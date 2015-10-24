@@ -1,0 +1,32 @@
+unit mainform_frm;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  DBGrids;
+
+type
+
+  { Tmainform }
+
+  Tmainform = class(TForm)
+    DBGrid1: TDBGrid;
+    Panel1: TPanel;
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  mainform: Tmainform;
+
+implementation
+
+{$R *.lfm}
+
+end.
+
