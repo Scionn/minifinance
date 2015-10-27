@@ -1,8 +1,8 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
   Height = 405
-  HorizontalOffset = 1382
-  VerticalOffset = 126
+  HorizontalOffset = 1281
+  VerticalOffset = 100
   Width = 174
   object zc1: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -22,6 +22,7 @@ object DataModule1: TDataModule1
     Connection = zc1
     Filtered = True
     UpdateObject = zup1
+    AfterPost = zq1AfterPost
     SQL.Strings = (
       'select movimenti.*, conti.descrizione'
       'from movimenti '

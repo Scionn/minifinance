@@ -1,9 +1,9 @@
 object Conti: TConti
-  Left = 916
+  Left = 465
   Height = 481
-  Top = 479
+  Top = 103
   Width = 735
-  Caption = 'Conti'
+  Caption = 'Conti Correnti'
   ClientHeight = 481
   ClientWidth = 735
   OnClose = FormClose
@@ -206,7 +206,7 @@ object Conti: TConti
       TabOrder = 8
     end
   end
-  object DBGrid1: TDBGrid
+  object dbgridconti: TDBGrid
     Left = 0
     Height = 313
     Top = 168

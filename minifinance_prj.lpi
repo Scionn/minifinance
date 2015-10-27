@@ -28,19 +28,22 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="4">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="SQLDBLaz"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item1>
       <Item2>
-        <PackageName Value="zcomponent"/>
+        <PackageName Value="SQLDBLaz"/>
       </Item2>
       <Item3>
-        <PackageName Value="FCL"/>
+        <PackageName Value="zcomponent"/>
       </Item3>
       <Item4>
-        <PackageName Value="LCL"/>
+        <PackageName Value="FCL"/>
       </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
     </RequiredPackages>
     <Units Count="5">
       <Unit0>
@@ -73,6 +76,7 @@
         <Filename Value="estrattoconto_frm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="estrattoconto"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit4>
     </Units>
@@ -87,7 +91,17 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <Optimizations>
+        <OptimizationLevel Value="3"/>
+      </Optimizations>
+    </CodeGeneration>
     <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>

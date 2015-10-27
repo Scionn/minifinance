@@ -1,7 +1,7 @@
 object mainform: Tmainform
-  Left = 257
+  Left = 203
   Height = 610
-  Top = 129
+  Top = 92
   Width = 1064
   Caption = 'mainform'
   ClientHeight = 610
@@ -28,9 +28,9 @@ object mainform: Tmainform
       TabOrder = 0
     end
     object dbcbcontocorrentefiltro: TDBLookupComboBox
-      Left = 24
+      Left = 104
       Height = 23
-      Top = 80
+      Top = 88
       Width = 216
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
@@ -39,14 +39,22 @@ object mainform: Tmainform
       LookupCache = False
       TabOrder = 1
     end
-    object Button1: TButton
-      Left = 272
+    object bteccontocorrente: TButton
+      Left = 344
       Height = 25
-      Top = 80
-      Width = 75
-      Caption = 'Button1'
-      OnClick = Button1Click
+      Top = 88
+      Width = 96
+      Caption = 'Visualizza EC'
+      OnClick = bteccontocorrenteClick
       TabOrder = 2
+    end
+    object Label8: TLabel
+      Left = 8
+      Height = 15
+      Top = 88
+      Width = 80
+      Caption = 'Conto corrente'
+      ParentColor = False
     end
   end
   object dbgridmovimenti: TDBGrid
@@ -58,7 +66,6 @@ object mainform: Tmainform
     Color = clWindow
     Columns = <    
       item
-        MaxSize = 200
         Title.Caption = 'Conto Corrente'
         Width = 250
         FieldName = 'DESCRIZIONE_1'
@@ -75,10 +82,12 @@ object mainform: Tmainform
       item
         Title.Caption = 'Entrate'
         FieldName = 'ENTRATE'
+        DisplayFormat = '€ #,##0.00'
       end    
       item
         Title.Caption = 'Uscite'
         FieldName = 'USCITE'
+        DisplayFormat = '€ #,##0.00'
       end    
       item
         Title.Caption = 'DESCRIZIONE'
@@ -140,7 +149,7 @@ object mainform: Tmainform
       MaxLength = 0
       TabOrder = 1
     end
-    object dbeddare: TDBEdit
+    object dbedentrate: TDBEdit
       Left = 592
       Height = 23
       Top = 9
@@ -151,7 +160,7 @@ object mainform: Tmainform
       MaxLength = 0
       TabOrder = 2
     end
-    object dbedavere: TDBEdit
+    object dbeduscite: TDBEdit
       Left = 592
       Height = 23
       Top = 40

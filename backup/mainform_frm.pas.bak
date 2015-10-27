@@ -15,13 +15,13 @@ type
 
   Tmainform = class(TForm)
     btconti: TButton;
-    Button1: TButton;
+    bteccontocorrente: TButton;
     dbchriconciliato: TDBCheckBox;
     dbeddataop: TDBDateEdit;
     dbeddataval: TDBDateEdit;
     dbeddescrizione: TDBEdit;
-    dbeddare: TDBEdit;
-    dbedavere: TDBEdit;
+    dbedentrate: TDBEdit;
+    dbeduscite: TDBEdit;
     dbcbcontocorrente: TDBLookupComboBox;
     dbcbcontocorrentefiltro: TDBLookupComboBox;
     DBNavigator1: TDBNavigator;
@@ -36,12 +36,13 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
+    Label8: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     zqconti: TZQuery;
     zupconti: TZUpdateSQL;
     procedure btcontiClick(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    procedure bteccontocorrenteClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     { private declarations }
@@ -62,14 +63,27 @@ procedure Tmainform.btcontiClick(Sender: TObject);
 begin
   conti:=Tconti.Create(self);
   conti.showmodal;
+  zqconti.Refresh;
+  datamodule1.zq1.Refresh;
 end;
 
-procedure Tmainform.Button1Click(Sender: TObject);
+procedure Tmainform.bteccontocorrenteClick(Sender: TObject);
 begin
+  if dbcbcontocorrentefiltro.ItemIndex = -1 then
+     begin
+       ShowMessage('Selezionare un conto');
+       Exit;
+     end;
     estrattoconto:=Testrattoconto.Create(self);
     estrattoconto.zqec.parambyname('CONTO').asinteger:=dbcbcontocorrentefiltro.KeyValue;
-  estrattoconto.showmodal;
+    estrattoconto.zqec.open;
+    estrattoconto.lbconto.Caption:='Conto corrente n.: ' + dbcbcontocorrentefiltro.Text;
+    estrattoconto.showmodal;
 end;
+
+
+
+
 
 procedure Tmainform.FormShow(Sender: TObject);
 begin
@@ -77,6 +91,8 @@ begin
   zqconti.Open;
   datamodule1.zq1.open;
 end;
+
+
 
 end.
 

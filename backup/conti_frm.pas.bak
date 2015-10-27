@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, FileUtil, ZDataset, ZSqlUpdate, Forms, Controls,
-  Graphics, Dialogs, DbCtrls, StdCtrls, ExtCtrls, DBGrids;
+  Graphics, Dialogs, DbCtrls, StdCtrls, ExtCtrls, DBGrids,mainform_frm;
 
 type
 
@@ -21,7 +21,7 @@ type
     dbediban: TDBEdit;
     dbednumero: TDBEdit;
     dbedreferente: TDBEdit;
-    DBGrid1: TDBGrid;
+    dbgridconti: TDBGrid;
     dblbidconto: TDBText;
     DBNavigator1: TDBNavigator;
     Label1: TLabel;
@@ -53,6 +53,7 @@ implementation
 
 procedure TConti.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
+  mainform.zqconti.Refresh;
   closeAction:=caFree;
 end;
 

@@ -1,7 +1,7 @@
 object Conti: TConti
-  Left = 916
+  Left = 465
   Height = 481
-  Top = 479
+  Top = 103
   Width = 735
   Caption = 'Conti Correnti'
   ClientHeight = 481

@@ -5,7 +5,7 @@ unit datamodule_frm;
 interface
 
 uses
-  Classes, SysUtils, db, FileUtil, ZConnection, ZDataset, ZSqlUpdate;
+  Classes, SysUtils, db, FileUtil, ZConnection, ZDataset, ZSqlUpdate, ZAbstractDataset;
 
 type
 
@@ -15,6 +15,7 @@ type
     zc1: TZConnection;
     zq1: TZQuery;
     zup1: TZUpdateSQL;
+    procedure zq1AfterPost(DataSet: TDataSet);
   private
     { private declarations }
   public
@@ -27,6 +28,16 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TDataModule1 }
+
+
+procedure TDataModule1.zq1AfterPost(DataSet: TDataSet);
+begin
+  zq1.Refresh;
+end;
+
+
 
 end.
 
