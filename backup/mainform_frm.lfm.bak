@@ -1,29 +1,441 @@
 object mainform: Tmainform
-  Left = 325
-  Height = 536
-  Top = 164
-  Width = 1052
+  Left = 257
+  Height = 610
+  Top = 129
+  Width = 1064
   Caption = 'mainform'
-  ClientHeight = 536
-  ClientWidth = 1052
+  ClientHeight = 610
+  ClientWidth = 1064
+  OnShow = FormShow
   LCLVersion = '1.4.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 128
     Top = 0
-    Width = 1052
+    Width = 1064
     Align = alTop
     Caption = ' '
+    ClientHeight = 128
+    ClientWidth = 1064
     TabOrder = 0
+    object btconti: TButton
+      Left = 8
+      Height = 25
+      Top = 8
+      Width = 136
+      Caption = 'Anag. Conti Correnti'
+      OnClick = btcontiClick
+      TabOrder = 0
+    end
+    object dbcbcontocorrentefiltro: TDBLookupComboBox
+      Left = 24
+      Height = 23
+      Top = 80
+      Width = 216
+      KeyField = 'IDCONTO'
+      ListField = 'DESCRIZIONE'
+      ListFieldIndex = 0
+      ListSource = dsconti
+      LookupCache = False
+      TabOrder = 1
+    end
+    object Button1: TButton
+      Left = 272
+      Height = 25
+      Top = 80
+      Width = 75
+      Caption = 'Button1'
+      OnClick = Button1Click
+      TabOrder = 2
+    end
   end
-  object DBGrid1: TDBGrid
+  object dbgridmovimenti: TDBGrid
     Left = 0
-    Height = 408
+    Height = 336
     Top = 128
-    Width = 1052
+    Width = 1064
     Align = alClient
     Color = clWindow
-    Columns = <>
+    Columns = <    
+      item
+        MaxSize = 200
+        Title.Caption = 'Conto Corrente'
+        Width = 250
+        FieldName = 'DESCRIZIONE_1'
+      end    
+      item
+        Title.Caption = 'Data Valuta'
+        FieldName = 'DATAVAL'
+      end    
+      item
+        Title.Caption = 'Data Operazione'
+        Width = 99
+        FieldName = 'DATAOP'
+      end    
+      item
+        Title.Caption = 'Entrate'
+        FieldName = 'ENTRATE'
+      end    
+      item
+        Title.Caption = 'Uscite'
+        FieldName = 'USCITE'
+      end    
+      item
+        Title.Caption = 'DESCRIZIONE'
+        Width = 500
+        FieldName = 'DESCRIZIONE'
+      end    
+      item
+        Title.Caption = 'RICONCILIATO'
+        FieldName = 'RICONCILIATO'
+      end>
+    DataSource = ds1
     TabOrder = 1
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 146
+    Top = 464
+    Width = 1064
+    Align = alBottom
+    Caption = ' '
+    ClientHeight = 146
+    ClientWidth = 1064
+    TabOrder = 2
+    object DBNavigator1: TDBNavigator
+      Left = 8
+      Height = 25
+      Top = 112
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = ds1
+      Options = []
+      TabOrder = 0
+    end
+    object dblbidmovimento: TDBText
+      Left = 96
+      Height = 15
+      Top = 9
+      Width = 96
+      DataField = 'IDMOV'
+      DataSource = ds1
+      ParentColor = False
+    end
+    object dbeddescrizione: TDBEdit
+      Left = 96
+      Height = 23
+      Top = 72
+      Width = 400
+      DataField = 'DESCRIZIONE'
+      DataSource = ds1
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object dbeddare: TDBEdit
+      Left = 592
+      Height = 23
+      Top = 9
+      Width = 120
+      DataField = 'ENTRATE'
+      DataSource = ds1
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object dbedavere: TDBEdit
+      Left = 592
+      Height = 23
+      Top = 40
+      Width = 120
+      DataField = 'USCITE'
+      DataSource = ds1
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object dbcbcontocorrente: TDBLookupComboBox
+      Left = 96
+      Height = 23
+      Top = 40
+      Width = 192
+      DataField = 'IDCONTO'
+      DataSource = ds1
+      KeyField = 'IDCONTO'
+      ListField = 'DESCRIZIONE'
+      ListFieldIndex = 0
+      ListSource = dsconti
+      LookupCache = False
+      TabOrder = 4
+    end
+    object dbchriconciliato: TDBCheckBox
+      Left = 520
+      Height = 23
+      Top = 72
+      Width = 90
+      Caption = 'Riconciliato'
+      DataField = 'RICONCILIATO'
+      DataSource = ds1
+      TabOrder = 5
+      ValueChecked = '1'
+      ValueUnchecked = '0'
+    end
+    object dbeddataop: TDBDateEdit
+      Left = 392
+      Height = 23
+      Top = 9
+      Width = 136
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 6
+      DataField = 'DATAOP'
+      DataSource = ds1
+    end
+    object dbeddataval: TDBDateEdit
+      Left = 392
+      Height = 23
+      Top = 40
+      Width = 136
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 7
+      DataField = 'DATAVAL'
+      DataSource = ds1
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 9
+      Width = 73
+      Caption = 'IDmovimento'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 40
+      Width = 80
+      Caption = 'Conto corrente'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 8
+      Height = 15
+      Top = 72
+      Width = 60
+      Caption = 'Descrizione'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 296
+      Height = 15
+      Top = 9
+      Width = 87
+      Caption = 'Data Operazione'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 296
+      Height = 15
+      Top = 40
+      Width = 60
+      Caption = 'Data Valuta'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 539
+      Height = 15
+      Top = 9
+      Width = 37
+      Caption = 'Entrate'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 539
+      Height = 15
+      Top = 40
+      Width = 32
+      Caption = 'Uscite'
+      ParentColor = False
+    end
+  end
+  object ds1: TDataSource
+    AutoEdit = False
+    DataSet = DataModule1.zq1
+    left = 80
+    top = 384
+  end
+  object dsconti: TDataSource
+    AutoEdit = False
+    DataSet = zqconti
+    left = 880
+    top = 152
+  end
+  object zqconti: TZQuery
+    Connection = DataModule1.zc1
+    UpdateObject = zupconti
+    SQL.Strings = (
+      'SELECT *'
+      'from conti'
+    )
+    Params = <>
+    left = 937
+    top = 152
+  end
+  object zupconti: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM conti'
+      'WHERE'
+      '  conti.IDCONTO = :OLD_IDCONTO AND'
+      '  ((conti.DESCRIZIONE IS NULL AND :OLD_DESCRIZIONE IS NULL) OR (conti.DESCRIZIONE = :OLD_DESCRIZIONE)) AND'
+      '  ((conti.IBAN IS NULL AND :OLD_IBAN IS NULL) OR (conti.IBAN = :OLD_IBAN)) AND'
+      '  ((conti.ABI IS NULL AND :OLD_ABI IS NULL) OR (conti.ABI = :OLD_ABI)) AND'
+      '  ((conti.CAB IS NULL AND :OLD_CAB IS NULL) OR (conti.CAB = :OLD_CAB)) AND'
+      '  ((conti.CIN IS NULL AND :OLD_CIN IS NULL) OR (conti.CIN = :OLD_CIN)) AND'
+      '  ((conti.FILIALE IS NULL AND :OLD_FILIALE IS NULL) OR (conti.FILIALE = :OLD_FILIALE)) AND'
+      '  ((conti.REFERENTE IS NULL AND :OLD_REFERENTE IS NULL) OR (conti.REFERENTE = :OLD_REFERENTE)) AND'
+      '  ((conti.NUMERO IS NULL AND :OLD_NUMERO IS NULL) OR (conti.NUMERO = :OLD_NUMERO))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO conti'
+      '  (IDCONTO, DESCRIZIONE, IBAN, ABI, CAB, CIN, FILIALE, REFERENTE, NUMERO)'
+      'VALUES'
+      '  (:IDCONTO, :DESCRIZIONE, :IBAN, :ABI, :CAB, :CIN, :FILIALE, :REFERENTE, '
+      '   :NUMERO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE conti SET'
+      '  IDCONTO = :IDCONTO,'
+      '  DESCRIZIONE = :DESCRIZIONE,'
+      '  IBAN = :IBAN,'
+      '  ABI = :ABI,'
+      '  CAB = :CAB,'
+      '  CIN = :CIN,'
+      '  FILIALE = :FILIALE,'
+      '  REFERENTE = :REFERENTE,'
+      '  NUMERO = :NUMERO'
+      'WHERE'
+      '  conti.IDCONTO = :OLD_IDCONTO AND'
+      '  ((conti.DESCRIZIONE IS NULL AND :OLD_DESCRIZIONE IS NULL) OR (conti.DESCRIZIONE = :OLD_DESCRIZIONE)) AND'
+      '  ((conti.IBAN IS NULL AND :OLD_IBAN IS NULL) OR (conti.IBAN = :OLD_IBAN)) AND'
+      '  ((conti.ABI IS NULL AND :OLD_ABI IS NULL) OR (conti.ABI = :OLD_ABI)) AND'
+      '  ((conti.CAB IS NULL AND :OLD_CAB IS NULL) OR (conti.CAB = :OLD_CAB)) AND'
+      '  ((conti.CIN IS NULL AND :OLD_CIN IS NULL) OR (conti.CIN = :OLD_CIN)) AND'
+      '  ((conti.FILIALE IS NULL AND :OLD_FILIALE IS NULL) OR (conti.FILIALE = :OLD_FILIALE)) AND'
+      '  ((conti.REFERENTE IS NULL AND :OLD_REFERENTE IS NULL) OR (conti.REFERENTE = :OLD_REFERENTE)) AND'
+      '  ((conti.NUMERO IS NULL AND :OLD_NUMERO IS NULL) OR (conti.NUMERO = :OLD_NUMERO))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 1001
+    top = 152
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDCONTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIZIONE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IBAN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ABI'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CAB'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CIN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FILIALE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFERENTE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NUMERO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_IDCONTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_DESCRIZIONE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_IBAN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ABI'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_CAB'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_CIN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_FILIALE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_REFERENTE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_NUMERO'
+        ParamType = ptUnknown
+      end>
   end
 end

@@ -1,0 +1,220 @@
+object Conti: TConti
+  Left = 916
+  Height = 481
+  Top = 479
+  Width = 735
+  Caption = 'Conti'
+  ClientHeight = 481
+  ClientWidth = 735
+  OnClose = FormClose
+  LCLVersion = '1.4.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 168
+    Top = 0
+    Width = 735
+    Align = alTop
+    Caption = ' '
+    ClientHeight = 168
+    ClientWidth = 735
+    TabOrder = 0
+    object dblbidconto: TDBText
+      Left = 104
+      Height = 15
+      Top = 8
+      Width = 65
+      DataField = 'IDCONTO'
+      DataSource = mainform.dsconti
+      ParentColor = False
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 42
+      Caption = 'IDconto'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 40
+      Width = 60
+      Caption = 'Descrizione'
+      ParentColor = False
+    end
+    object dbeddescrizione: TDBEdit
+      Left = 104
+      Height = 23
+      Top = 40
+      Width = 368
+      DataField = 'DESCRIZIONE'
+      DataSource = mainform.dsconti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label3: TLabel
+      Left = 480
+      Height = 15
+      Top = 8
+      Width = 27
+      Caption = 'IBAN'
+      ParentColor = False
+    end
+    object dbediban: TDBEdit
+      Left = 520
+      Height = 23
+      Top = 8
+      Width = 208
+      DataField = 'IBAN'
+      DataSource = mainform.dsconti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Label4: TLabel
+      Left = 480
+      Height = 15
+      Top = 40
+      Width = 18
+      Caption = 'ABI'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 480
+      Height = 15
+      Top = 72
+      Width = 23
+      Caption = 'CAB'
+      ParentColor = False
+    end
+    object dbedabi: TDBEdit
+      Left = 520
+      Height = 23
+      Top = 40
+      Width = 208
+      DataField = 'ABI'
+      DataSource = mainform.dsconti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object dbedcab: TDBEdit
+      Left = 520
+      Height = 23
+      Top = 72
+      Width = 208
+      DataField = 'CAB'
+      DataSource = mainform.dsconti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object dbedcin: TDBEdit
+      Left = 520
+      Height = 23
+      Top = 104
+      Width = 208
+      DataField = 'CIN'
+      DataSource = mainform.dsconti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 4
+    end
+    object Label6: TLabel
+      Left = 480
+      Height = 15
+      Top = 104
+      Width = 20
+      Caption = 'CIN'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 8
+      Height = 15
+      Top = 72
+      Width = 30
+      Caption = 'Filiale'
+      ParentColor = False
+    end
+    object dbedfiliale: TDBEdit
+      Left = 104
+      Height = 23
+      Top = 72
+      Width = 368
+      DataField = 'FILIALE'
+      DataSource = mainform.dsconti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 5
+    end
+    object Label8: TLabel
+      Left = 8
+      Height = 15
+      Top = 104
+      Width = 50
+      Caption = 'Referente'
+      ParentColor = False
+    end
+    object dbedreferente: TDBEdit
+      Left = 104
+      Height = 23
+      Top = 104
+      Width = 368
+      DataField = 'REFERENTE'
+      DataSource = mainform.dsconti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 6
+    end
+    object Label9: TLabel
+      Left = 8
+      Height = 15
+      Top = 136
+      Width = 44
+      Caption = 'Numero'
+      ParentColor = False
+    end
+    object dbednumero: TDBEdit
+      Left = 104
+      Height = 23
+      Top = 136
+      Width = 232
+      DataField = 'NUMERO'
+      DataSource = mainform.dsconti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 7
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 408
+      Height = 25
+      Top = 136
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = mainform.dsconti
+      Options = []
+      TabOrder = 8
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 313
+    Top = 168
+    Width = 735
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = mainform.dsconti
+    TabOrder = 1
+  end
+end

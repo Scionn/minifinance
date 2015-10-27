@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, mainform_frm
+  Forms, mainform_frm, zcomponent, datamodule_frm, CONTI_FRM, estrattoconto_frm
   { you can add units after this };
 
 {$R *.res}
@@ -16,6 +16,7 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(Tmainform, mainform);
+  Application.CreateForm(TDataModule1, DataModule1);
   Application.Run;
 end.
 

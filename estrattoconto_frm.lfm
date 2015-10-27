@@ -1,0 +1,140 @@
+object estrattoconto: Testrattoconto
+  Left = 399
+  Height = 240
+  Top = 556
+  Width = 926
+  Caption = 'Estratto Conto'
+  ClientHeight = 240
+  ClientWidth = 926
+  OnClose = FormClose
+  OnShow = FormShow
+  LCLVersion = '1.4.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 926
+    Align = alTop
+    Caption = ' '
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 214
+    Top = 26
+    Width = 926
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = dsec
+    TabOrder = 1
+  end
+  object zqec: TZReadOnlyQuery
+    Connection = DataModule1.zc1
+    OnCalcFields = zqecCalcFields
+    SQL.Strings = (
+      'SELECT * '
+      'FROM movimenti'
+      'WHERE IDCONTO=:CONTO'
+      'ORDER BY dataval'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'CONTO'
+        ParamType = ptUnknown
+      end>
+    left = 88
+    top = 168
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'CONTO'
+        ParamType = ptUnknown
+      end>
+    object zqecDATAOP: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DATAOP'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqecDATAVAL: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DATAVAL'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqecENTRATE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ENTRATE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 21
+    end
+    object zqecUSCITE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'USCITE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 21
+    end
+    object zqecsaldo1: TCurrencyField
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'saldo'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+    end
+    object zqecDESCRIZIONE: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'DESCRIZIONE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object zqecRICONCILIATO: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'RICONCILIATO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object dsec: TDataSource
+    DataSet = zqec
+    left = 16
+    top = 168
+  end
+end
