@@ -1,8 +1,8 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
   Height = 405
-  HorizontalOffset = 1281
-  VerticalOffset = 100
+  HorizontalOffset = 1375
+  VerticalOffset = 111
   Width = 174
   object zc1: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -10,7 +10,7 @@ object DataModule1: TDataModule1
     Properties.Strings = (
       'AutoEncodeStrings='
     )
-    TransactIsolationLevel = tiSerializable
+    TransactIsolationLevel = tiRepeatableRead
     HostName = 'www.rgibertini.it'
     Port = 0
     Database = 'rgibertini_minifinance'

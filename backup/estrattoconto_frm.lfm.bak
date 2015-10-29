@@ -1,11 +1,11 @@
 object estrattoconto: Testrattoconto
-  Left = 176
-  Height = 240
-  Top = 231
-  Width = 926
+  Left = 779
+  Height = 609
+  Top = 341
+  Width = 869
   Caption = 'Estratto Conto'
-  ClientHeight = 240
-  ClientWidth = 926
+  ClientHeight = 609
+  ClientWidth = 869
   OnClose = FormClose
   OnShow = FormShow
   LCLVersion = '1.4.4.0'
@@ -13,14 +13,14 @@ object estrattoconto: Testrattoconto
     Left = 0
     Height = 32
     Top = 0
-    Width = 926
+    Width = 869
     Align = alTop
     Caption = ' '
     ClientHeight = 32
-    ClientWidth = 926
+    ClientWidth = 869
     TabOrder = 0
     object lbsaldo: TLabel
-      Left = 488
+      Left = 192
       Height = 15
       Top = 8
       Width = 38
@@ -35,53 +35,83 @@ object estrattoconto: Testrattoconto
       Caption = 'lbconto'
       ParentColor = False
     end
+    object Button1: TButton
+      Left = 776
+      Height = 25
+      Top = 0
+      Width = 75
+      Caption = 'Button1'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 520
+      Height = 25
+      Top = 0
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = dsec
+      Options = []
+      TabOrder = 1
+    end
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Height = 208
+    Height = 577
     Top = 32
-    Width = 926
+    Width = 869
     Align = alClient
     Color = clWindow
     Columns = <    
       item
-        Title.Caption = 'Data Operazione'
+        Title.Caption = 'RICONCILIATO'
+        FieldName = 'RICONCILIATO'
+      end    
+      item
+        Title.Caption = 'DATAOP'
         FieldName = 'DATAOP'
       end    
       item
-        Title.Caption = 'Data Valuta'
+        Title.Caption = 'DATAVAL'
         FieldName = 'DATAVAL'
       end    
       item
-        Title.Caption = 'Entrata'
+        Title.Caption = 'ENTRATE'
         FieldName = 'ENTRATE'
-        DisplayFormat = '€ #,##0.00'
       end    
       item
-        Title.Caption = 'Uscita'
+        Title.Caption = 'USCITE'
         FieldName = 'USCITE'
-        DisplayFormat = '€ #,##0.00'
       end    
       item
-        Title.Caption = 'Saldo Scalare'
+        Title.Caption = 'saldo'
         FieldName = 'saldo'
-        DisplayFormat = '€ #,##0.00'
       end    
       item
-        Title.Caption = 'Descrizione'
+        Title.Caption = 'DESCRIZIONE'
         FieldName = 'DESCRIZIONE'
-      end    
-      item
-        Title.Caption = 'Riconciliato'
-        FieldName = 'RICONCILIATO'
       end>
     DataSource = dsec
     TabOrder = 1
   end
-  object zqec: TZReadOnlyQuery
+  object dsec: TDataSource
+    DataSet = zqec
+    left = 16
+    top = 168
+  end
+  object zqec: TZQuery
     Connection = DataModule1.zc1
     AfterOpen = zqecAfterOpen
     OnCalcFields = zqecCalcFields
+    UpdateObject = zupec
     SQL.Strings = (
       'SELECT * '
       'FROM movimenti'
@@ -94,7 +124,7 @@ object estrattoconto: Testrattoconto
         Name = 'CONTO'
         ParamType = ptUnknown
       end>
-    left = 88
+    left = 80
     top = 168
     ParamData = <    
       item
@@ -122,11 +152,22 @@ object estrattoconto: Testrattoconto
       ReadOnly = False
       Required = False
     end
+    object zqecDESCRIZIONE: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'DESCRIZIONE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
     object zqecENTRATE: TFloatField
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'ENTRATE'
-      Index = 2
+      Index = 3
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -139,7 +180,7 @@ object estrattoconto: Testrattoconto
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'USCITE'
-      Index = 3
+      Index = 4
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -148,11 +189,21 @@ object estrattoconto: Testrattoconto
       MinValue = 0
       Precision = 21
     end
+    object zqecRICONCILIATO: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'RICONCILIATO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
     object zqecsaldo1: TCurrencyField
       DisplayWidth = 10
       FieldKind = fkCalculated
       FieldName = 'saldo'
-      Index = 4
+      Index = 6
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -160,31 +211,81 @@ object estrattoconto: Testrattoconto
       MaxValue = 0
       MinValue = 0
     end
-    object zqecDESCRIZIONE: TStringField
-      DisplayWidth = 1020
-      FieldKind = fkData
-      FieldName = 'DESCRIZIONE'
-      Index = 5
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 1020
-    end
-    object zqecRICONCILIATO: TSmallintField
-      DisplayWidth = 10
-      FieldKind = fkData
-      FieldName = 'RICONCILIATO'
-      Index = 6
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = True
-    end
   end
-  object dsec: TDataSource
-    DataSet = zqec
-    left = 16
+  object zupec: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM movimenti'
+      'WHERE'
+      '  movimenti.IDMOV = :OLD_IDMOV'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO movimenti'
+      '  (IDMOV, IDCONTO, DATAOP, DATAVAL, DESCRIZIONE, ENTRATE, USCITE, RICONCILIATO)'
+      'VALUES'
+      '  (:IDMOV, :IDCONTO, :DATAOP, :DATAVAL, :DESCRIZIONE, :ENTRATE, :USCITE, '
+      '   :RICONCILIATO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE movimenti SET'
+      '  IDMOV = :IDMOV,'
+      '  IDCONTO = :IDCONTO,'
+      '  DATAOP = :DATAOP,'
+      '  DATAVAL = :DATAVAL,'
+      '  DESCRIZIONE = :DESCRIZIONE,'
+      '  ENTRATE = :ENTRATE,'
+      '  USCITE = :USCITE,'
+      '  RICONCILIATO = :RICONCILIATO'
+      'WHERE'
+      '  movimenti.IDMOV = :OLD_IDMOV'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 145
     top = 168
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDMOV'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDCONTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAOP'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAVAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIZIONE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ENTRATE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'USCITE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'RICONCILIATO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_IDMOV'
+        ParamType = ptUnknown
+      end>
   end
 end

@@ -1,0 +1,96 @@
+object tipiaffidamento: Ttipiaffidamento
+  Left = 1059
+  Height = 388
+  Top = 574
+  Width = 598
+  Caption = 'Tipologie di affidamento'
+  ClientHeight = 388
+  ClientWidth = 598
+  OnClose = FormClose
+  LCLVersion = '1.4.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 74
+    Top = 0
+    Width = 598
+    Align = alTop
+    Caption = ' '
+    ClientHeight = 74
+    ClientWidth = 598
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 10
+      Width = 46
+      Caption = 'IDtipoaff'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 40
+      Width = 60
+      Caption = 'Descrizione'
+      ParentColor = False
+    end
+    object dblbidtipo: TDBText
+      Left = 88
+      Height = 15
+      Top = 10
+      Width = 55
+      DataSource = Affidamenti.dstipoaffidamento
+      ParentColor = False
+    end
+    object dbeddescrizione: TDBEdit
+      Left = 80
+      Height = 23
+      Top = 40
+      Width = 392
+      DataSource = Affidamenti.dstipoaffidamento
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 344
+      Height = 25
+      Top = 8
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = Affidamenti.dstipoaffidamento
+      Options = []
+      TabOrder = 1
+    end
+    object dbchfido2: TDBCheckBox
+      Left = 192
+      Height = 23
+      Top = 8
+      Width = 130
+      Caption = 'Ricade su Fido 2'
+      DataSource = Affidamenti.dstipoaffidamento
+      TabOrder = 2
+      ValueChecked = 'True'
+      ValueUnchecked = 'False'
+    end
+  end
+  object DBGridtipoaffidamento: TDBGrid
+    Left = 0
+    Height = 314
+    Top = 74
+    Width = 598
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = Affidamenti.dstipoaffidamento
+    TabOrder = 1
+  end
+end

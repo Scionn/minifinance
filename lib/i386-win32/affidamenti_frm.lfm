@@ -1,0 +1,229 @@
+object Affidamenti: TAffidamenti
+  Left = 305
+  Height = 480
+  Top = 464
+  Width = 741
+  Caption = 'Affidamenti'
+  ClientHeight = 480
+  ClientWidth = 741
+  OnClose = FormClose
+  LCLVersion = '1.4.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 216
+    Top = 0
+    Width = 741
+    Align = alTop
+    Caption = ' '
+    ClientHeight = 216
+    ClientWidth = 741
+    TabOrder = 0
+    object dblbidaffidamento: TDBText
+      Left = 104
+      Height = 15
+      Top = 8
+      Width = 99
+      DataSource = mainform.dsaffidamenti
+      ParentColor = False
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 76
+      Caption = 'IDaffidamento'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 40
+      Width = 60
+      Caption = 'Descrizione'
+      ParentColor = False
+    end
+    object dbeddescrizione: TDBEdit
+      Left = 104
+      Height = 23
+      Top = 40
+      Width = 368
+      DataField = 'DESCRIZIONE'
+      DataSource = mainform.dsaffidamenti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label3: TLabel
+      Left = 480
+      Height = 15
+      Top = 8
+      Width = 23
+      Caption = 'Fido'
+      ParentColor = False
+    end
+    object dbedfido: TDBEdit
+      Left = 520
+      Height = 23
+      Top = 8
+      Width = 208
+      DataSource = mainform.dsaffidamenti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Label4: TLabel
+      Left = 480
+      Height = 15
+      Top = 40
+      Width = 32
+      Caption = 'Fido 2'
+      ParentColor = False
+    end
+    object dbedfido2: TDBEdit
+      Left = 520
+      Height = 23
+      Top = 40
+      Width = 208
+      DataSource = mainform.dsaffidamenti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object Label8: TLabel
+      Left = 8
+      Height = 15
+      Top = 136
+      Width = 50
+      Caption = 'Referente'
+      ParentColor = False
+    end
+    object dbedreferente: TDBEdit
+      Left = 104
+      Height = 23
+      Top = 136
+      Width = 368
+      DataSource = mainform.dsaffidamenti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object Label9: TLabel
+      Left = 8
+      Height = 15
+      Top = 168
+      Width = 44
+      Caption = 'Numero'
+      ParentColor = False
+    end
+    object dbednumero: TDBEdit
+      Left = 104
+      Height = 23
+      Top = 168
+      Width = 232
+      DataField = 'NUMERO'
+      DataSource = mainform.dsaffidamenti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 4
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 487
+      Height = 25
+      Top = 184
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = mainform.dsaffidamenti
+      Options = []
+      TabOrder = 5
+    end
+    object Label10: TLabel
+      Left = 8
+      Height = 15
+      Top = 72
+      Width = 80
+      Caption = 'Conto corrente'
+      ParentColor = False
+    end
+    object dbcbcontocorrentefiltro: TDBLookupComboBox
+      Left = 104
+      Height = 23
+      Top = 72
+      Width = 368
+      DataSource = mainform.dsaffidamenti
+      KeyField = 'IDCONTO'
+      ListField = 'DESCRIZIONE'
+      ListFieldIndex = 0
+      ListSource = mainform.dsconti
+      LookupCache = False
+      TabOrder = 6
+    end
+    object bttipofido: TButton
+      Left = 520
+      Height = 25
+      Top = 104
+      Width = 208
+      Caption = 'Anag. tipologie affidamento'
+      OnClick = bttipofidoClick
+      TabOrder = 7
+    end
+    object Label5: TLabel
+      Left = 8
+      Height = 15
+      Top = 104
+      Width = 24
+      Caption = 'Tipo'
+      ParentColor = False
+    end
+  end
+  object DBGridaffidamenti: TDBGrid
+    Left = 0
+    Height = 264
+    Top = 216
+    Width = 741
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = mainform.dsaffidamenti
+    TabOrder = 1
+  end
+  object dbcbtipoaffido: TDBLookupComboBox
+    Left = 104
+    Height = 23
+    Top = 104
+    Width = 368
+    DataSource = mainform.dsaffidamenti
+    ListFieldIndex = 0
+    ListSource = dstipoaffidamento
+    LookupCache = False
+    TabOrder = 2
+  end
+  object dstipoaffidamento: TDataSource
+    DataSet = zqtipoaffidamento
+    left = 520
+    top = 240
+  end
+  object zqtipoaffidamento: TZQuery
+    Connection = DataModule1.zc1
+    UpdateObject = zuptipoaffidamento
+    SQL.Strings = (
+      'select *'
+      'from tipoaffidamento'
+    )
+    Params = <>
+    left = 536
+    top = 320
+  end
+  object zuptipoaffidamento: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    left = 600
+    top = 248
+  end
+end

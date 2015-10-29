@@ -1,7 +1,7 @@
 object mainform: Tmainform
-  Left = 230
+  Left = 298
   Height = 610
-  Top = 164
+  Top = 113
   Width = 1064
   Caption = 'mainform'
   ClientHeight = 610
@@ -19,9 +19,9 @@ object mainform: Tmainform
     ClientWidth = 1064
     TabOrder = 0
     object btconti: TButton
-      Left = 560
+      Left = 920
       Height = 25
-      Top = 72
+      Top = 8
       Width = 136
       Caption = 'Anag. Conti Correnti'
       OnClick = btcontiClick
@@ -63,7 +63,6 @@ object mainform: Tmainform
       Width = 164
       Caption = 'Visualizza Operazioni future da:'
       ParentColor = False
-      OnClick = Label9Click
     end
     object DateTimePicker1: TDateTimePicker
       Left = 184
@@ -124,6 +123,15 @@ object mainform: Tmainform
       Width = 75
       Caption = 'Visualizza'
       TabOrder = 5
+    end
+    object btfidi: TButton
+      Left = 920
+      Height = 25
+      Top = 40
+      Width = 136
+      Caption = 'Anag. Affidamenti'
+      OnClick = btfidiClick
+      TabOrder = 6
     end
   end
   object dbgridmovimenti: TDBGrid
@@ -355,6 +363,15 @@ object mainform: Tmainform
       ParentColor = False
     end
   end
+  object btconti1: TButton
+    Left = 920
+    Height = 25
+    Top = 8
+    Width = 136
+    Caption = 'Anag. Conti Correnti'
+    OnClick = btcontiClick
+    TabOrder = 3
+  end
   object ds1: TDataSource
     AutoEdit = False
     DataSet = DataModule1.zq1
@@ -515,5 +532,26 @@ object mainform: Tmainform
         Name = 'OLD_NUMERO'
         ParamType = ptUnknown
       end>
+  end
+  object zqaffidamenti: TZQuery
+    Connection = DataModule1.zc1
+    UpdateObject = zupaffidamenti
+    SQL.Strings = (
+      'SELECT *'
+      'from affidamenti'
+    )
+    Params = <>
+    left = 937
+    top = 216
+  end
+  object zupaffidamenti: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    left = 1001
+    top = 216
+  end
+  object dsaffidamenti: TDataSource
+    DataSet = zqaffidamenti
+    left = 880
+    top = 216
   end
 end

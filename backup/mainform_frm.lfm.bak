@@ -1,7 +1,7 @@
 object mainform: Tmainform
-  Left = 203
+  Left = 298
   Height = 610
-  Top = 92
+  Top = 113
   Width = 1064
   Caption = 'mainform'
   ClientHeight = 610
@@ -19,7 +19,7 @@ object mainform: Tmainform
     ClientWidth = 1064
     TabOrder = 0
     object btconti: TButton
-      Left = 8
+      Left = 920
       Height = 25
       Top = 8
       Width = 136
@@ -55,6 +55,83 @@ object mainform: Tmainform
       Width = 80
       Caption = 'Conto corrente'
       ParentColor = False
+    end
+    object Label9: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 164
+      Caption = 'Visualizza Operazioni future da:'
+      ParentColor = False
+    end
+    object DateTimePicker1: TDateTimePicker
+      Left = 184
+      Height = 23
+      Top = 8
+      Width = 83
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 3
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 42304
+      Time = 0.734536990741617
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object Label10: TLabel
+      Left = 280
+      Height = 15
+      Top = 8
+      Width = 9
+      Caption = 'a:'
+      ParentColor = False
+    end
+    object DateTimePicker2: TDateTimePicker
+      Left = 300
+      Height = 23
+      Top = 8
+      Width = 83
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 4
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 42304
+      Time = 0.734788576388382
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object btoperazionifuture: TButton
+      Left = 408
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Visualizza'
+      TabOrder = 5
+    end
+    object btfidi: TButton
+      Left = 920
+      Height = 25
+      Top = 40
+      Width = 136
+      Caption = 'Anag. Affidamenti'
+      OnClick = btfidiClick
+      TabOrder = 6
     end
   end
   object dbgridmovimenti: TDBGrid
@@ -286,6 +363,15 @@ object mainform: Tmainform
       ParentColor = False
     end
   end
+  object btconti1: TButton
+    Left = 920
+    Height = 25
+    Top = 8
+    Width = 136
+    Caption = 'Anag. Conti Correnti'
+    OnClick = btcontiClick
+    TabOrder = 3
+  end
   object ds1: TDataSource
     AutoEdit = False
     DataSet = DataModule1.zq1
@@ -446,5 +532,26 @@ object mainform: Tmainform
         Name = 'OLD_NUMERO'
         ParamType = ptUnknown
       end>
+  end
+  object zqaffidamenti: TZQuery
+    Connection = DataModule1.zc1
+    UpdateObject = zupaffidamenti
+    SQL.Strings = (
+      'SELECT *'
+      'from affidamenti'
+    )
+    Params = <>
+    left = 937
+    top = 216
+  end
+  object zupaffidamenti: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    left = 1001
+    top = 216
+  end
+  object dsaffidamenti: TDataSource
+    DataSet = zqaffidamenti
+    left = 880
+    top = 216
   end
 end

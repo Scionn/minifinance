@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, db, FileUtil, DateTimePicker, Forms, Controls, Graphics,
   Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, DBExtCtrls, conti_frm,
-  ZDataset, ZSqlUpdate, datamodule_frm, estrattoconto_frm;
+  ZDataset, ZSqlUpdate, datamodule_frm, estrattoconto_frm, affidamenti_frm, windows;
 
 type
 
@@ -15,8 +15,11 @@ type
 
   Tmainform = class(TForm)
     btconti: TButton;
+    btconti1: TButton;
+    btfidi: TButton;
     bteccontocorrente: TButton;
     btoperazionifuture: TButton;
+    dsaffidamenti: TDataSource;
     DateTimePicker1: TDateTimePicker;
     DateTimePicker2: TDateTimePicker;
     dbchriconciliato: TDBCheckBox;
@@ -45,11 +48,15 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     zqconti: TZQuery;
+    zqaffidamenti: TZQuery;
     zupconti: TZUpdateSQL;
+    zupaffidamenti: TZUpdateSQL;
     procedure btcontiClick(Sender: TObject);
     procedure bteccontocorrenteClick(Sender: TObject);
+    procedure btfidiClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure Label9Click(Sender: TObject);
+    procedure GetBuildInfo(var V1, V2, V3, V4: Word);
+    function kfVersionInfo: String;
   private
     { private declarations }
   public
@@ -64,6 +71,45 @@ implementation
 {$R *.lfm}
 
 { Tmainform }
+
+procedure Tmainform.GetBuildInfo(var V1, V2, V3, V4: Word);
+var
+   VerInfoSize, VerValueSize, Dummy : DWORD;
+   VerInfo : Pointer;
+   VerValue : PVSFixedFileInfo;
+begin
+VerInfoSize := GetFileVersionInfoSize(PChar(ParamStr(0)), Dummy);
+GetMem(VerInfo, VerInfoSize);
+GetFileVersionInfo(PChar(ParamStr(0)), 0, VerInfoSize, VerInfo);
+VerQueryValue(VerInfo, '\', Pointer(VerValue), VerValueSize);
+With VerValue^ do
+begin
+  V1 := dwFileVersionMS shr 16;
+  V2 := dwFileVersionMS and $FFFF;
+  V3 := dwFileVersionLS shr 16;
+  V4 := dwFileVersionLS and $FFFF;
+end;
+FreeMem(VerInfo, VerInfoSize);
+end;
+
+
+
+
+
+
+function Tmainform.kfVersionInfo: String;
+var
+  V1,       // Major Version
+  V2,       // Minor Version
+  V3,       // Release
+  V4: Word; // Build Number
+begin
+  GetBuildInfo(V1, V2, V3, V4);
+  Result := IntToStr(V1) + '.'
+            + IntToStr(V2) + '.'
+            + IntToStr(V3) + '.'
+            + IntToStr(V4);
+end;
 
 procedure Tmainform.btcontiClick(Sender: TObject);
 begin
@@ -87,6 +133,14 @@ begin
     estrattoconto.showmodal;
 end;
 
+procedure Tmainform.btfidiClick(Sender: TObject);
+begin
+  affidamenti:=Taffidamenti.Create(self);
+  affidamenti.showmodal;
+  zqaffidamenti.Refresh;
+  datamodule1.zq1.Refresh;
+end;
+
 
 
 
@@ -96,12 +150,10 @@ begin
   //apro i dataset che mi servono
   zqconti.Open;
   datamodule1.zq1.open;
+  //metto la versione sopra nella barra
+  mainform.Caption:='Minifinance v' + kfVersionInfo;
 end;
 
-procedure Tmainform.Label9Click(Sender: TObject);
-begin
-
-end;
 
 
 
