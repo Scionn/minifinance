@@ -11,6 +11,10 @@ object DataModule1: TDataModule1
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiRepeatableRead
+<<<<<<< HEAD
+    Connected = True
+=======
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
     HostName = 'www.rgibertini.it'
     Port = 0
     Database = 'rgibertini_minifinance'
@@ -44,10 +48,11 @@ object DataModule1: TDataModule1
     )
     InsertSQL.Strings = (
       'INSERT INTO movimenti'
-      '  (IDMOV, IDCONTO, DATAOP, DATAVAL, DESCRIZIONE, ENTRATE, USCITE, RICONCILIATO)'
+      '  (IDMOV, IDCONTO, DATAOP, DATAVAL, DESCRIZIONE, ENTRATE, USCITE, RICONCILIATO, '
+      '   PRESUNTO)'
       'VALUES'
       '  (:IDMOV, :IDCONTO, :DATAOP, :DATAVAL, :DESCRIZIONE, :ENTRATE, :USCITE, '
-      '   :RICONCILIATO)'
+      '   :RICONCILIATO, :PRESUNTO)'
     )
     ModifySQL.Strings = (
       'UPDATE movimenti SET'
@@ -58,7 +63,8 @@ object DataModule1: TDataModule1
       '  DESCRIZIONE = :DESCRIZIONE,'
       '  ENTRATE = :ENTRATE,'
       '  USCITE = :USCITE,'
-      '  RICONCILIATO = :RICONCILIATO'
+      '  RICONCILIATO = :RICONCILIATO,'
+      '  PRESUNTO = :PRESUNTO'
       'WHERE'
       '  movimenti.IDMOV = :OLD_IDMOV'
     )
@@ -104,6 +110,11 @@ object DataModule1: TDataModule1
       item
         DataType = ftUnknown
         Name = 'RICONCILIATO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PRESUNTO'
         ParamType = ptUnknown
       end    
       item

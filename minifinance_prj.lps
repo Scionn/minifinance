@@ -4,7 +4,11 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
+<<<<<<< HEAD
+    <Units Count="13">
+=======
     <Units Count="12">
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
       <Unit0>
         <Filename Value="minifinance_prj.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -12,7 +16,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
+        <UsageCount Value="47"/>
+=======
         <UsageCount Value="42"/>
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
       </Unit0>
       <Unit1>
         <Filename Value="mainform_frm.pas"/>
@@ -20,54 +28,101 @@
         <ComponentName Value="mainform"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+<<<<<<< HEAD
+        <CursorPos X="38" Y="10"/>
+        <UsageCount Value="47"/>
+=======
         <TopLine Value="76"/>
         <CursorPos Y="95"/>
         <UsageCount Value="42"/>
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
-        <Filename Value="datamodule_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="DataModule1"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="11"/>
-        <CursorPos X="47" Y="18"/>
-        <UsageCount Value="42"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit2>
-      <Unit3>
         <Filename Value="conti_frm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Conti"/>
         <HasResources Value="True"/>
+<<<<<<< HEAD
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="CONTI_FRM"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="22"/>
-        <CursorPos X="3" Y="56"/>
-        <UsageCount Value="37"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="24"/>
+        <CursorPos X="3" Y="58"/>
+=======
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="11"/>
+        <CursorPos X="47" Y="18"/>
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit3>
-      <Unit4>
+      </Unit2>
+      <Unit3>
         <Filename Value="estrattoconto_frm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="estrattoconto"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+<<<<<<< HEAD
+        <EditorIndex Value="6"/>
+        <TopLine Value="17"/>
+        <CursorPos X="41" Y="34"/>
+        <UsageCount Value="38"/>
+=======
+        <UnitName Value="CONTI_FRM"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="22"/>
+        <CursorPos X="3" Y="56"/>
+        <UsageCount Value="37"/>
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="affidamenti_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Affidamenti"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+<<<<<<< HEAD
+        <EditorIndex Value="2"/>
+        <CursorPos X="89" Y="9"/>
+        <UsageCount Value="28"/>
+=======
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <TopLine Value="17"/>
         <CursorPos X="41" Y="34"/>
         <UsageCount Value="33"/>
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
+<<<<<<< HEAD
+        <Filename Value="tipiaffidamento_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="tipiaffidamento"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="8"/>
+        <CursorPos X="3" Y="42"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="fidi_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Fidi"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="22" Y="39"/>
+=======
         <Filename Value="affidamenti_frm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Affidamenti"/>
@@ -89,11 +144,32 @@
         <EditorIndex Value="2"/>
         <TopLine Value="9"/>
         <CursorPos X="3" Y="43"/>
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit6>
       <Unit7>
+<<<<<<< HEAD
+        <Filename Value="datamodule_frm.pas"/>
+        <ComponentName Value="DataModule1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="37"/>
+        <UsageCount Value="46"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZAbstractRODataset.pas"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="1188"/>
+        <CursorPos Y="1206"/>
+        <UsageCount Value="18"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit8>
+      <Unit9>
+=======
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZAbstractRODataset.pas"/>
         <EditorIndex Value="6"/>
         <TopLine Value="1188"/>
@@ -103,19 +179,170 @@
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit7>
       <Unit8>
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZSqlUpdate.pas"/>
         <EditorIndex Value="9"/>
         <TopLine Value="843"/>
         <CursorPos Y="851"/>
+<<<<<<< HEAD
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit9>
+      <Unit10>
+=======
         <UsageCount Value="12"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit8>
       <Unit9>
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcCachedResultSet.pas"/>
         <EditorIndex Value="10"/>
         <TopLine Value="545"/>
         <CursorPos Y="553"/>
+<<<<<<< HEAD
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="4779"/>
+        <CursorPos Y="4792"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="C:\lazarus\components\codetools\sourcelog.pas"/>
+        <UnitName Value="SourceLog"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="216"/>
+        <CursorPos Y="230"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit12>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="141" Column="3" TopLine="139"/>
+      </Position1>
+      <Position2>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="144" Column="3" TopLine="142"/>
+      </Position2>
+      <Position3>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="64" TopLine="39"/>
+      </Position3>
+      <Position4>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="55" TopLine="34"/>
+      </Position4>
+      <Position5>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="60" Column="5" TopLine="33"/>
+      </Position5>
+      <Position6>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="144" Column="3" TopLine="142"/>
+      </Position6>
+      <Position7>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="179" Column="25" TopLine="149"/>
+      </Position7>
+      <Position8>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="180" Column="25" TopLine="150"/>
+      </Position8>
+      <Position9>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="181" Column="25" TopLine="151"/>
+      </Position9>
+      <Position10>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="182" Column="25" TopLine="152"/>
+      </Position10>
+      <Position11>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="185" Column="25" TopLine="155"/>
+      </Position11>
+      <Position12>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="184" Column="25" TopLine="154"/>
+      </Position12>
+      <Position13>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="183" Column="25" TopLine="153"/>
+      </Position13>
+      <Position14>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="182" Column="25" TopLine="152"/>
+      </Position14>
+      <Position15>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="182" Column="25" TopLine="152"/>
+      </Position15>
+      <Position16>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="183" Column="25" TopLine="153"/>
+      </Position16>
+      <Position17>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="184" Column="25" TopLine="154"/>
+      </Position17>
+      <Position18>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="192" Column="25" TopLine="162"/>
+      </Position18>
+      <Position19>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="130" Column="20" TopLine="128"/>
+      </Position19>
+      <Position20>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="138" Column="3" TopLine="119"/>
+      </Position20>
+      <Position21>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="160" Column="3" TopLine="141"/>
+      </Position21>
+      <Position22>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="168" Column="4" TopLine="149"/>
+      </Position22>
+      <Position23>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="173" Column="9" TopLine="154"/>
+      </Position23>
+      <Position24>
+        <Filename Value="fidi_frm.pas"/>
+      </Position24>
+      <Position25>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="33" Column="73" TopLine="14"/>
+      </Position25>
+      <Position26>
+        <Filename Value="fidi_frm.pas"/>
+      </Position26>
+      <Position27>
+        <Filename Value="fidi_frm.pas"/>
+        <Caret Line="34" Column="22"/>
+      </Position27>
+      <Position28>
+        <Filename Value="fidi_frm.pas"/>
+        <Caret Line="36" Column="22"/>
+      </Position28>
+      <Position29>
+        <Filename Value="fidi_frm.pas"/>
+        <Caret Line="37" Column="22"/>
+      </Position29>
+      <Position30>
+        <Filename Value="fidi_frm.pas"/>
+        <Caret Line="38" Column="22"/>
+=======
         <UsageCount Value="12"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -258,7 +485,19 @@
       <Position30>
         <Filename Value="estrattoconto_frm.pas"/>
         <Caret Line="33" Column="41" TopLine="17"/>
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
       </Position30>
     </JumpHistory>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="affidamenti_frm.pas"/>
+        <Line Value="58"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

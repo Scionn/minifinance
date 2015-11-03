@@ -53,6 +53,8 @@ object Affidamenti: TAffidamenti
       MaxLength = 0
       TabOrder = 0
     end
+<<<<<<< HEAD
+=======
     object Label3: TLabel
       Left = 480
       Height = 15
@@ -89,6 +91,7 @@ object Affidamenti: TAffidamenti
       MaxLength = 0
       TabOrder = 2
     end
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
     object Label8: TLabel
       Left = 8
       Height = 15
@@ -102,10 +105,18 @@ object Affidamenti: TAffidamenti
       Height = 23
       Top = 104
       Width = 368
+<<<<<<< HEAD
+      DataField = 'REFERENTE'
+      DataSource = mainform.dsaffidamenti
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+=======
       DataSource = mainform.dsaffidamenti
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 3
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
     end
     object Label9: TLabel
       Left = 8
@@ -124,10 +135,17 @@ object Affidamenti: TAffidamenti
       DataSource = mainform.dsaffidamenti
       CharCase = ecNormal
       MaxLength = 0
+<<<<<<< HEAD
+      TabOrder = 2
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 488
+=======
       TabOrder = 4
     end
     object DBNavigator1: TDBNavigator
       Left = 408
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
       Height = 25
       Top = 136
       Width = 241
@@ -142,7 +160,11 @@ object Affidamenti: TAffidamenti
       ClientWidth = 241
       DataSource = mainform.dsaffidamenti
       Options = []
+<<<<<<< HEAD
+      TabOrder = 3
+=======
       TabOrder = 5
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
     end
     object Label10: TLabel
       Left = 8
@@ -157,22 +179,47 @@ object Affidamenti: TAffidamenti
       Height = 23
       Top = 72
       Width = 368
+<<<<<<< HEAD
+      DataField = 'IDCONTO'
+=======
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
       DataSource = mainform.dsaffidamenti
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
       ListSource = mainform.dsconti
       LookupCache = False
+<<<<<<< HEAD
+      TabOrder = 4
+=======
       TabOrder = 6
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
     end
     object bttipofido: TButton
       Left = 520
       Height = 25
+<<<<<<< HEAD
+      Top = 72
+      Width = 208
+      Caption = 'Anag. tipologie affidamento'
+      OnClick = bttipofidoClick
+      TabOrder = 5
+    end
+    object btfidi: TButton
+      Left = 520
+      Height = 25
+      Top = 40
+      Width = 208
+      Caption = 'Anag. fidi'
+      OnClick = btfidiClick
+      TabOrder = 6
+=======
       Top = 104
       Width = 208
       Caption = 'Anag. tipologie affidamento'
       OnClick = bttipofidoClick
       TabOrder = 7
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
     end
   end
   object DBGridaffidamenti: TDBGrid
@@ -186,6 +233,8 @@ object Affidamenti: TAffidamenti
     DataSource = mainform.dsaffidamenti
     TabOrder = 1
   end
+<<<<<<< HEAD
+=======
   object dstipoaffidamento: TDataSource
     DataSet = zqtipoaffidamento
     left = 520
@@ -207,4 +256,5 @@ object Affidamenti: TAffidamenti
     left = 600
     top = 248
   end
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
 end

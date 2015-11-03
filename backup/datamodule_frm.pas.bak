@@ -12,9 +12,6 @@ type
   { TDataModule1 }
 
   TDataModule1 = class(TDataModule)
-    zc1: TZConnection;
-    zq1: TZQuery;
-    zup1: TZUpdateSQL;
     procedure zq1AfterPost(DataSet: TDataSet);
   private
     { private declarations }

@@ -39,7 +39,12 @@ object tipiaffidamento: Ttipiaffidamento
       Height = 15
       Top = 10
       Width = 55
+<<<<<<< HEAD
+      DataField = 'IDTIPO'
+      DataSource = mainform.dstipoaffidamento
+=======
       DataSource = Affidamenti.dstipoaffidamento
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
       ParentColor = False
     end
     object dbeddescrizione: TDBEdit
@@ -47,7 +52,12 @@ object tipiaffidamento: Ttipiaffidamento
       Height = 23
       Top = 40
       Width = 392
+<<<<<<< HEAD
+      DataField = 'DESCRIZIONE'
+      DataSource = mainform.dstipoaffidamento
+=======
       DataSource = Affidamenti.dstipoaffidamento
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 0
@@ -66,6 +76,12 @@ object tipiaffidamento: Ttipiaffidamento
       ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 241
+<<<<<<< HEAD
+      DataSource = mainform.dstipoaffidamento
+      Options = []
+      TabOrder = 1
+    end
+=======
       DataSource = Affidamenti.dstipoaffidamento
       Options = []
       TabOrder = 1
@@ -81,6 +97,7 @@ object tipiaffidamento: Ttipiaffidamento
       ValueChecked = 'True'
       ValueUnchecked = 'False'
     end
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
   end
   object DBGridtipoaffidamento: TDBGrid
     Left = 0
@@ -88,9 +105,16 @@ object tipiaffidamento: Ttipiaffidamento
     Top = 74
     Width = 598
     Align = alClient
+<<<<<<< HEAD
+    AutoEdit = False
+    Color = clWindow
+    Columns = <>
+    DataSource = mainform.dstipoaffidamento
+=======
     Color = clWindow
     Columns = <>
     DataSource = Affidamenti.dstipoaffidamento
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
     TabOrder = 1
   end
 end

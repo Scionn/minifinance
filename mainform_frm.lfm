@@ -140,12 +140,13 @@ object mainform: Tmainform
     Top = 128
     Width = 1064
     Align = alClient
+    AutoEdit = False
     Color = clWindow
     Columns = <    
       item
         Title.Caption = 'Conto Corrente'
         Width = 250
-        FieldName = 'DESCRIZIONE_1'
+        FieldName = 'descrizione_1'
       end    
       item
         Title.Caption = 'Data Valuta'
@@ -173,10 +174,17 @@ object mainform: Tmainform
       end    
       item
         Title.Caption = 'RICONCILIATO'
+        Visible = False
         FieldName = 'RICONCILIATO'
+      end    
+      item
+        Title.Caption = 'PRESUNTO'
+        Visible = False
+        FieldName = 'PRESUNTO'
       end>
     DataSource = ds1
     TabOrder = 1
+    OnPrepareCanvas = dbgridmovimentiPrepareCanvas
   end
   object Panel2: TPanel
     Left = 0
@@ -362,6 +370,27 @@ object mainform: Tmainform
       Caption = 'Uscite'
       ParentColor = False
     end
+    object dbchpresunto: TDBCheckBox
+      Left = 624
+      Height = 23
+      Top = 72
+      Width = 90
+      Caption = 'Presunto'
+      DataField = 'PRESUNTO'
+      DataSource = ds1
+      TabOrder = 8
+      ValueChecked = '1'
+      ValueUnchecked = '0'
+    end
+  end
+  object btconti1: TButton
+    Left = 920
+    Height = 25
+    Top = 8
+    Width = 136
+    Caption = 'Anag. Conti Correnti'
+    OnClick = btcontiClick
+    TabOrder = 3
   end
   object btconti1: TButton
     Left = 920
@@ -374,7 +403,7 @@ object mainform: Tmainform
   end
   object ds1: TDataSource
     AutoEdit = False
-    DataSet = DataModule1.zq1
+    DataSet = zq1
     left = 80
     top = 384
   end
@@ -385,7 +414,7 @@ object mainform: Tmainform
     top = 152
   end
   object zqconti: TZQuery
-    Connection = DataModule1.zc1
+    Connection = zc1
     UpdateObject = zupconti
     SQL.Strings = (
       'SELECT *'
@@ -399,22 +428,15 @@ object mainform: Tmainform
     DeleteSQL.Strings = (
       'DELETE FROM conti'
       'WHERE'
-      '  conti.IDCONTO = :OLD_IDCONTO AND'
-      '  ((conti.DESCRIZIONE IS NULL AND :OLD_DESCRIZIONE IS NULL) OR (conti.DESCRIZIONE = :OLD_DESCRIZIONE)) AND'
-      '  ((conti.IBAN IS NULL AND :OLD_IBAN IS NULL) OR (conti.IBAN = :OLD_IBAN)) AND'
-      '  ((conti.ABI IS NULL AND :OLD_ABI IS NULL) OR (conti.ABI = :OLD_ABI)) AND'
-      '  ((conti.CAB IS NULL AND :OLD_CAB IS NULL) OR (conti.CAB = :OLD_CAB)) AND'
-      '  ((conti.CIN IS NULL AND :OLD_CIN IS NULL) OR (conti.CIN = :OLD_CIN)) AND'
-      '  ((conti.FILIALE IS NULL AND :OLD_FILIALE IS NULL) OR (conti.FILIALE = :OLD_FILIALE)) AND'
-      '  ((conti.REFERENTE IS NULL AND :OLD_REFERENTE IS NULL) OR (conti.REFERENTE = :OLD_REFERENTE)) AND'
-      '  ((conti.NUMERO IS NULL AND :OLD_NUMERO IS NULL) OR (conti.NUMERO = :OLD_NUMERO))'
+      '  conti.IDCONTO = :OLD_IDCONTO'
     )
     InsertSQL.Strings = (
       'INSERT INTO conti'
-      '  (IDCONTO, DESCRIZIONE, IBAN, ABI, CAB, CIN, FILIALE, REFERENTE, NUMERO)'
+      '  (IDCONTO, DESCRIZIONE, IBAN, ABI, CAB, CIN, FILIALE, REFERENTE, NUMERO, '
+      '   SCOPERTO)'
       'VALUES'
       '  (:IDCONTO, :DESCRIZIONE, :IBAN, :ABI, :CAB, :CIN, :FILIALE, :REFERENTE, '
-      '   :NUMERO)'
+      '   :NUMERO, :SCOPERTO)'
     )
     ModifySQL.Strings = (
       'UPDATE conti SET'
@@ -426,17 +448,10 @@ object mainform: Tmainform
       '  CIN = :CIN,'
       '  FILIALE = :FILIALE,'
       '  REFERENTE = :REFERENTE,'
-      '  NUMERO = :NUMERO'
+      '  NUMERO = :NUMERO,'
+      '  SCOPERTO = :SCOPERTO'
       'WHERE'
-      '  conti.IDCONTO = :OLD_IDCONTO AND'
-      '  ((conti.DESCRIZIONE IS NULL AND :OLD_DESCRIZIONE IS NULL) OR (conti.DESCRIZIONE = :OLD_DESCRIZIONE)) AND'
-      '  ((conti.IBAN IS NULL AND :OLD_IBAN IS NULL) OR (conti.IBAN = :OLD_IBAN)) AND'
-      '  ((conti.ABI IS NULL AND :OLD_ABI IS NULL) OR (conti.ABI = :OLD_ABI)) AND'
-      '  ((conti.CAB IS NULL AND :OLD_CAB IS NULL) OR (conti.CAB = :OLD_CAB)) AND'
-      '  ((conti.CIN IS NULL AND :OLD_CIN IS NULL) OR (conti.CIN = :OLD_CIN)) AND'
-      '  ((conti.FILIALE IS NULL AND :OLD_FILIALE IS NULL) OR (conti.FILIALE = :OLD_FILIALE)) AND'
-      '  ((conti.REFERENTE IS NULL AND :OLD_REFERENTE IS NULL) OR (conti.REFERENTE = :OLD_REFERENTE)) AND'
-      '  ((conti.NUMERO IS NULL AND :OLD_NUMERO IS NULL) OR (conti.NUMERO = :OLD_NUMERO))'
+      '  conti.IDCONTO = :OLD_IDCONTO'
     )
     UseSequenceFieldForRefreshSQL = False
     left = 1001
@@ -489,50 +504,280 @@ object mainform: Tmainform
       end    
       item
         DataType = ftUnknown
+        Name = 'SCOPERTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
         Name = 'OLD_IDCONTO'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_DESCRIZIONE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_IBAN'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_ABI'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_CAB'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_CIN'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_FILIALE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_REFERENTE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_NUMERO'
         ParamType = ptUnknown
       end>
   end
+  object zqaffidamenti: TZQuery
+    Connection = zc1
+    UpdateObject = zupaffidamenti
+    SQL.Strings = (
+      'SELECT *'
+      'from affidamenti'
+    )
+    Params = <>
+    left = 937
+    top = 216
+  end
+  object zupaffidamenti: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM affidamenti'
+      'WHERE'
+      '  affidamenti.IDAFFIDAMENTO = :OLD_IDAFFIDAMENTO'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO affidamenti'
+      '  (IDAFFIDAMENTO, DESCRIZIONE, IDCONTO, REFERENTE, NUMERO)'
+      'VALUES'
+      '  (:IDAFFIDAMENTO, :DESCRIZIONE, :IDCONTO, :REFERENTE, :NUMERO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE affidamenti SET'
+      '  IDAFFIDAMENTO = :IDAFFIDAMENTO,'
+      '  DESCRIZIONE = :DESCRIZIONE,'
+      '  IDCONTO = :IDCONTO,'
+      '  REFERENTE = :REFERENTE,'
+      '  NUMERO = :NUMERO'
+      'WHERE'
+      '  affidamenti.IDAFFIDAMENTO = :OLD_IDAFFIDAMENTO'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 1001
+    top = 216
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDAFFIDAMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIZIONE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDCONTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFERENTE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NUMERO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_IDAFFIDAMENTO'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsaffidamenti: TDataSource
+    AutoEdit = False
+    DataSet = zqaffidamenti
+    left = 880
+    top = 216
+  end
+  object dstipoaffidamento: TDataSource
+    AutoEdit = False
+    DataSet = zqtipoaffidamento
+    left = 880
+    top = 280
+  end
+  object zqtipoaffidamento: TZQuery
+    Connection = zc1
+    UpdateObject = zuptipoaffidamento
+    SQL.Strings = (
+      'select *'
+      'from tipoaffidamento'
+    )
+    Params = <>
+    left = 937
+    top = 280
+  end
+  object zuptipoaffidamento: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM tipoaffidamento'
+      'WHERE'
+      '  tipoaffidamento.IDTIPO = :OLD_IDTIPO'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO tipoaffidamento'
+      '  (IDTIPO, DESCRIZIONE)'
+      'VALUES'
+      '  (:IDTIPO, :DESCRIZIONE)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE tipoaffidamento SET'
+      '  IDTIPO = :IDTIPO,'
+      '  DESCRIZIONE = :DESCRIZIONE'
+      'WHERE'
+      '  tipoaffidamento.IDTIPO = :OLD_IDTIPO'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 1001
+    top = 280
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDTIPO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIZIONE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_IDTIPO'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsfidi: TDataSource
+    DataSet = zqfidi
+    left = 880
+    top = 344
+  end
+  object zqfidi: TZQuery
+    Connection = zc1
+    UpdateObject = zupfidi
+    SQL.Strings = (
+      'select *'
+      'from fidi'
+    )
+    Params = <>
+    left = 937
+    top = 344
+  end
+  object zupfidi: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    left = 1001
+    top = 344
+  end
+  object zq1: TZQuery
+    Connection = zc1
+    Filtered = True
+    UpdateObject = zup1
+    AfterPost = zq1AfterPost
+    SQL.Strings = (
+      'select movimenti.*, conti.descrizione'
+      'from movimenti '
+      'left join conti '
+      'on movimenti.idconto=conti.idconto'
+      'ORDER BY dataval'
+    )
+    Params = <>
+    left = 152
+    top = 384
+  end
+  object zup1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM movimenti'
+      'WHERE'
+      '  movimenti.IDMOV = :OLD_IDMOV'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO movimenti'
+      '  (IDMOV, IDCONTO, DATAOP, DATAVAL, DESCRIZIONE, ENTRATE, USCITE, RICONCILIATO, '
+      '   PRESUNTO)'
+      'VALUES'
+      '  (:IDMOV, :IDCONTO, :DATAOP, :DATAVAL, :DESCRIZIONE, :ENTRATE, :USCITE, '
+      '   :RICONCILIATO, :PRESUNTO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE movimenti SET'
+      '  IDMOV = :IDMOV,'
+      '  IDCONTO = :IDCONTO,'
+      '  DATAOP = :DATAOP,'
+      '  DATAVAL = :DATAVAL,'
+      '  DESCRIZIONE = :DESCRIZIONE,'
+      '  ENTRATE = :ENTRATE,'
+      '  USCITE = :USCITE,'
+      '  RICONCILIATO = :RICONCILIATO,'
+      '  PRESUNTO = :PRESUNTO'
+      'WHERE'
+      '  movimenti.IDMOV = :OLD_IDMOV'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 224
+    top = 384
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDMOV'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDCONTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAOP'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAVAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIZIONE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ENTRATE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'USCITE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'RICONCILIATO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PRESUNTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_IDMOV'
+        ParamType = ptUnknown
+      end>
+  end
+<<<<<<< HEAD
+  object zc1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    TransactIsolationLevel = tiRepeatableRead
+    HostName = 'www.rgibertini.it'
+    Port = 0
+    Database = 'rgibertini_minifinance'
+    Protocol = 'mysql-5'
+    left = 80
+    top = 312
+=======
   object zqaffidamenti: TZQuery
     Connection = DataModule1.zc1
     UpdateObject = zupaffidamenti
@@ -553,5 +798,6 @@ object mainform: Tmainform
     DataSet = zqaffidamenti
     left = 880
     top = 216
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
   end
 end

@@ -1,7 +1,11 @@
 object estrattoconto: Testrattoconto
   Left = 779
   Height = 609
+<<<<<<< HEAD
+  Top = 308
+=======
   Top = 341
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
   Width = 869
   Caption = 'Estratto Conto'
   ClientHeight = 609
@@ -20,7 +24,11 @@ object estrattoconto: Testrattoconto
     ClientWidth = 869
     TabOrder = 0
     object lbsaldo: TLabel
+<<<<<<< HEAD
+      Left = 280
+=======
       Left = 192
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
       Height = 15
       Top = 8
       Width = 38
@@ -108,7 +116,10 @@ object estrattoconto: Testrattoconto
     top = 168
   end
   object zqec: TZQuery
+<<<<<<< HEAD
+=======
     Connection = DataModule1.zc1
+>>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
     AfterOpen = zqecAfterOpen
     OnCalcFields = zqecCalcFields
     UpdateObject = zupec
