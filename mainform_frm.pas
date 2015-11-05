@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, DateTimePicker, Forms, Controls, Graphics,
   Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, DBExtCtrls, anagconti_frm,
       estrattoconto_frm,
-  anagaffidamenti_frm, windows, Grids, datamodule_frm;
+  anagaffidamenti_frm, windows, Grids, datamodule_frm, affidamenti_frm;
 
 type
 
@@ -19,7 +19,9 @@ type
     btconti1: TButton;
     btfidi: TButton;
     bteccontocorrente: TButton;
+    btaffidamenti: TButton;
     chinfinito: TCheckBox;
+    dbcbaffidamentofiltro: TDBLookupComboBox;
     dbchpresunto: TDBCheckBox;
     datada: TDateTimePicker;
     dataa: TDateTimePicker;
@@ -36,6 +38,7 @@ type
     dbgridmovimenti: TDBGrid;
     Label1: TLabel;
     Label10: TLabel;
+    Label11: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -46,6 +49,7 @@ type
     Label9: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
+    procedure btaffidamentiClick(Sender: TObject);
     procedure btcontiClick(Sender: TObject);
     procedure bteccontocorrenteClick(Sender: TObject);
     procedure btfidiClick(Sender: TObject);
@@ -115,10 +119,34 @@ procedure Tmainform.btcontiClick(Sender: TObject);
 begin
   anagconti:=Tanagconti.Create(self);
   anagconti.showmodal;
-  datamodule1.zqconti.close;
-  datamodule1.zqconti.open;
+  datamodule1.zqanagconti.close;
+  datamodule1.zqanagconti.open;
   datamodule1.zq1.close;
   datamodule1.zq1.open;
+end;
+
+procedure Tmainform.btaffidamentiClick(Sender: TObject);
+begin
+  if dbcbaffidamentofiltro.ItemIndex = -1 then
+     begin
+       ShowMessage('Selezionare un affidamento');
+       Exit;
+     end;
+    affidamenti:=Taffidamenti.Create(self);
+    //passo i parametri
+    affidamenti.zqaff.parambyname('AFFIDAMENTO').asinteger:=dbcbaffidamentofiltro.KeyValue;
+    affidamenti.zqaff.parambyname('DATADA').AsDate:=datada.Date;
+    if chinfinito.Checked then
+       affidamenti.zqaff.parambyname('DATAA').AsDate:=IncMonth(now,36)
+    else
+       affidamenti.zqaff.parambyname('DATAA').AsDate:=dataa.Date;
+    affidamenti.zqaff.open;
+    affidamenti.lbaffidamenti.Caption:='Affidamento n.: ' + dbcbaffidamentofiltro.Text;
+    //mostro la form
+    affidamenti.showmodal;
+    //aggiorno in dati
+    datamodule1.zq1.close;
+    datamodule1.zq1.open;
 end;
 
 procedure Tmainform.bteccontocorrenteClick(Sender: TObject);
@@ -149,8 +177,8 @@ procedure Tmainform.btfidiClick(Sender: TObject);
 begin
   anagaffidamenti:=Tanagaffidamenti.Create(self);
   anagaffidamenti.showmodal;
-  datamodule1.zqaffidamenti.close;
-  datamodule1.zqaffidamenti.open;
+  datamodule1.zqanagaff.close;
+  datamodule1.zqanagaff.open;
   datamodule1.zq1.close;
   datamodule1.zq1.open;
 end;
@@ -190,10 +218,10 @@ procedure Tmainform.FormShow(Sender: TObject);
 begin
   //apro i dataset che mi servono
   datamodule1.zq1.open;
-  datamodule1.zqconti.Open;
-  datamodule1.zqaffidamenti.Open;
-  datamodule1.zqtipoaffidamento.open;
-  datamodule1.zqfidi.open;
+  datamodule1.zqanagconti.Open;
+  datamodule1.zqanagaff.Open;
+  datamodule1.zqanagtipoaff.open;
+  datamodule1.zqanagfidi.open;
   DataModule1.zqfiditipofido.open;
   //metto la versione sopra nella barra
   mainform.Caption:='Minifinance v' + kfVersionInfo;

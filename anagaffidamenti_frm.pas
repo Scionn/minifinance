@@ -55,16 +55,16 @@ procedure TAnagaffidamenti.bttipofidoClick(Sender: TObject);
 begin
   anagtipiaffidamento:=Tanagtipiaffidamento.Create(self);
   anagtipiaffidamento.showmodal;
-  DataModule1.zqtipoaffidamento.Close;
- DataModule1.zqtipoaffidamento.open;
+  DataModule1.zqanagtipoaff.Close;
+ DataModule1.zqanagtipoaff.open;
 end;
 
 procedure TAnagaffidamenti.btfidiClick(Sender: TObject);
 begin
  anagfidi:=Tanagfidi.Create(self);
  anagfidi.showmodal;
- DataModule1.zqfidi.Close;
- DataModule1.zqfidi.open;
+ DataModule1.zqanagfidi.Close;
+ DataModule1.zqanagfidi.open;
 end;
 
 end.

@@ -14,23 +14,23 @@ type
   TDataModule1 = class(TDataModule)
     dsfiditipofido: TDataSource;
     ds1: TDataSource;
-    dsaffidamenti: TDataSource;
-    dsconti: TDataSource;
-    dsfidi: TDataSource;
-    dstipoaffidamento: TDataSource;
+    dsanagaff: TDataSource;
+    dsanagconti: TDataSource;
+    dsanagfidi: TDataSource;
+    dsanagtipoaff: TDataSource;
     zc1: TZConnection;
     zq1: TZQuery;
-    zqaffidamenti: TZQuery;
-    zqconti: TZQuery;
-    zqfidi: TZQuery;
-    zqtipoaffidamento: TZQuery;
+    zqanagaff: TZQuery;
+    zqanagconti: TZQuery;
+    zqanagfidi: TZQuery;
+    zqanagtipoaff: TZQuery;
     zqfiditipofido: TZQuery;
     zup1: TZUpdateSQL;
-    zupaffidamenti: TZUpdateSQL;
-    zupconti: TZUpdateSQL;
+    zupanagaff: TZUpdateSQL;
+    zupanagconti: TZUpdateSQL;
     zupfiditipofido: TZUpdateSQL;
-    zupfidi: TZUpdateSQL;
-    zuptipoaffidamento: TZUpdateSQL;
+    zupanagfidi: TZUpdateSQL;
+    zupanagtipoaff: TZUpdateSQL;
     procedure zq1AfterRefresh(DataSet: TDataSet);
   private
     { private declarations }

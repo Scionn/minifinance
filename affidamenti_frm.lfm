@@ -1,0 +1,555 @@
+object Affidamenti: TAffidamenti
+  Left = 323
+  Height = 580
+  Top = 364
+  Width = 1294
+  Caption = 'Affidamenti'
+  ClientHeight = 580
+  ClientWidth = 1294
+  LCLVersion = '1.4.4.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 194
+    Top = 386
+    Width = 1294
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'IDAFFIDO'
+        Visible = False
+        FieldName = 'IDAFFIDO'
+      end    
+      item
+        Title.Caption = 'IDAFFIDAMENTO'
+        Visible = False
+        FieldName = 'IDAFFIDAMENTO'
+      end    
+      item
+        Title.Caption = 'IDTIPO'
+        Visible = False
+        FieldName = 'IDTIPO'
+      end    
+      item
+        Title.Caption = 'Tipo'
+        Width = 150
+        FieldName = 'Tipo'
+      end    
+      item
+        Title.Caption = 'Descrizione'
+        Width = 300
+        FieldName = 'DESCRIZIONE'
+      end    
+      item
+        Title.Caption = 'Data Operazione'
+        Width = 100
+        FieldName = 'DATAOP'
+      end    
+      item
+        Title.Caption = 'Data Valuta'
+        Width = 100
+        FieldName = 'DATAVAL'
+      end    
+      item
+        Title.Caption = 'Entrate'
+        FieldName = 'ENTRATE'
+      end    
+      item
+        Title.Caption = 'Uscite'
+        FieldName = 'USCITE'
+      end    
+      item
+        Title.Caption = 'Data Doc'
+        Width = 100
+        FieldName = 'DATADOC'
+      end    
+      item
+        Title.Caption = 'Numero Doc'
+        Width = 100
+        FieldName = 'NUMDOC'
+      end    
+      item
+        Title.Caption = 'Scadenza Doc'
+        Width = 100
+        FieldName = 'SCADDOC'
+      end    
+      item
+        Title.Caption = 'Scadenza Fin'
+        Width = 100
+        FieldName = 'SCADFIN'
+      end    
+      item
+        Title.Caption = 'Numero Fin'
+        Width = 100
+        FieldName = 'NUMFIN'
+      end>
+    DataSource = dsaff
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 386
+    Top = 0
+    Width = 1294
+    Align = alTop
+    Caption = ' '
+    ClientHeight = 386
+    ClientWidth = 1294
+    TabOrder = 1
+    object lbaffidamenti: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 71
+      Caption = 'lbaffidamenti'
+      ParentColor = False
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 1016
+      Height = 25
+      Top = 344
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = dsaff
+      Options = []
+      TabOrder = 0
+    end
+    object DBText1: TDBText
+      Left = 73
+      Height = 15
+      Top = 32
+      Width = 43
+      DataField = 'IDAFFIDO'
+      DataSource = dsaff
+      ParentColor = False
+    end
+    object DBText2: TDBText
+      Left = 73
+      Height = 15
+      Top = 59
+      Width = 43
+      DataField = 'IDAFFIDAMENTO'
+      DataSource = dsaff
+      ParentColor = False
+    end
+    object DBDateEdit1: TDBDateEdit
+      Left = 73
+      Height = 23
+      Top = 88
+      Width = 201
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 1
+      DataField = 'DATAOP'
+      DataSource = dsaff
+    end
+    object DBDateEdit2: TDBDateEdit
+      Left = 73
+      Height = 23
+      Top = 117
+      Width = 201
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 2
+      DataField = 'DATAVAL'
+      DataSource = dsaff
+    end
+    object DBEdit1: TDBEdit
+      Left = 73
+      Height = 23
+      Top = 144
+      Width = 201
+      DataField = 'DESCRIZIONE'
+      DataSource = dsaff
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object DBEdit2: TDBEdit
+      Left = 73
+      Height = 23
+      Top = 200
+      Width = 201
+      DataField = 'ENTRATE'
+      DataSource = dsaff
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 4
+    end
+    object DBEdit3: TDBEdit
+      Left = 73
+      Height = 23
+      Top = 171
+      Width = 201
+      DataField = 'USCITE'
+      DataSource = dsaff
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 5
+    end
+    object DBDateEdit3: TDBDateEdit
+      Left = 73
+      Height = 23
+      Top = 230
+      Width = 201
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 6
+      DataField = 'DATADOC'
+      DataSource = dsaff
+    end
+    object DBEdit4: TDBEdit
+      Left = 73
+      Height = 23
+      Top = 262
+      Width = 201
+      DataField = 'NUMDOC'
+      DataSource = dsaff
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 7
+    end
+    object DBDateEdit4: TDBDateEdit
+      Left = 628
+      Height = 23
+      Top = 33
+      Width = 103
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 8
+      DataField = 'SCADDOC'
+      DataSource = dsaff
+    end
+    object DBDateEdit5: TDBDateEdit
+      Left = 630
+      Height = 23
+      Top = 71
+      Width = 103
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 9
+      DataField = 'SCADFIN'
+      DataSource = dsaff
+    end
+    object DBEdit5: TDBEdit
+      Left = 629
+      Height = 23
+      Top = 113
+      Width = 80
+      DataField = 'NUMFIN'
+      DataSource = dsaff
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 10
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 633
+      Height = 23
+      Top = 160
+      Width = 100
+      DataField = 'IDTIPO'
+      DataSource = dsaff
+      KeyField = 'IDTIPO'
+      ListField = 'DESCRIZIONE'
+      ListFieldIndex = 0
+      ListSource = DataModule1.dsanagtipoaff
+      LookupCache = False
+      TabOrder = 11
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 32
+      Width = 45
+      Caption = 'ID affido'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 59
+      Width = 81
+      Caption = 'ID Affidamento'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 8
+      Height = 15
+      Top = 88
+      Width = 87
+      Caption = 'Data Operazione'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 8
+      Height = 15
+      Top = 117
+      Width = 60
+      Caption = 'Data Valuta'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 8
+      Height = 15
+      Top = 144
+      Width = 60
+      Caption = 'Descrizione'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 8
+      Height = 15
+      Top = 171
+      Width = 32
+      Caption = 'Uscite'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 8
+      Height = 15
+      Top = 200
+      Width = 37
+      Caption = 'Entrate'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 8
+      Height = 15
+      Top = 230
+      Width = 90
+      Caption = 'Data Documento'
+      ParentColor = False
+    end
+    object Label9: TLabel
+      Left = 8
+      Height = 15
+      Top = 262
+      Width = 110
+      Caption = 'Numero Documento'
+      ParentColor = False
+    end
+    object Label10: TLabel
+      Left = 547
+      Height = 15
+      Top = 37
+      Width = 115
+      Caption = 'Scadenza Documento'
+      ParentColor = False
+    end
+    object Label11: TLabel
+      Left = 553
+      Height = 15
+      Top = 76
+      Width = 130
+      Caption = 'Scadenza Finanziamento'
+      ParentColor = False
+    end
+    object Label12: TLabel
+      Left = 554
+      Height = 15
+      Top = 117
+      Width = 125
+      Caption = 'Numero Finanziamento'
+      ParentColor = False
+    end
+    object Label13: TLabel
+      Left = 558
+      Height = 15
+      Top = 163
+      Width = 24
+      Caption = 'Tipo'
+      ParentColor = False
+    end
+  end
+  object dsaff: TDataSource
+    DataSet = zqaff
+    left = 104
+    top = 464
+  end
+  object zqaff: TZQuery
+    Connection = DataModule1.zc1
+    UpdateObject = zupaff
+    SQL.Strings = (
+      'SELECT affidi.*,tipoaffidamento.descrizione as Tipo'
+      'FROM affidi'
+      'left join tipoaffidamento on affidi.idtipo=tipoaffidamento.idtipo'
+      'WHERE affidi.IDaffidamento=:AFFIDAMENTO'
+      'AND dataop between :DATADA AND :DATAA'
+      'ORDER BY dataval'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'AFFIDAMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATADA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAA'
+        ParamType = ptUnknown
+      end>
+    left = 167
+    top = 464
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'AFFIDAMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATADA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAA'
+        ParamType = ptUnknown
+      end>
+  end
+  object zupaff: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM affidi'
+      'WHERE'
+      '  affidi.IDAFFIDO = :OLD_IDAFFIDO'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO affidi'
+      '  (IDAFFIDO, IDAFFIDAMENTO, DATAOP, DATAVAL, DESCRIZIONE, ENTRATE, USCITE, '
+      '   DATADOC, NUMDOC, SCADDOC, SCADFIN, NUMFIN, IDTIPO)'
+      'VALUES'
+      '  (:IDAFFIDO, :IDAFFIDAMENTO, :DATAOP, :DATAVAL, :DESCRIZIONE, :ENTRATE, '
+      '   :USCITE, :DATADOC, :NUMDOC, :SCADDOC, :SCADFIN, :NUMFIN, :IDTIPO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE affidi SET'
+      '  IDAFFIDO = :IDAFFIDO,'
+      '  IDAFFIDAMENTO = :IDAFFIDAMENTO,'
+      '  DATAOP = :DATAOP,'
+      '  DATAVAL = :DATAVAL,'
+      '  DESCRIZIONE = :DESCRIZIONE,'
+      '  ENTRATE = :ENTRATE,'
+      '  USCITE = :USCITE,'
+      '  DATADOC = :DATADOC,'
+      '  NUMDOC = :NUMDOC,'
+      '  SCADDOC = :SCADDOC,'
+      '  SCADFIN = :SCADFIN,'
+      '  NUMFIN = :NUMFIN,'
+      '  IDTIPO = :IDTIPO'
+      'WHERE'
+      '  affidi.IDAFFIDO = :OLD_IDAFFIDO'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 230
+    top = 468
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDAFFIDO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDAFFIDAMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAOP'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAVAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIZIONE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ENTRATE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'USCITE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATADOC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NUMDOC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SCADDOC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SCADFIN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NUMFIN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDTIPO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_IDAFFIDO'
+        ParamType = ptUnknown
+      end>
+  end
+end

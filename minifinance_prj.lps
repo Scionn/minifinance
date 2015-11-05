@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="54"/>
+        <UsageCount Value="57"/>
       </Unit0>
       <Unit1>
         <Filename Value="mainform_frm.pas"/>
@@ -20,8 +20,9 @@
         <ComponentName Value="mainform"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <CursorPos X="66" Y="9"/>
-        <UsageCount Value="54"/>
+        <TopLine Value="116"/>
+        <CursorPos X="25" Y="142"/>
+        <UsageCount Value="57"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -31,13 +32,86 @@
         <ComponentName Value="estrattoconto"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <CursorPos X="43" Y="8"/>
-        <UsageCount Value="45"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="11"/>
+        <CursorPos X="24" Y="32"/>
+        <UsageCount Value="48"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
+        <Filename Value="datamodule_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="69" Y="8"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="anagaffidamenti_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Anagaffidamenti"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="27"/>
+        <CursorPos X="27" Y="59"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="anagconti_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="anagconti"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="anagCONTI_FRM"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="10"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="anagfidi_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="anagFidi"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="14"/>
+        <CursorPos X="20" Y="34"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="anagtipiaffidamento_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="anagtipiaffidamento"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="10"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="affidamenti_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Affidamenti"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit8>
+      <Unit9>
         <Filename Value="tipiaffidamento_frm.pas"/>
         <ComponentName Value="anagtipiaffidamento"/>
         <HasResources Value="True"/>
@@ -45,8 +119,8 @@
         <EditorIndex Value="-1"/>
         <CursorPos X="45" Y="9"/>
         <UsageCount Value="34"/>
-      </Unit3>
-      <Unit4>
+      </Unit9>
+      <Unit10>
         <Filename Value="fidi_frm.pas"/>
         <ComponentName Value="anagFidi"/>
         <HasResources Value="True"/>
@@ -55,40 +129,8 @@
         <TopLine Value="16"/>
         <CursorPos X="58" Y="60"/>
         <UsageCount Value="32"/>
-        <LoadedDesigner Value="True"/>
-      </Unit4>
-      <Unit5>
-        <Filename Value="datamodule_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="DataModule1"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="69" Y="8"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="anagaffidamenti_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <HasResources Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="89" Y="9"/>
-        <UsageCount Value="20"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="anagconti_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="anagconti"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="anagCONTI_FRM"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="10"/>
-        <UsageCount Value="20"/>
-      </Unit7>
-      <Unit8>
+      </Unit10>
+      <Unit11>
         <Filename Value="conti_frm.pas"/>
         <ComponentName Value="anagconti"/>
         <HasResources Value="True"/>
@@ -97,62 +139,52 @@
         <EditorIndex Value="-1"/>
         <CursorPos X="74" Y="9"/>
         <UsageCount Value="49"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="affidamenti_frm.pas"/>
-        <ComponentName Value="Anagaffidamenti"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="25"/>
-        <CursorPos X="31" Y="59"/>
-        <UsageCount Value="35"/>
-      </Unit9>
-      <Unit10>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZAbstractRODataset.pas"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="1188"/>
-        <CursorPos Y="1206"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit10>
-      <Unit11>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZSqlUpdate.pas"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="843"/>
-        <CursorPos Y="851"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit11>
       <Unit12>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcCachedResultSet.pas"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="545"/>
-        <CursorPos Y="553"/>
-        <UsageCount Value="20"/>
+        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZAbstractRODataset.pas"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="1188"/>
+        <CursorPos Y="1206"/>
+        <UsageCount Value="26"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit12>
       <Unit13>
-        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="4779"/>
-        <CursorPos Y="4792"/>
-        <UsageCount Value="19"/>
+        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZSqlUpdate.pas"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="843"/>
+        <CursorPos Y="851"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit13>
       <Unit14>
-        <Filename Value="C:\lazarus\components\codetools\sourcelog.pas"/>
-        <UnitName Value="SourceLog"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="216"/>
-        <CursorPos Y="230"/>
-        <UsageCount Value="19"/>
+        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcCachedResultSet.pas"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="545"/>
+        <CursorPos Y="553"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit14>
       <Unit15>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="4779"/>
+        <CursorPos Y="4792"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="C:\lazarus\components\codetools\sourcelog.pas"/>
+        <UnitName Value="SourceLog"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="216"/>
+        <CursorPos Y="230"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit16>
+      <Unit17>
         <Filename Value="affidamenti_frm.lfm"/>
         <ComponentName Value="Affidamenti"/>
         <HasResources Value="True"/>
@@ -160,16 +192,16 @@
         <EditorIndex Value="-1"/>
         <UsageCount Value="13"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit15>
-      <Unit16>
+      </Unit17>
+      <Unit18>
         <Filename Value="unit1.pas"/>
         <ComponentName Value="Form1"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="21"/>
-      </Unit16>
-      <Unit17>
+      </Unit18>
+      <Unit19>
         <Filename Value="anagaffidamenti_frm.lfm"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
@@ -177,143 +209,134 @@
         <CursorPos X="-1" Y="-1"/>
         <UsageCount Value="20"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit17>
-      <Unit18>
+      </Unit19>
+      <Unit20>
         <Filename Value="anagaffidamenti_frm.lrs"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
         <UsageCount Value="20"/>
-      </Unit18>
-      <Unit19>
-        <Filename Value="anagfidi_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <HasResources Value="True"/>
-        <UnitName Value="fidi_frm"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="10"/>
-        <UsageCount Value="20"/>
-      </Unit19>
-      <Unit20>
-        <Filename Value="anagtipiaffidamento_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <HasResources Value="True"/>
-        <UnitName Value="tipiaffidamento_frm"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="10"/>
-        <UsageCount Value="20"/>
       </Unit20>
     </Units>
-    <JumpHistory Count="27" HistoryIndex="26">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="mainform_frm.pas"/>
-        <Caret Line="126" Column="3" TopLine="124"/>
+        <Caret Line="118" Column="3" TopLine="114"/>
       </Position1>
       <Position2>
         <Filename Value="mainform_frm.pas"/>
-        <Caret Line="152" Column="22" TopLine="146"/>
+        <Caret Line="150" Column="27" TopLine="143"/>
       </Position2>
       <Position3>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="52" Column="4" TopLine="8"/>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="126" Column="3" TopLine="124"/>
       </Position3>
       <Position4>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="57" Column="7" TopLine="17"/>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="120" Column="3" TopLine="114"/>
       </Position4>
       <Position5>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="50" Column="21" TopLine="16"/>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="145" Column="3" TopLine="124"/>
       </Position5>
       <Position6>
         <Filename Value="mainform_frm.pas"/>
-        <Caret Line="138" Column="36" TopLine="124"/>
+        <Caret Line="10" Column="16"/>
       </Position6>
       <Position7>
         <Filename Value="mainform_frm.pas"/>
-        <Caret Line="200" Column="12" TopLine="158"/>
+        <Caret Line="11" Column="54"/>
       </Position7>
       <Position8>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="58" Column="68" TopLine="17"/>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="202" Column="31" TopLine="120"/>
       </Position8>
       <Position9>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="195" Column="31" TopLine="158"/>
+        <Filename Value="estrattoconto_frm.pas"/>
+        <Caret Line="88" Column="12"/>
       </Position9>
       <Position10>
         <Filename Value="mainform_frm.pas"/>
-        <Caret Line="116" TopLine="114"/>
+        <Caret Line="9" Column="66"/>
       </Position10>
       <Position11>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="63" Column="13" TopLine="23"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Column="10"/>
       </Position11>
       <Position12>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="60" TopLine="19"/>
+        <Filename Value="anagaffidamenti_frm.pas"/>
+        <Caret Line="9" Column="89"/>
       </Position12>
       <Position13>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="57" TopLine="17"/>
+        <Filename Value="anagaffidamenti_frm.pas"/>
+        <Caret Line="67" Column="20" TopLine="27"/>
       </Position13>
       <Position14>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="54" TopLine="14"/>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="9" Column="66"/>
       </Position14>
       <Position15>
         <Filename Value="mainform_frm.pas"/>
-        <Caret Line="11" Column="56"/>
+        <Caret Line="122" Column="21" TopLine="99"/>
       </Position15>
       <Position16>
         <Filename Value="mainform_frm.pas"/>
-        <Caret Line="145" Column="25" TopLine="123"/>
+        <Caret Line="156" Column="24" TopLine="133"/>
       </Position16>
       <Position17>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="116" Column="3" TopLine="114"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="62" Column="25" TopLine="23"/>
       </Position17>
       <Position18>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="146" Column="31" TopLine="143"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="64" Column="25" TopLine="23"/>
       </Position18>
       <Position19>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="118" Column="3" TopLine="114"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="67" TopLine="26"/>
       </Position19>
       <Position20>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="150" Column="27" TopLine="143"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="36" Column="20" TopLine="14"/>
       </Position20>
       <Position21>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="126" Column="3" TopLine="124"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="35" Column="20" TopLine="14"/>
       </Position21>
       <Position22>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="120" Column="3" TopLine="114"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="34" Column="20" TopLine="14"/>
       </Position22>
       <Position23>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="145" Column="3" TopLine="124"/>
+        <Filename Value="estrattoconto_frm.pas"/>
+        <Caret Line="8" Column="43"/>
       </Position23>
       <Position24>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="10" Column="16"/>
+        <Filename Value="estrattoconto_frm.pas"/>
+        <Caret Line="61" TopLine="57"/>
       </Position24>
       <Position25>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="11" Column="54"/>
+        <Filename Value="affidamenti_frm.pas"/>
       </Position25>
       <Position26>
         <Filename Value="mainform_frm.pas"/>
-        <Caret Line="202" Column="31" TopLine="120"/>
+        <Caret Line="200" Column="17" TopLine="168"/>
       </Position26>
       <Position27>
-        <Filename Value="estrattoconto_frm.pas"/>
-        <Caret Line="88" Column="12"/>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="154" Column="33" TopLine="133"/>
       </Position27>
+      <Position28>
+        <Filename Value="affidamenti_frm.pas"/>
+      </Position28>
+      <Position29>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="11" Column="71"/>
+      </Position29>
+      <Position30>
+        <Filename Value="affidamenti_frm.pas"/>
+      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

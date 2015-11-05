@@ -14,8 +14,6 @@ type
 
   TanagFidi = class(TForm)
     btcerca: TButton;
-    btaggiungi: TButton;
-    btrimuovi: TButton;
     dbcbaffidamento: TDBLookupComboBox;
     dbcbtipoaffidamento: TDBLookupComboBox;
     dbcbaffidamentofiltro: TDBLookupComboBox;
@@ -25,6 +23,7 @@ type
     DBGrid1: TDBGrid;
     dbgridfidi: TDBGrid;
     DBNavigator1: TDBNavigator;
+    DBNavigator2: TDBNavigator;
     Label1: TLabel;
     Label10: TLabel;
     Label11: TLabel;
@@ -59,9 +58,10 @@ procedure TanagFidi.btcercaClick(Sender: TObject);
 begin
   //se è selezionato un affidamento lo filtro nel dataset
   if dbcbaffidamentofiltro.ItemIndex <> -1 then
-      DataModule1.zqfidi.Filter:='idaffidamento='+dbcbaffidamentofiltro.KeyValue
+      DataModule1.zqanagfidi.Filter:='idaffidamento='+dbcbaffidamentofiltro.KeyValue
 
 end;
+
 
 end.
 

@@ -30,7 +30,6 @@ type
     zqecsaldo1: TCurrencyField;
     zqecUSCITE: TFloatField;
     zupec: TZUpdateSQL;
-    procedure Button1Click(Sender: TObject);
     procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
       Column: TColumn; AState: TGridDrawState);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -59,10 +58,6 @@ begin
   CloseAction:=cafree;
 end;
 
-procedure Testrattoconto.Button1Click(Sender: TObject);
-begin
-  zqec.CommitUpdates;
-end;
 
 procedure Testrattoconto.DBGrid1PrepareCanvas(sender: TObject;
   DataCol: Integer; Column: TColumn; AState: TGridDrawState);

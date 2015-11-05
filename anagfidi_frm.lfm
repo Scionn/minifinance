@@ -24,10 +24,11 @@ object anagFidi: TanagFidi
       Top = 16
       Width = 368
       DataField = 'IDAFFIDAMENTO'
-      DataSource = DataModule1.dsfidi
+      DataSource = DataModule1.dsanagfidi
       KeyField = 'IDAFFIDAMENTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
+      ListSource = DataModule1.dsanagaff
       LookupCache = False
       Style = csDropDownList
       TabOrder = 0
@@ -62,7 +63,7 @@ object anagFidi: TanagFidi
       Top = 48
       Width = 368
       DataField = 'DESCRIZIONE'
-      DataSource = DataModule1.dsfidi
+      DataSource = DataModule1.dsanagfidi
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 1
@@ -73,7 +74,7 @@ object anagFidi: TanagFidi
       Top = 80
       Width = 368
       DataField = 'FIDO'
-      DataSource = DataModule1.dsfidi
+      DataSource = DataModule1.dsanagfidi
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 2
@@ -85,7 +86,7 @@ object anagFidi: TanagFidi
       Width = 90
       Caption = 'Totale'
       DataField = 'TOTALE'
-      DataSource = DataModule1.dsfidi
+      DataSource = DataModule1.dsanagfidi
       TabOrder = 3
       ValueChecked = '1'
       ValueUnchecked = '0'
@@ -104,7 +105,7 @@ object anagFidi: TanagFidi
       ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 241
-      DataSource = DataModule1.dsfidi
+      DataSource = DataModule1.dsanagfidi
       Options = []
       TabOrder = 4
     end
@@ -147,7 +148,7 @@ object anagFidi: TanagFidi
           Visible = False
           FieldName = 'TOTALE'
         end>
-      DataSource = DataModule1.dsfidi
+      DataSource = DataModule1.dsanagfidi
       TabOrder = 5
     end
   end
@@ -177,7 +178,7 @@ object anagFidi: TanagFidi
       KeyField = 'IDAFFIDAMENTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
-      ListSource = DataModule1.dsaffidamenti
+      ListSource = DataModule1.dsanagaff
       LookupCache = False
       Style = csDropDownList
       TabOrder = 0
@@ -228,22 +229,6 @@ object anagFidi: TanagFidi
       DataSource = DataModule1.dsfiditipofido
       TabOrder = 0
     end
-    object btaggiungi: TButton
-      Left = 56
-      Height = 25
-      Top = 88
-      Width = 75
-      Caption = 'Aggiungi'
-      TabOrder = 1
-    end
-    object btrimuovi: TButton
-      Left = 206
-      Height = 25
-      Top = 86
-      Width = 75
-      Caption = 'Rimuovi'
-      TabOrder = 2
-    end
     object dbcbtipoaffidamento: TDBLookupComboBox
       Left = 56
       Height = 23
@@ -254,10 +239,10 @@ object anagFidi: TanagFidi
       KeyField = 'IDTIPO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
-      ListSource = DataModule1.dstipoaffidamento
+      ListSource = DataModule1.dsanagtipoaff
       LookupCache = False
       Style = csDropDownList
-      TabOrder = 3
+      TabOrder = 1
     end
     object Label3: TLabel
       Left = 16
@@ -266,6 +251,25 @@ object anagFidi: TanagFidi
       Width = 24
       Caption = 'Tipo'
       ParentColor = False
+    end
+    object DBNavigator2: TDBNavigator
+      Left = 40
+      Height = 25
+      Top = 104
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = DataModule1.dsfiditipofido
+      Options = []
+      TabOrder = 2
+      VisibleButtons = [nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]
     end
   end
 end

@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, mainform_frm, zcomponent, estrattoconto_frm,
-  datetimectrls, datamodule_frm;
+  datetimectrls, datamodule_frm, affidamenti_frm;
 
 {$R *.res}
 
@@ -17,6 +17,7 @@ begin
   Application.Initialize;
   Application.CreateForm(Tmainform, mainform);
   Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TAffidamenti, Affidamenti);
   Application.Run;
 end.
 

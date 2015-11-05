@@ -18,7 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="2"/>
-      <BuildNr Value="13"/>
+      <BuildNr Value="14"/>
       <Language Value="0410"/>
       <StringTable CompanyName="Gibertini Informatica" ProductName="MiniFinance" ProductVersion=""/>
     </VersionInfo>
@@ -50,7 +50,7 @@
         <PackageName Value="LCL"/>
       </Item5>
     </RequiredPackages>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="minifinance_prj.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -79,7 +79,9 @@
       <Unit4>
         <Filename Value="anagaffidamenti_frm.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="Anagaffidamenti"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit4>
       <Unit5>
         <Filename Value="anagconti_frm.pas"/>
@@ -92,15 +94,24 @@
       <Unit6>
         <Filename Value="anagfidi_frm.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="anagFidi"/>
         <HasResources Value="True"/>
-        <UnitName Value="fidi_frm"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit6>
       <Unit7>
         <Filename Value="anagtipiaffidamento_frm.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="anagtipiaffidamento"/>
         <HasResources Value="True"/>
-        <UnitName Value="tipiaffidamento_frm"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="affidamenti_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Affidamenti"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

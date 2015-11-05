@@ -24,6 +24,7 @@ object Anagaffidamenti: TAnagaffidamenti
       Top = 8
       Width = 99
       DataField = 'IDAFFIDAMENTO'
+      DataSource = DataModule1.dsanagaff
       ParentColor = False
     end
     object Label1: TLabel
@@ -48,6 +49,7 @@ object Anagaffidamenti: TAnagaffidamenti
       Top = 40
       Width = 368
       DataField = 'DESCRIZIONE'
+      DataSource = DataModule1.dsanagaff
       CharCase = ecNormal
       MaxLength = 1020
       TabOrder = 0
@@ -66,6 +68,7 @@ object Anagaffidamenti: TAnagaffidamenti
       Top = 104
       Width = 368
       DataField = 'REFERENTE'
+      DataSource = DataModule1.dsanagaff
       CharCase = ecNormal
       MaxLength = 200
       TabOrder = 1
@@ -84,6 +87,7 @@ object Anagaffidamenti: TAnagaffidamenti
       Top = 136
       Width = 232
       DataField = 'NUMERO'
+      DataSource = DataModule1.dsanagaff
       CharCase = ecNormal
       MaxLength = 200
       TabOrder = 2
@@ -102,6 +106,7 @@ object Anagaffidamenti: TAnagaffidamenti
       ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 241
+      DataSource = DataModule1.dsanagaff
       Options = []
       TabOrder = 3
     end
@@ -119,9 +124,11 @@ object Anagaffidamenti: TAnagaffidamenti
       Top = 72
       Width = 368
       DataField = 'IDCONTO'
+      DataSource = DataModule1.dsanagaff
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
+      ListSource = DataModule1.dsanagconti
       LookupCache = False
       Style = csDropDownList
       TabOrder = 4
@@ -184,6 +191,7 @@ object Anagaffidamenti: TAnagaffidamenti
         Width = 150
         FieldName = 'NUMERO'
       end>
+    DataSource = DataModule1.dsanagaff
     TabOrder = 1
   end
 end

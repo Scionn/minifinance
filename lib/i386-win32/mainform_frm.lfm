@@ -35,7 +35,7 @@ object mainform: Tmainform
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
-      ListSource = DataModule1.dsconti
+      ListSource = DataModule1.dsanagconti
       LookupCache = False
       Style = csDropDownList
       TabOrder = 1
@@ -127,13 +127,43 @@ object mainform: Tmainform
       TabOrder = 5
     end
     object chinfinito: TCheckBox
-      Left = 362
+      Left = 360
       Height = 19
       Top = 8
-      Width = 58
-      Caption = 'Infinito'
+      Width = 105
+      Caption = 'Infinito (3 years)'
       OnChange = chinfinitoChange
       TabOrder = 6
+    end
+    object Label11: TLabel
+      Left = 8
+      Height = 15
+      Top = 72
+      Width = 67
+      Caption = 'Affidamento'
+      ParentColor = False
+    end
+    object dbcbaffidamentofiltro: TDBLookupComboBox
+      Left = 104
+      Height = 23
+      Top = 72
+      Width = 239
+      KeyField = 'IDAFFIDAMENTO'
+      ListField = 'DESCRIZIONE'
+      ListFieldIndex = 0
+      ListSource = DataModule1.dsanagaff
+      LookupCache = False
+      Style = csDropDownList
+      TabOrder = 7
+    end
+    object btaffidamenti: TButton
+      Left = 360
+      Height = 25
+      Top = 72
+      Width = 96
+      Caption = 'Affidamenti'
+      OnClick = btaffidamentiClick
+      TabOrder = 8
     end
   end
   object dbgridmovimenti: TDBGrid
@@ -279,7 +309,7 @@ object mainform: Tmainform
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
-      ListSource = DataModule1.dsconti
+      ListSource = DataModule1.dsanagconti
       LookupCache = False
       Style = csDropDownList
       TabOrder = 4

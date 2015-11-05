@@ -1,7 +1,7 @@
 object estrattoconto: Testrattoconto
-  Left = 304
+  Left = 571
   Height = 608
-  Top = 361
+  Top = 150
   Width = 933
   Caption = 'Estratto Conto'
   ClientHeight = 608
@@ -41,7 +41,6 @@ object estrattoconto: Testrattoconto
       Top = 0
       Width = 75
       Caption = 'Button1'
-      OnClick = Button1Click
       TabOrder = 0
     end
     object DBNavigator1: TDBNavigator
