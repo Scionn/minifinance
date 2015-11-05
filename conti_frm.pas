@@ -19,7 +19,7 @@ type
     dbeddescrizione: TDBEdit;
     dbedfiliale: TDBEdit;
     dbediban: TDBEdit;
-    dbedscoperto: TDBEdit;
+    DBEdit1: TDBEdit;
     dbednumero: TDBEdit;
     dbedreferente: TDBEdit;
     dbgridconti: TDBGrid;

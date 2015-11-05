@@ -25,6 +25,7 @@ type
     zqecDATAVAL: TDateField;
     zqecDESCRIZIONE: TStringField;
     zqecENTRATE: TFloatField;
+    zqecPRESUNTO: TSmallintField;
     zqecRICONCILIATO: TSmallintField;
     zqecsaldo1: TCurrencyField;
     zqecUSCITE: TFloatField;

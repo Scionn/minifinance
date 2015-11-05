@@ -19,7 +19,6 @@ type
     dbeddescrizione: TDBEdit;
     dbedfiliale: TDBEdit;
     dbediban: TDBEdit;
-    dbedscoperto: TDBEdit;
     dbednumero: TDBEdit;
     dbedreferente: TDBEdit;
     dbgridconti: TDBGrid;

@@ -1,15 +1,11 @@
 object estrattoconto: Testrattoconto
-  Left = 779
-  Height = 609
-<<<<<<< HEAD
-  Top = 308
-=======
-  Top = 341
->>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
-  Width = 869
+  Left = 536
+  Height = 608
+  Top = 283
+  Width = 933
   Caption = 'Estratto Conto'
-  ClientHeight = 609
-  ClientWidth = 869
+  ClientHeight = 608
+  ClientWidth = 933
   OnClose = FormClose
   OnShow = FormShow
   LCLVersion = '1.4.4.0'
@@ -17,18 +13,14 @@ object estrattoconto: Testrattoconto
     Left = 0
     Height = 32
     Top = 0
-    Width = 869
+    Width = 933
     Align = alTop
     Caption = ' '
     ClientHeight = 32
-    ClientWidth = 869
+    ClientWidth = 933
     TabOrder = 0
     object lbsaldo: TLabel
-<<<<<<< HEAD
       Left = 280
-=======
-      Left = 192
->>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
       Height = 15
       Top = 8
       Width = 38
@@ -73,39 +65,53 @@ object estrattoconto: Testrattoconto
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Height = 577
+    Height = 576
     Top = 32
-    Width = 869
+    Width = 933
     Align = alClient
     Color = clWindow
     Columns = <    
       item
-        Title.Caption = 'RICONCILIATO'
+        Title.Caption = 'Riconciliato'
+        Width = 75
         FieldName = 'RICONCILIATO'
       end    
       item
-        Title.Caption = 'DATAOP'
+        Title.Caption = 'Data Operazione'
+        Width = 100
         FieldName = 'DATAOP'
       end    
       item
-        Title.Caption = 'DATAVAL'
+        Title.Caption = 'Data Valuta'
+        Width = 100
         FieldName = 'DATAVAL'
       end    
       item
-        Title.Caption = 'ENTRATE'
+        Title.Caption = 'Descrizione'
+        Width = 300
+        FieldName = 'DESCRIZIONE'
+      end    
+      item
+        Title.Caption = 'Entrate'
+        Width = 100
         FieldName = 'ENTRATE'
+        DisplayFormat = '€ #,##0.00'
       end    
       item
-        Title.Caption = 'USCITE'
+        Title.Caption = 'Uscite'
+        Width = 100
         FieldName = 'USCITE'
+        DisplayFormat = '€ #,##0.00'
       end    
       item
-        Title.Caption = 'saldo'
+        Title.Caption = 'Saldo'
+        Width = 100
         FieldName = 'saldo'
       end    
       item
-        Title.Caption = 'DESCRIZIONE'
-        FieldName = 'DESCRIZIONE'
+        Title.Caption = 'PRESUNTO'
+        Visible = False
+        FieldName = 'PRESUNTO'
       end>
     DataSource = dsec
     TabOrder = 1
@@ -116,13 +122,11 @@ object estrattoconto: Testrattoconto
     top = 168
   end
   object zqec: TZQuery
-<<<<<<< HEAD
-=======
-    Connection = DataModule1.zc1
->>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
+    Connection = mainform.zc1
     AfterOpen = zqecAfterOpen
     OnCalcFields = zqecCalcFields
     UpdateObject = zupec
+    Active = True
     SQL.Strings = (
       'SELECT * '
       'FROM movimenti'
@@ -183,6 +187,7 @@ object estrattoconto: Testrattoconto
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      DisplayFormat = '€ #,##0.00'
       MaxValue = 0
       MinValue = 0
       Precision = 21
@@ -196,6 +201,7 @@ object estrattoconto: Testrattoconto
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      DisplayFormat = '€ #,##0.00'
       MaxValue = 0
       MinValue = 0
       Precision = 21
@@ -210,11 +216,21 @@ object estrattoconto: Testrattoconto
       ReadOnly = False
       Required = True
     end
+    object zqecPRESUNTO: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PRESUNTO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
     object zqecsaldo1: TCurrencyField
       DisplayWidth = 10
       FieldKind = fkCalculated
       FieldName = 'saldo'
-      Index = 6
+      Index = 7
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False

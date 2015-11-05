@@ -1,28 +1,22 @@
 object Conti: TConti
-<<<<<<< HEAD
-  Left = 873
-  Height = 481
-  Top = 482
-=======
-  Left = 719
-  Height = 481
-  Top = 464
->>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
-  Width = 735
+  Left = 353
+  Height = 522
+  Top = 355
+  Width = 1038
   Caption = 'Conti Correnti'
-  ClientHeight = 481
-  ClientWidth = 735
+  ClientHeight = 522
+  ClientWidth = 1038
   OnClose = FormClose
   LCLVersion = '1.4.4.0'
   object Panel1: TPanel
     Left = 0
-    Height = 200
+    Height = 208
     Top = 0
-    Width = 735
+    Width = 1038
     Align = alTop
     Caption = ' '
-    ClientHeight = 200
-    ClientWidth = 735
+    ClientHeight = 208
+    ClientWidth = 1038
     TabOrder = 0
     object dblbidconto: TDBText
       Left = 104
@@ -57,7 +51,7 @@ object Conti: TConti
       DataField = 'DESCRIZIONE'
       DataSource = mainform.dsconti
       CharCase = ecNormal
-      MaxLength = 0
+      MaxLength = 1020
       TabOrder = 0
     end
     object Label3: TLabel
@@ -76,7 +70,7 @@ object Conti: TConti
       DataField = 'IBAN'
       DataSource = mainform.dsconti
       CharCase = ecNormal
-      MaxLength = 0
+      MaxLength = 200
       TabOrder = 1
     end
     object Label4: TLabel
@@ -103,7 +97,7 @@ object Conti: TConti
       DataField = 'ABI'
       DataSource = mainform.dsconti
       CharCase = ecNormal
-      MaxLength = 0
+      MaxLength = 40
       TabOrder = 2
     end
     object dbedcab: TDBEdit
@@ -114,7 +108,7 @@ object Conti: TConti
       DataField = 'CAB'
       DataSource = mainform.dsconti
       CharCase = ecNormal
-      MaxLength = 0
+      MaxLength = 40
       TabOrder = 3
     end
     object dbedcin: TDBEdit
@@ -125,7 +119,7 @@ object Conti: TConti
       DataField = 'CIN'
       DataSource = mainform.dsconti
       CharCase = ecNormal
-      MaxLength = 0
+      MaxLength = 40
       TabOrder = 4
     end
     object Label6: TLabel
@@ -152,7 +146,7 @@ object Conti: TConti
       DataField = 'FILIALE'
       DataSource = mainform.dsconti
       CharCase = ecNormal
-      MaxLength = 0
+      MaxLength = 1020
       TabOrder = 5
     end
     object Label8: TLabel
@@ -171,7 +165,7 @@ object Conti: TConti
       DataField = 'REFERENTE'
       DataSource = mainform.dsconti
       CharCase = ecNormal
-      MaxLength = 0
+      MaxLength = 200
       TabOrder = 6
     end
     object Label9: TLabel
@@ -186,11 +180,11 @@ object Conti: TConti
       Left = 104
       Height = 23
       Top = 136
-      Width = 336
+      Width = 232
       DataField = 'NUMERO'
       DataSource = mainform.dsconti
       CharCase = ecNormal
-      MaxLength = 0
+      MaxLength = 200
       TabOrder = 7
     end
     object DBNavigator1: TDBNavigator
@@ -212,31 +206,21 @@ object Conti: TConti
       TabOrder = 8
     end
     object Label10: TLabel
-      Left = 456
+      Left = 407
       Height = 15
-      Top = 136
-      Width = 47
-      Caption = 'Scoperto'
+      Top = 143
+      Width = 40
+      Caption = 'Label10'
       ParentColor = False
-    end
-    object dbedscoperto: TDBEdit
-      Left = 520
-      Height = 23
-      Top = 136
-      Width = 208
-      DataField = 'SCOPERTO'
-      DataSource = mainform.dsconti
-      CharCase = ecNormal
-      MaxLength = 0
-      TabOrder = 9
     end
   end
   object dbgridconti: TDBGrid
     Left = 0
-    Height = 281
-    Top = 200
-    Width = 735
+    Height = 314
+    Top = 208
+    Width = 1038
     Align = alClient
+    AutoEdit = False
     Color = clWindow
     Columns = <    
       item
@@ -245,23 +229,23 @@ object Conti: TConti
         FieldName = 'IDCONTO'
       end    
       item
-        Title.Caption = 'DESCRIZIONE'
-        Width = 250
+        Title.Caption = 'Conto Corrente'
+        Width = 300
         FieldName = 'DESCRIZIONE'
       end    
       item
         Title.Caption = 'IBAN'
-        Width = 120
+        Width = 200
         FieldName = 'IBAN'
       end    
       item
         Title.Caption = 'ABI'
-        Width = 50
+        Width = 60
         FieldName = 'ABI'
       end    
       item
         Title.Caption = 'CAB'
-        Width = 50
+        Width = 60
         FieldName = 'CAB'
       end    
       item
@@ -270,22 +254,23 @@ object Conti: TConti
         FieldName = 'CIN'
       end    
       item
-        Title.Caption = 'FILIALE'
+        Title.Caption = 'Filiale'
         Width = 250
         FieldName = 'FILIALE'
       end    
       item
-        Title.Caption = 'REFERENTE'
+        Title.Caption = 'Referente'
         Width = 150
         FieldName = 'REFERENTE'
       end    
       item
-        Title.Caption = 'NUMERO'
+        Title.Caption = 'Numero'
         Width = 150
         FieldName = 'NUMERO'
       end    
       item
-        Title.Caption = 'SCOPERTO'
+        Title.Caption = 'Scoperto'
+        Width = 100
         FieldName = 'SCOPERTO'
         DisplayFormat = '€ #,##0.00'
       end>

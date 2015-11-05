@@ -18,11 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="2"/>
-<<<<<<< HEAD
-      <BuildNr Value="8"/>
-=======
-      <BuildNr Value="7"/>
->>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
+      <BuildNr Value="9"/>
       <Language Value="0410"/>
       <StringTable CompanyName="Gibertini Informatica" ProductName="MiniFinance" ProductVersion=""/>
     </VersionInfo>
@@ -92,28 +88,16 @@
         <ResourceBaseClass Value="Form"/>
       </Unit4>
       <Unit5>
-<<<<<<< HEAD
         <Filename Value="tipiaffidamento_frm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="tipiaffidamento"/>
-=======
-        <Filename Value="affidamenti_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Affidamenti"/>
->>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit5>
       <Unit6>
-<<<<<<< HEAD
         <Filename Value="fidi_frm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Fidi"/>
-=======
-        <Filename Value="tipiaffidamento_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="tipiaffidamento"/>
->>>>>>> 2ac5b01efa4eeec6039ea3efba2a8455d156af84
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit6>
