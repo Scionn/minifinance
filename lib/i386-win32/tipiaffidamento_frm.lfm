@@ -1,7 +1,7 @@
 object tipiaffidamento: Ttipiaffidamento
-  Left = 501
+  Left = 580
   Height = 388
-  Top = 234
+  Top = 247
   Width = 598
   Caption = 'Tipologie di affidamento'
   ClientHeight = 388
@@ -39,7 +39,6 @@ object tipiaffidamento: Ttipiaffidamento
       Height = 15
       Top = 10
       Width = 55
-      DataSource = mainform.dstipoaffidamento
       ParentColor = False
     end
     object dbeddescrizione: TDBEdit
@@ -47,7 +46,6 @@ object tipiaffidamento: Ttipiaffidamento
       Height = 23
       Top = 40
       Width = 392
-      DataSource = mainform.dstipoaffidamento
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 0
@@ -66,7 +64,6 @@ object tipiaffidamento: Ttipiaffidamento
       ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 241
-      DataSource = mainform.dstipoaffidamento
       Options = []
       TabOrder = 1
     end
@@ -90,7 +87,6 @@ object tipiaffidamento: Ttipiaffidamento
         Width = 300
         FieldName = 'DESCRIZIONE'
       end>
-    DataSource = mainform.dstipoaffidamento
     TabOrder = 1
   end
 end

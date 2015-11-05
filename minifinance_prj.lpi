@@ -18,7 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="2"/>
-      <BuildNr Value="9"/>
+      <BuildNr Value="10"/>
       <Language Value="0410"/>
       <StringTable CompanyName="Gibertini Informatica" ProductName="MiniFinance" ProductVersion=""/>
     </VersionInfo>
@@ -53,7 +53,7 @@
         <PackageName Value="LCL"/>
       </Item6>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="8">
       <Unit0>
         <Filename Value="minifinance_prj.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -101,6 +101,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="datamodule_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

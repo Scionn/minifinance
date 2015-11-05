@@ -35,7 +35,7 @@ object mainform: Tmainform
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
-      ListSource = dsconti
+      ListSource = DataModule1.dsconti
       LookupCache = False
       TabOrder = 1
     end
@@ -193,7 +193,7 @@ object mainform: Tmainform
         Visible = False
         FieldName = 'PRESUNTO'
       end>
-    DataSource = ds1
+    DataSource = DataModule1.ds1
     TabOrder = 1
     OnPrepareCanvas = dbgridmovimentiPrepareCanvas
   end
@@ -221,7 +221,7 @@ object mainform: Tmainform
       ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 241
-      DataSource = ds1
+      DataSource = DataModule1.ds1
       Options = []
       TabOrder = 0
     end
@@ -231,7 +231,7 @@ object mainform: Tmainform
       Top = 9
       Width = 96
       DataField = 'IDMOV'
-      DataSource = ds1
+      DataSource = DataModule1.ds1
       ParentColor = False
     end
     object dbeddescrizione: TDBEdit
@@ -240,7 +240,7 @@ object mainform: Tmainform
       Top = 72
       Width = 400
       DataField = 'DESCRIZIONE'
-      DataSource = ds1
+      DataSource = DataModule1.ds1
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 1
@@ -251,7 +251,7 @@ object mainform: Tmainform
       Top = 9
       Width = 120
       DataField = 'ENTRATE'
-      DataSource = ds1
+      DataSource = DataModule1.ds1
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 2
@@ -262,7 +262,7 @@ object mainform: Tmainform
       Top = 40
       Width = 120
       DataField = 'USCITE'
-      DataSource = ds1
+      DataSource = DataModule1.ds1
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 3
@@ -273,11 +273,11 @@ object mainform: Tmainform
       Top = 40
       Width = 192
       DataField = 'IDCONTO'
-      DataSource = ds1
+      DataSource = DataModule1.ds1
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
-      ListSource = dsconti
+      ListSource = DataModule1.dsconti
       LookupCache = False
       TabOrder = 4
     end
@@ -288,7 +288,7 @@ object mainform: Tmainform
       Width = 90
       Caption = 'Riconciliato'
       DataField = 'RICONCILIATO'
-      DataSource = ds1
+      DataSource = DataModule1.ds1
       TabOrder = 5
       ValueChecked = '1'
       ValueUnchecked = '0'
@@ -307,7 +307,7 @@ object mainform: Tmainform
       MaxLength = 0
       TabOrder = 6
       DataField = 'DATAOP'
-      DataSource = ds1
+      DataSource = DataModule1.ds1
     end
     object dbeddataval: TDBDateEdit
       Left = 392
@@ -323,7 +323,7 @@ object mainform: Tmainform
       MaxLength = 0
       TabOrder = 7
       DataField = 'DATAVAL'
-      DataSource = ds1
+      DataSource = DataModule1.ds1
     end
     object Label1: TLabel
       Left = 8
@@ -388,7 +388,7 @@ object mainform: Tmainform
       Width = 90
       Caption = 'Presunto'
       DataField = 'PRESUNTO'
-      DataSource = ds1
+      DataSource = DataModule1.ds1
       TabOrder = 8
       ValueChecked = '1'
       ValueUnchecked = '0'
@@ -402,393 +402,5 @@ object mainform: Tmainform
     Caption = 'Anag. Conti Correnti'
     OnClick = btcontiClick
     TabOrder = 3
-  end
-  object ds1: TDataSource
-    AutoEdit = False
-    DataSet = zq1
-    left = 80
-    top = 384
-  end
-  object dsconti: TDataSource
-    AutoEdit = False
-    DataSet = zqconti
-    left = 880
-    top = 152
-  end
-  object zqconti: TZQuery
-    Connection = zc1
-    UpdateObject = zupconti
-    SQL.Strings = (
-      'SELECT *'
-      'from conti'
-    )
-    Params = <>
-    left = 937
-    top = 152
-  end
-  object zupconti: TZUpdateSQL
-    DeleteSQL.Strings = (
-      'DELETE FROM conti'
-      'WHERE'
-      '  conti.IDCONTO = :OLD_IDCONTO AND'
-      '  ((conti.DESCRIZIONE IS NULL AND :OLD_DESCRIZIONE IS NULL) OR (conti.DESCRIZIONE = :OLD_DESCRIZIONE)) AND'
-      '  ((conti.IBAN IS NULL AND :OLD_IBAN IS NULL) OR (conti.IBAN = :OLD_IBAN)) AND'
-      '  ((conti.ABI IS NULL AND :OLD_ABI IS NULL) OR (conti.ABI = :OLD_ABI)) AND'
-      '  ((conti.CAB IS NULL AND :OLD_CAB IS NULL) OR (conti.CAB = :OLD_CAB)) AND'
-      '  ((conti.CIN IS NULL AND :OLD_CIN IS NULL) OR (conti.CIN = :OLD_CIN)) AND'
-      '  ((conti.FILIALE IS NULL AND :OLD_FILIALE IS NULL) OR (conti.FILIALE = :OLD_FILIALE)) AND'
-      '  ((conti.REFERENTE IS NULL AND :OLD_REFERENTE IS NULL) OR (conti.REFERENTE = :OLD_REFERENTE)) AND'
-      '  ((conti.NUMERO IS NULL AND :OLD_NUMERO IS NULL) OR (conti.NUMERO = :OLD_NUMERO))'
-    )
-    InsertSQL.Strings = (
-      'INSERT INTO conti'
-      '  (IDCONTO, DESCRIZIONE, IBAN, ABI, CAB, CIN, FILIALE, REFERENTE, NUMERO)'
-      'VALUES'
-      '  (:IDCONTO, :DESCRIZIONE, :IBAN, :ABI, :CAB, :CIN, :FILIALE, :REFERENTE, '
-      '   :NUMERO)'
-    )
-    ModifySQL.Strings = (
-      'UPDATE conti SET'
-      '  IDCONTO = :IDCONTO,'
-      '  DESCRIZIONE = :DESCRIZIONE,'
-      '  IBAN = :IBAN,'
-      '  ABI = :ABI,'
-      '  CAB = :CAB,'
-      '  CIN = :CIN,'
-      '  FILIALE = :FILIALE,'
-      '  REFERENTE = :REFERENTE,'
-      '  NUMERO = :NUMERO'
-      'WHERE'
-      '  conti.IDCONTO = :OLD_IDCONTO AND'
-      '  ((conti.DESCRIZIONE IS NULL AND :OLD_DESCRIZIONE IS NULL) OR (conti.DESCRIZIONE = :OLD_DESCRIZIONE)) AND'
-      '  ((conti.IBAN IS NULL AND :OLD_IBAN IS NULL) OR (conti.IBAN = :OLD_IBAN)) AND'
-      '  ((conti.ABI IS NULL AND :OLD_ABI IS NULL) OR (conti.ABI = :OLD_ABI)) AND'
-      '  ((conti.CAB IS NULL AND :OLD_CAB IS NULL) OR (conti.CAB = :OLD_CAB)) AND'
-      '  ((conti.CIN IS NULL AND :OLD_CIN IS NULL) OR (conti.CIN = :OLD_CIN)) AND'
-      '  ((conti.FILIALE IS NULL AND :OLD_FILIALE IS NULL) OR (conti.FILIALE = :OLD_FILIALE)) AND'
-      '  ((conti.REFERENTE IS NULL AND :OLD_REFERENTE IS NULL) OR (conti.REFERENTE = :OLD_REFERENTE)) AND'
-      '  ((conti.NUMERO IS NULL AND :OLD_NUMERO IS NULL) OR (conti.NUMERO = :OLD_NUMERO))'
-    )
-    UseSequenceFieldForRefreshSQL = False
-    left = 1001
-    top = 152
-    ParamData = <    
-      item
-        DataType = ftUnknown
-        Name = 'IDCONTO'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'DESCRIZIONE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'IBAN'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'ABI'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'CAB'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'CIN'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'FILIALE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'REFERENTE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'NUMERO'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_IDCONTO'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_DESCRIZIONE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_IBAN'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_ABI'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_CAB'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_CIN'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_FILIALE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_REFERENTE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_NUMERO'
-        ParamType = ptUnknown
-      end>
-  end
-  object zqaffidamenti: TZQuery
-    Connection = zc1
-    UpdateObject = zupaffidamenti
-    SQL.Strings = (
-      'SELECT affidamenti.*, conti.descrizione'
-      'from affidamenti'
-      'left join conti '
-      'on affidamenti.idconto=conti.idconto'
-    )
-    Params = <>
-    left = 937
-    top = 216
-  end
-  object zupaffidamenti: TZUpdateSQL
-    UseSequenceFieldForRefreshSQL = False
-    left = 1001
-    top = 216
-  end
-  object dsaffidamenti: TDataSource
-    AutoEdit = False
-    DataSet = zqaffidamenti
-    left = 880
-    top = 216
-  end
-  object dstipoaffidamento: TDataSource
-    AutoEdit = False
-    DataSet = zqtipoaffidamento
-    left = 880
-    top = 280
-  end
-  object zuptipoaffidamento: TZUpdateSQL
-    UseSequenceFieldForRefreshSQL = False
-    left = 1001
-    top = 280
-  end
-  object zqtipoaffidamento: TZQuery
-    Connection = zc1
-    UpdateObject = zuptipoaffidamento
-    SQL.Strings = (
-      'select *'
-      'from tipoaffidamento'
-    )
-    Params = <>
-    left = 937
-    top = 280
-  end
-  object zc1: TZConnection
-    ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = False
-    Properties.Strings = (
-      'AutoEncodeStrings='
-    )
-    TransactIsolationLevel = tiRepeatableRead
-    Connected = True
-    HostName = 'www.rgibertini.it'
-    Port = 0
-    Database = 'rgibertini_minifinance'
-    User = 'minuuser'
-    Password = '5v1Zvi!6'
-    Protocol = 'mysql-5'
-    left = 80
-    top = 320
-  end
-  object zq1: TZQuery
-    Connection = zc1
-    AfterRefresh = zq1AfterRefresh
-    Filtered = True
-    UpdateObject = zup1
-    SQL.Strings = (
-      'select movimenti.*, conti.descrizione'
-      'from movimenti '
-      'left join conti '
-      'on movimenti.idconto=conti.idconto'
-      'ORDER BY dataval'
-    )
-    Params = <>
-    left = 136
-    top = 384
-  end
-  object zup1: TZUpdateSQL
-    DeleteSQL.Strings = (
-      'DELETE FROM movimenti'
-      'WHERE'
-      '  movimenti.IDMOV = :OLD_IDMOV'
-    )
-    InsertSQL.Strings = (
-      'INSERT INTO movimenti'
-      '  (IDMOV, IDCONTO, DATAOP, DATAVAL, DESCRIZIONE, ENTRATE, USCITE, RICONCILIATO)'
-      'VALUES'
-      '  (:IDMOV, :IDCONTO, :DATAOP, :DATAVAL, :DESCRIZIONE, :ENTRATE, :USCITE, '
-      '   :RICONCILIATO)'
-    )
-    ModifySQL.Strings = (
-      'UPDATE movimenti SET'
-      '  IDMOV = :IDMOV,'
-      '  IDCONTO = :IDCONTO,'
-      '  DATAOP = :DATAOP,'
-      '  DATAVAL = :DATAVAL,'
-      '  DESCRIZIONE = :DESCRIZIONE,'
-      '  ENTRATE = :ENTRATE,'
-      '  USCITE = :USCITE,'
-      '  RICONCILIATO = :RICONCILIATO'
-      'WHERE'
-      '  movimenti.IDMOV = :OLD_IDMOV'
-    )
-    UseSequenceFieldForRefreshSQL = False
-    left = 192
-    top = 384
-    ParamData = <    
-      item
-        DataType = ftUnknown
-        Name = 'IDMOV'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'IDCONTO'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'DATAOP'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'DATAVAL'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'DESCRIZIONE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'ENTRATE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'USCITE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'RICONCILIATO'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_IDMOV'
-        ParamType = ptUnknown
-      end>
-  end
-  object dsfidi: TDataSource
-    DataSet = zqfidi
-    left = 880
-    top = 344
-  end
-  object zqfidi: TZQuery
-    Connection = zc1
-    UpdateObject = zupfidi
-    SQL.Strings = (
-      'select * from fidi'
-    )
-    Params = <>
-    left = 937
-    top = 344
-  end
-  object zupfidi: TZUpdateSQL
-    DeleteSQL.Strings = (
-      'DELETE FROM fidi'
-      'WHERE'
-      '  fidi.IDFIDO = :OLD_IDFIDO'
-    )
-    InsertSQL.Strings = (
-      'INSERT INTO fidi'
-      '  (IDFIDO, DESCRIZIONE, IDAFFIDAMENTO, FIDO, TOTALE)'
-      'VALUES'
-      '  (:IDFIDO, :DESCRIZIONE, :IDAFFIDAMENTO, :FIDO, :TOTALE)'
-    )
-    ModifySQL.Strings = (
-      'UPDATE fidi SET'
-      '  IDFIDO = :IDFIDO,'
-      '  DESCRIZIONE = :DESCRIZIONE,'
-      '  IDAFFIDAMENTO = :IDAFFIDAMENTO,'
-      '  FIDO = :FIDO,'
-      '  TOTALE = :TOTALE'
-      'WHERE'
-      '  fidi.IDFIDO = :OLD_IDFIDO'
-    )
-    UseSequenceFieldForRefreshSQL = False
-    left = 1001
-    top = 344
-    ParamData = <    
-      item
-        DataType = ftUnknown
-        Name = 'IDFIDO'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'DESCRIZIONE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'IDAFFIDAMENTO'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'FIDO'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'TOTALE'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'OLD_IDFIDO'
-        ParamType = ptUnknown
-      end>
   end
 end

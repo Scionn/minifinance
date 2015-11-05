@@ -1,7 +1,7 @@
 object estrattoconto: Testrattoconto
-  Left = 536
+  Left = 723
   Height = 608
-  Top = 283
+  Top = 355
   Width = 933
   Caption = 'Estratto Conto'
   ClientHeight = 608
@@ -123,7 +123,7 @@ object estrattoconto: Testrattoconto
     top = 168
   end
   object zqec: TZQuery
-    Connection = mainform.zc1
+    Connection = DataModule1.zc1
     AfterOpen = zqecAfterOpen
     OnCalcFields = zqecCalcFields
     UpdateObject = zupec

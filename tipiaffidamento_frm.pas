@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls, DbCtrls, DBGrids;
+  StdCtrls, DbCtrls, DBGrids, datamodule_frm;
 
 type
 

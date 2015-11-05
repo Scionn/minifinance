@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, sqldb, FileUtil, KDBGrids, ZDataset, ZSqlUpdate, Forms,
-  Controls, Graphics, Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, Grids;
+  Controls, Graphics, Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, Grids, datamodule_frm;
 
 type
 

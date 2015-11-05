@@ -1,7 +1,7 @@
 object Affidamenti: TAffidamenti
-  Left = 342
+  Left = 312
   Height = 484
-  Top = 409
+  Top = 449
   Width = 953
   Caption = 'Affidamenti'
   ClientHeight = 484
@@ -24,7 +24,6 @@ object Affidamenti: TAffidamenti
       Top = 8
       Width = 99
       DataField = 'IDAFFIDAMENTO'
-      DataSource = mainform.dsaffidamenti
       ParentColor = False
     end
     object Label1: TLabel
@@ -49,7 +48,6 @@ object Affidamenti: TAffidamenti
       Top = 40
       Width = 368
       DataField = 'DESCRIZIONE'
-      DataSource = mainform.dsaffidamenti
       CharCase = ecNormal
       MaxLength = 1020
       TabOrder = 0
@@ -68,7 +66,6 @@ object Affidamenti: TAffidamenti
       Top = 104
       Width = 368
       DataField = 'REFERENTE'
-      DataSource = mainform.dsaffidamenti
       CharCase = ecNormal
       MaxLength = 200
       TabOrder = 1
@@ -87,7 +84,6 @@ object Affidamenti: TAffidamenti
       Top = 136
       Width = 232
       DataField = 'NUMERO'
-      DataSource = mainform.dsaffidamenti
       CharCase = ecNormal
       MaxLength = 200
       TabOrder = 2
@@ -106,7 +102,6 @@ object Affidamenti: TAffidamenti
       ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 241
-      DataSource = mainform.dsaffidamenti
       Options = []
       TabOrder = 3
     end
@@ -124,11 +119,9 @@ object Affidamenti: TAffidamenti
       Top = 72
       Width = 368
       DataField = 'IDCONTO'
-      DataSource = mainform.dsaffidamenti
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
-      ListSource = mainform.dsconti
       LookupCache = False
       TabOrder = 4
     end
@@ -190,7 +183,6 @@ object Affidamenti: TAffidamenti
         Width = 150
         FieldName = 'NUMERO'
       end>
-    DataSource = mainform.dsaffidamenti
     TabOrder = 1
   end
 end

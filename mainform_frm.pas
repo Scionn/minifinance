@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, db, FileUtil, DateTimePicker, Forms, Controls, Graphics,
   Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, DBExtCtrls, conti_frm,
   ZDataset, ZSqlUpdate, ZConnection,  estrattoconto_frm,
-  affidamenti_frm, windows, Grids;
+  affidamenti_frm, windows, Grids, datamodule_frm;
 
 type
 
@@ -21,8 +21,6 @@ type
     bteccontocorrente: TButton;
     btoperazionifuture: TButton;
     dbchpresunto: TDBCheckBox;
-    dsfidi: TDataSource;
-    dsaffidamenti: TDataSource;
     DateTimePicker1: TDateTimePicker;
     DateTimePicker2: TDateTimePicker;
     dbchriconciliato: TDBCheckBox;
@@ -35,10 +33,7 @@ type
     dbcbcontocorrentefiltro: TDBLookupComboBox;
     DBNavigator1: TDBNavigator;
     dblbidmovimento: TDBText;
-    ds1: TDataSource;
     dbgridmovimenti: TDBGrid;
-    dsconti: TDataSource;
-    dstipoaffidamento: TDataSource;
     Label1: TLabel;
     Label10: TLabel;
     Label2: TLabel;
@@ -51,17 +46,6 @@ type
     Label9: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
-    zc1: TZConnection;
-    zq1: TZQuery;
-    zqconti: TZQuery;
-    zqaffidamenti: TZQuery;
-    zqtipoaffidamento: TZQuery;
-    zqfidi: TZQuery;
-    zup1: TZUpdateSQL;
-    zupconti: TZUpdateSQL;
-    zupaffidamenti: TZUpdateSQL;
-    zupfidi: TZUpdateSQL;
-    zuptipoaffidamento: TZUpdateSQL;
     procedure btcontiClick(Sender: TObject);
     procedure bteccontocorrenteClick(Sender: TObject);
     procedure btfidiClick(Sender: TObject);
@@ -70,7 +54,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure GetBuildInfo(var V1, V2, V3, V4: Word);
     function kfVersionInfo: String;
-    procedure zq1AfterRefresh(DataSet: TDataSet);
+
   private
     { private declarations }
   public
@@ -125,19 +109,16 @@ begin
             + IntToStr(V4);
 end;
 
-procedure Tmainform.zq1AfterRefresh(DataSet: TDataSet);
-begin
-   zq1.Refresh;
-end;
+
 
 procedure Tmainform.btcontiClick(Sender: TObject);
 begin
   conti:=Tconti.Create(self);
   conti.showmodal;
-  zqconti.close;
-  zqconti.open;
-  zq1.close;
-  zq1.open;
+  datamodule1.zqconti.close;
+  datamodule1.zqconti.open;
+  datamodule1.zq1.close;
+  datamodule1.zq1.open;
 end;
 
 procedure Tmainform.bteccontocorrenteClick(Sender: TObject);
@@ -158,8 +139,8 @@ procedure Tmainform.btfidiClick(Sender: TObject);
 begin
   affidamenti:=Taffidamenti.Create(self);
   affidamenti.showmodal;
-  zqaffidamenti.Refresh;
-  zq1.Refresh;
+datamodule1.zqaffidamenti.Refresh;
+  datamodule1.zq1.Refresh;
 end;
 
 procedure Tmainform.dbgridmovimentiPrepareCanvas(sender: TObject;
@@ -167,13 +148,13 @@ procedure Tmainform.dbgridmovimentiPrepareCanvas(sender: TObject;
 begin
 
 //controllo se il record è presunto o meno
-if zq1.FieldByName('presunto').AsBoolean then
+if datamodule1.zq1.FieldByName('presunto').AsBoolean then
    with sender as TDBGrid do
                begin
                     Canvas.Brush.Color:=clYellow;
                end
 //quindi se è riconciliato
-else if zq1.FieldByName('riconciliato').AsBoolean then
+else if datamodule1.zq1.FieldByName('riconciliato').AsBoolean then
    with sender as TDBGrid do
                begin
                     Canvas.Brush.Color:=clMoneyGreen;
@@ -185,11 +166,12 @@ end;
 procedure Tmainform.FormShow(Sender: TObject);
 begin
   //apro i dataset che mi servono
-  zqconti.Open;
-  zq1.open;
-  zqaffidamenti.Open;
-  zqtipoaffidamento.open;
-  zqfidi.open;
+datamodule1.zq1.open;
+  datamodule1.zqconti.Open;
+  datamodule1.zqaffidamenti.Open;
+  datamodule1.zqtipoaffidamento.open;
+  datamodule1.zqfidi.open;
+  DataModule1.zqfiditipofido.open;
   //metto la versione sopra nella barra
   mainform.Caption:='Minifinance v' + kfVersionInfo;
 end;

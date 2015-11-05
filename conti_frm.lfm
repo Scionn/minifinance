@@ -1,7 +1,7 @@
 object Conti: TConti
-  Left = 353
+  Left = 372
   Height = 522
-  Top = 355
+  Top = 334
   Width = 1038
   Caption = 'Conti Correnti'
   ClientHeight = 522
@@ -22,9 +22,9 @@ object Conti: TConti
       Left = 104
       Height = 15
       Top = 8
-      Width = 6
+      Width = 65
       DataField = 'IDCONTO'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       ParentColor = False
     end
     object Label1: TLabel
@@ -49,9 +49,9 @@ object Conti: TConti
       Top = 40
       Width = 368
       DataField = 'DESCRIZIONE'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
-      MaxLength = 1020
+      MaxLength = 0
       TabOrder = 0
     end
     object Label3: TLabel
@@ -68,9 +68,9 @@ object Conti: TConti
       Top = 8
       Width = 208
       DataField = 'IBAN'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
-      MaxLength = 200
+      MaxLength = 0
       TabOrder = 1
     end
     object Label4: TLabel
@@ -95,9 +95,9 @@ object Conti: TConti
       Top = 40
       Width = 56
       DataField = 'ABI'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
-      MaxLength = 40
+      MaxLength = 0
       TabOrder = 2
     end
     object dbedcab: TDBEdit
@@ -106,9 +106,9 @@ object Conti: TConti
       Top = 40
       Width = 56
       DataField = 'CAB'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
-      MaxLength = 40
+      MaxLength = 0
       TabOrder = 3
     end
     object dbedcin: TDBEdit
@@ -117,9 +117,9 @@ object Conti: TConti
       Top = 40
       Width = 40
       DataField = 'CIN'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
-      MaxLength = 40
+      MaxLength = 0
       TabOrder = 4
     end
     object Label6: TLabel
@@ -144,9 +144,9 @@ object Conti: TConti
       Top = 72
       Width = 368
       DataField = 'FILIALE'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
-      MaxLength = 1020
+      MaxLength = 0
       TabOrder = 5
     end
     object Label8: TLabel
@@ -163,9 +163,9 @@ object Conti: TConti
       Top = 104
       Width = 368
       DataField = 'REFERENTE'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
-      MaxLength = 200
+      MaxLength = 0
       TabOrder = 6
     end
     object Label9: TLabel
@@ -182,9 +182,9 @@ object Conti: TConti
       Top = 104
       Width = 184
       DataField = 'NUMERO'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
-      MaxLength = 200
+      MaxLength = 0
       TabOrder = 7
     end
     object DBNavigator1: TDBNavigator
@@ -201,7 +201,7 @@ object Conti: TConti
       ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 241
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       Options = []
       TabOrder = 8
     end
@@ -219,7 +219,7 @@ object Conti: TConti
       Top = 72
       Width = 184
       DataField = 'SCOPERTO'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 9
@@ -246,9 +246,9 @@ object Conti: TConti
       Top = 40
       Width = 184
       DataField = 'SWIFT'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       CharCase = ecNormal
-      MaxLength = 200
+      MaxLength = 0
       TabOrder = 10
     end
     object DBMemo1: TDBMemo
@@ -257,7 +257,7 @@ object Conti: TConti
       Top = 136
       Width = 624
       DataField = 'NOTE'
-      DataSource = mainform.dsconti
+      DataSource = DataModule1.dsconti
       TabOrder = 11
     end
   end
@@ -331,7 +331,7 @@ object Conti: TConti
         Width = 500
         FieldName = 'NOTE'
       end>
-    DataSource = mainform.dsconti
+    DataSource = DataModule1.dsconti
     TabOrder = 1
   end
 end

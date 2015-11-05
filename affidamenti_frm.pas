@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, FileUtil, ZDataset, ZSqlUpdate, Forms, Controls,
-  Graphics, Dialogs, ExtCtrls, DbCtrls, StdCtrls, DBGrids, tipiaffidamento_frm, fidi_frm;
+  Graphics, Dialogs, ExtCtrls, DbCtrls, StdCtrls, DBGrids, tipiaffidamento_frm, fidi_frm, datamodule_frm;
 
 type
 
