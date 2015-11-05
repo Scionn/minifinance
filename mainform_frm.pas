@@ -134,8 +134,10 @@ procedure Tmainform.btcontiClick(Sender: TObject);
 begin
   conti:=Tconti.Create(self);
   conti.showmodal;
-  zqconti.Refresh;
-  zq1.Refresh;
+  zqconti.close;
+  zqconti.open;
+  zq1.close;
+  zq1.open;
 end;
 
 procedure Tmainform.bteccontocorrenteClick(Sender: TObject);
@@ -164,12 +166,13 @@ procedure Tmainform.dbgridmovimentiPrepareCanvas(sender: TObject;
   DataCol: Integer; Column: TColumn; AState: TGridDrawState);
 begin
 
-//controllo se il record è presuneto o meno
+//controllo se il record è presunto o meno
 if zq1.FieldByName('presunto').AsBoolean then
    with sender as TDBGrid do
                begin
                     Canvas.Brush.Color:=clYellow;
                end
+//quindi se è riconciliato
 else if zq1.FieldByName('riconciliato').AsBoolean then
    with sender as TDBGrid do
                begin

@@ -22,7 +22,7 @@ object Conti: TConti
       Left = 104
       Height = 15
       Top = 8
-      Width = 65
+      Width = 6
       DataField = 'IDCONTO'
       DataSource = mainform.dsconti
       ParentColor = False
@@ -82,9 +82,9 @@ object Conti: TConti
       ParentColor = False
     end
     object Label5: TLabel
-      Left = 480
+      Left = 584
       Height = 15
-      Top = 72
+      Top = 40
       Width = 23
       Caption = 'CAB'
       ParentColor = False
@@ -93,7 +93,7 @@ object Conti: TConti
       Left = 520
       Height = 23
       Top = 40
-      Width = 208
+      Width = 56
       DataField = 'ABI'
       DataSource = mainform.dsconti
       CharCase = ecNormal
@@ -101,10 +101,10 @@ object Conti: TConti
       TabOrder = 2
     end
     object dbedcab: TDBEdit
-      Left = 520
+      Left = 624
       Height = 23
-      Top = 72
-      Width = 208
+      Top = 40
+      Width = 56
       DataField = 'CAB'
       DataSource = mainform.dsconti
       CharCase = ecNormal
@@ -112,10 +112,10 @@ object Conti: TConti
       TabOrder = 3
     end
     object dbedcin: TDBEdit
-      Left = 520
+      Left = 728
       Height = 23
-      Top = 104
-      Width = 208
+      Top = 40
+      Width = 40
       DataField = 'CIN'
       DataSource = mainform.dsconti
       CharCase = ecNormal
@@ -123,9 +123,9 @@ object Conti: TConti
       TabOrder = 4
     end
     object Label6: TLabel
-      Left = 480
+      Left = 688
       Height = 15
-      Top = 104
+      Top = 40
       Width = 20
       Caption = 'CIN'
       ParentColor = False
@@ -169,18 +169,18 @@ object Conti: TConti
       TabOrder = 6
     end
     object Label9: TLabel
-      Left = 8
+      Left = 480
       Height = 15
-      Top = 136
+      Top = 104
       Width = 44
       Caption = 'Numero'
       ParentColor = False
     end
     object dbednumero: TDBEdit
-      Left = 104
+      Left = 544
       Height = 23
-      Top = 136
-      Width = 232
+      Top = 104
+      Width = 184
       DataField = 'NUMERO'
       DataSource = mainform.dsconti
       CharCase = ecNormal
@@ -188,9 +188,9 @@ object Conti: TConti
       TabOrder = 7
     end
     object DBNavigator1: TDBNavigator
-      Left = 104
+      Left = 760
       Height = 25
-      Top = 168
+      Top = 8
       Width = 241
       BevelOuter = bvNone
       ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -206,23 +206,59 @@ object Conti: TConti
       TabOrder = 8
     end
     object Label10: TLabel
-      Left = 456
+      Left = 480
       Height = 15
-      Top = 136
+      Top = 72
       Width = 47
       Caption = 'Scoperto'
       ParentColor = False
     end
     object DBEdit1: TDBEdit
-      Left = 520
+      Left = 544
       Height = 23
-      Top = 136
-      Width = 208
+      Top = 72
+      Width = 184
       DataField = 'SCOPERTO'
       DataSource = mainform.dsconti
       CharCase = ecNormal
       MaxLength = 0
       TabOrder = 9
+    end
+    object Label11: TLabel
+      Left = 8
+      Height = 15
+      Top = 136
+      Width = 26
+      Caption = 'Note'
+      ParentColor = False
+    end
+    object Label12: TLabel
+      Left = 776
+      Height = 15
+      Top = 40
+      Width = 26
+      Caption = 'Swift'
+      ParentColor = False
+    end
+    object DBEdit2: TDBEdit
+      Left = 816
+      Height = 23
+      Top = 40
+      Width = 184
+      DataField = 'SWIFT'
+      DataSource = mainform.dsconti
+      CharCase = ecNormal
+      MaxLength = 200
+      TabOrder = 10
+    end
+    object DBMemo1: TDBMemo
+      Left = 104
+      Height = 64
+      Top = 136
+      Width = 624
+      DataField = 'NOTE'
+      DataSource = mainform.dsconti
+      TabOrder = 11
     end
   end
   object dbgridconti: TDBGrid
@@ -265,6 +301,11 @@ object Conti: TConti
         FieldName = 'CIN'
       end    
       item
+        Title.Caption = 'SWIFT'
+        Width = 150
+        FieldName = 'SWIFT'
+      end    
+      item
         Title.Caption = 'Filiale'
         Width = 250
         FieldName = 'FILIALE'
@@ -284,6 +325,11 @@ object Conti: TConti
         Width = 100
         FieldName = 'SCOPERTO'
         DisplayFormat = '€ #,##0.00'
+      end    
+      item
+        Title.Caption = 'NOTE'
+        Width = 500
+        FieldName = 'NOTE'
       end>
     DataSource = mainform.dsconti
     TabOrder = 1

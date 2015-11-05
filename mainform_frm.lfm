@@ -621,6 +621,8 @@ object mainform: Tmainform
     HostName = 'www.rgibertini.it'
     Port = 0
     Database = 'rgibertini_minifinance'
+    User = 'minuuser'
+    Password = '5v1Zvi!6'
     Protocol = 'mysql-5'
     left = 80
     top = 320

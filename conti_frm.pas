@@ -20,13 +20,17 @@ type
     dbedfiliale: TDBEdit;
     dbediban: TDBEdit;
     DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
     dbednumero: TDBEdit;
     dbedreferente: TDBEdit;
     dbgridconti: TDBGrid;
     dblbidconto: TDBText;
+    DBMemo1: TDBMemo;
     DBNavigator1: TDBNavigator;
     Label1: TLabel;
     Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;

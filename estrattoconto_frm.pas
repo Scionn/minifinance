@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, sqldb, FileUtil, KDBGrids, ZDataset, ZSqlUpdate, Forms,
-  Controls, Graphics, Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls;
+  Controls, Graphics, Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, Grids;
 
 type
 
@@ -31,6 +31,8 @@ type
     zqecUSCITE: TFloatField;
     zupec: TZUpdateSQL;
     procedure Button1Click(Sender: TObject);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure zqecAfterOpen(DataSet: TDataSet);
@@ -60,6 +62,23 @@ end;
 procedure Testrattoconto.Button1Click(Sender: TObject);
 begin
   zqec.CommitUpdates;
+end;
+
+procedure Testrattoconto.DBGrid1PrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+  //controllo se il record è presunto o meno
+if zqec.FieldByName('presunto').AsBoolean then
+   with sender as TDBGrid do
+               begin
+                    Canvas.Brush.Color:=clYellow;
+               end
+//quindi se è riconciliato
+else if zqec.FieldByName('riconciliato').AsBoolean then
+   with sender as TDBGrid do
+               begin
+                    Canvas.Brush.Color:=clMoneyGreen;
+               end;
 end;
 
 

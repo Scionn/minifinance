@@ -115,6 +115,7 @@ object estrattoconto: Testrattoconto
       end>
     DataSource = dsec
     TabOrder = 1
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object dsec: TDataSource
     DataSet = zqec
