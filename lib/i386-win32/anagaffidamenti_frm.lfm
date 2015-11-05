@@ -1,9 +1,9 @@
-object Affidamenti: TAffidamenti
+object Anagaffidamenti: TAnagaffidamenti
   Left = 312
   Height = 484
   Top = 449
   Width = 953
-  Caption = 'Affidamenti'
+  Caption = 'Anagrafica Affidamenti'
   ClientHeight = 484
   ClientWidth = 953
   OnClose = FormClose
@@ -123,6 +123,7 @@ object Affidamenti: TAffidamenti
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
       LookupCache = False
+      Style = csDropDownList
       TabOrder = 4
     end
     object bttipofido: TButton

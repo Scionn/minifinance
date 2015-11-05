@@ -1,9 +1,9 @@
-object Conti: TConti
+object anagconti: Tanagconti
   Left = 372
   Height = 522
   Top = 334
   Width = 1038
-  Caption = 'Conti Correnti'
+  Caption = 'Anagrafica Conti Correnti'
   ClientHeight = 522
   ClientWidth = 1038
   OnClose = FormClose

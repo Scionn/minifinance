@@ -1,9 +1,9 @@
-object Fidi: TFidi
-  Left = 628
+object anagFidi: TanagFidi
+  Left = 843
   Height = 480
-  Top = 203
+  Top = 493
   Width = 822
-  Caption = 'Fidi'
+  Caption = 'Anagrafica Fidi'
   ClientHeight = 480
   ClientWidth = 822
   OnClose = FormClose
@@ -29,6 +29,7 @@ object Fidi: TFidi
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
       LookupCache = False
+      Style = csDropDownList
       TabOrder = 0
     end
     object Label10: TLabel
@@ -178,6 +179,7 @@ object Fidi: TFidi
       ListFieldIndex = 0
       ListSource = DataModule1.dsaffidamenti
       LookupCache = False
+      Style = csDropDownList
       TabOrder = 0
     end
     object btcerca: TButton
@@ -254,6 +256,7 @@ object Fidi: TFidi
       ListFieldIndex = 0
       ListSource = DataModule1.dstipoaffidamento
       LookupCache = False
+      Style = csDropDownList
       TabOrder = 3
     end
     object Label3: TLabel

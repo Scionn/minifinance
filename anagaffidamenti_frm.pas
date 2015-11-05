@@ -1,4 +1,4 @@
-unit affidamenti_frm;
+unit anagaffidamenti_frm;
 
 {$mode objfpc}{$H+}
 
@@ -6,13 +6,13 @@ interface
 
 uses
   Classes, SysUtils, db, FileUtil, ZDataset, ZSqlUpdate, Forms, Controls,
-  Graphics, Dialogs, ExtCtrls, DbCtrls, StdCtrls, DBGrids, tipiaffidamento_frm, fidi_frm, datamodule_frm;
+  Graphics, Dialogs, ExtCtrls, DbCtrls, StdCtrls, DBGrids, anagtipiaffidamento_frm, anagfidi_frm, datamodule_frm;
 
 type
 
-  { TAffidamenti }
+  { TAnagaffidamenti }
 
-  TAffidamenti = class(TForm)
+  TAnagaffidamenti = class(TForm)
     bttipofido: TButton;
     dbcbcontocorrentefiltro: TDBLookupComboBox;
     dbeddescrizione: TDBEdit;
@@ -37,30 +37,34 @@ type
   end;
 
 var
-  Affidamenti: TAffidamenti;
+  Anagaffidamenti: TAnagaffidamenti;
 
 implementation
 
 {$R *.lfm}
 
-{ TAffidamenti }
+{ TAnagaffidamenti }
 
-procedure TAffidamenti.FormClose(Sender: TObject; var CloseAction: TCloseAction
+procedure TAnagaffidamenti.FormClose(Sender: TObject; var CloseAction: TCloseAction
   );
 begin
     CloseAction:=cafree;
 end;
 
-procedure TAffidamenti.bttipofidoClick(Sender: TObject);
+procedure TAnagaffidamenti.bttipofidoClick(Sender: TObject);
 begin
-  tipiaffidamento:=Ttipiaffidamento.Create(self);
-  tipiaffidamento.showmodal;
+  anagtipiaffidamento:=Tanagtipiaffidamento.Create(self);
+  anagtipiaffidamento.showmodal;
+  DataModule1.zqtipoaffidamento.Close;
+ DataModule1.zqtipoaffidamento.open;
 end;
 
-procedure TAffidamenti.btfidiClick(Sender: TObject);
+procedure TAnagaffidamenti.btfidiClick(Sender: TObject);
 begin
- fidi:=Tfidi.Create(self);
-  fidi.showmodal;
+ anagfidi:=Tanagfidi.Create(self);
+ anagfidi.showmodal;
+ DataModule1.zqfidi.Close;
+ DataModule1.zqfidi.open;
 end;
 
 end.

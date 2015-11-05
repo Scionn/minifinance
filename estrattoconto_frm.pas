@@ -5,7 +5,7 @@ unit estrattoconto_frm;
 interface
 
 uses
-  Classes, SysUtils, db, sqldb, FileUtil, KDBGrids, ZDataset, ZSqlUpdate, Forms,
+  Classes, SysUtils, db, sqldb, FileUtil, ZDataset, ZSqlUpdate, Forms,
   Controls, Graphics, Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, Grids, datamodule_frm;
 
 type

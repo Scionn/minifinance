@@ -1,7 +1,7 @@
 object estrattoconto: Testrattoconto
-  Left = 723
+  Left = 304
   Height = 608
-  Top = 355
+  Top = 361
   Width = 933
   Caption = 'Estratto Conto'
   ClientHeight = 608
@@ -131,12 +131,23 @@ object estrattoconto: Testrattoconto
       'SELECT * '
       'FROM movimenti'
       'WHERE IDCONTO=:CONTO'
+      'AND dataop between :DATADA AND :DATAA'
       'ORDER BY dataval'
     )
     Params = <    
       item
         DataType = ftUnknown
         Name = 'CONTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATADA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAA'
         ParamType = ptUnknown
       end>
     left = 80
@@ -145,6 +156,16 @@ object estrattoconto: Testrattoconto
       item
         DataType = ftUnknown
         Name = 'CONTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATADA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATAA'
         ParamType = ptUnknown
       end>
     object zqecDATAOP: TDateField

@@ -5,10 +5,10 @@ unit mainform_frm;
 interface
 
 uses
-  Classes, SysUtils, db, FileUtil, DateTimePicker, Forms, Controls, Graphics,
-  Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, DBExtCtrls, conti_frm,
-  ZDataset, ZSqlUpdate, ZConnection,  estrattoconto_frm,
-  affidamenti_frm, windows, Grids, datamodule_frm;
+  Classes, SysUtils, FileUtil, DateTimePicker, Forms, Controls, Graphics,
+  Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, DBExtCtrls, anagconti_frm,
+      estrattoconto_frm,
+  anagaffidamenti_frm, windows, Grids, datamodule_frm;
 
 type
 
@@ -19,10 +19,10 @@ type
     btconti1: TButton;
     btfidi: TButton;
     bteccontocorrente: TButton;
-    btoperazionifuture: TButton;
+    chinfinito: TCheckBox;
     dbchpresunto: TDBCheckBox;
-    DateTimePicker1: TDateTimePicker;
-    DateTimePicker2: TDateTimePicker;
+    datada: TDateTimePicker;
+    dataa: TDateTimePicker;
     dbchriconciliato: TDBCheckBox;
     dbeddataop: TDBDateEdit;
     dbeddataval: TDBDateEdit;
@@ -49,12 +49,13 @@ type
     procedure btcontiClick(Sender: TObject);
     procedure bteccontocorrenteClick(Sender: TObject);
     procedure btfidiClick(Sender: TObject);
+    procedure chinfinitoChange(Sender: TObject);
+
     procedure dbgridmovimentiPrepareCanvas(sender: TObject; DataCol: Integer;
       Column: TColumn; AState: TGridDrawState);
     procedure FormShow(Sender: TObject);
     procedure GetBuildInfo(var V1, V2, V3, V4: Word);
     function kfVersionInfo: String;
-
   private
     { private declarations }
   public
@@ -110,11 +111,10 @@ begin
 end;
 
 
-
 procedure Tmainform.btcontiClick(Sender: TObject);
 begin
-  conti:=Tconti.Create(self);
-  conti.showmodal;
+  anagconti:=Tanagconti.Create(self);
+  anagconti.showmodal;
   datamodule1.zqconti.close;
   datamodule1.zqconti.open;
   datamodule1.zq1.close;
@@ -129,19 +129,42 @@ begin
        Exit;
      end;
     estrattoconto:=Testrattoconto.Create(self);
+    //passo i parametri
     estrattoconto.zqec.parambyname('CONTO').asinteger:=dbcbcontocorrentefiltro.KeyValue;
+    estrattoconto.zqec.parambyname('DATADA').AsDate:=datada.Date;
+    if chinfinito.Checked then
+       estrattoconto.zqec.parambyname('DATAA').AsDate:=IncMonth(now,36)
+    else
+       estrattoconto.zqec.parambyname('DATAA').AsDate:=dataa.Date;
     estrattoconto.zqec.open;
     estrattoconto.lbconto.Caption:='Conto corrente n.: ' + dbcbcontocorrentefiltro.Text;
+    //mostro la form
     estrattoconto.showmodal;
+    //aggiorno in dati
+    datamodule1.zq1.close;
+    datamodule1.zq1.open;
 end;
 
 procedure Tmainform.btfidiClick(Sender: TObject);
 begin
-  affidamenti:=Taffidamenti.Create(self);
-  affidamenti.showmodal;
-datamodule1.zqaffidamenti.Refresh;
-  datamodule1.zq1.Refresh;
+  anagaffidamenti:=Tanagaffidamenti.Create(self);
+  anagaffidamenti.showmodal;
+  datamodule1.zqaffidamenti.close;
+  datamodule1.zqaffidamenti.open;
+  datamodule1.zq1.close;
+  datamodule1.zq1.open;
 end;
+
+procedure Tmainform.chinfinitoChange(Sender: TObject);
+begin
+  //se è selezionato disabilito il data a
+if chinfinito.Checked then
+   dataa.Enabled:=false
+else
+  dataa.Enabled:=true;
+end;
+
+
 
 procedure Tmainform.dbgridmovimentiPrepareCanvas(sender: TObject;
   DataCol: Integer; Column: TColumn; AState: TGridDrawState);
@@ -166,7 +189,7 @@ end;
 procedure Tmainform.FormShow(Sender: TObject);
 begin
   //apro i dataset che mi servono
-datamodule1.zq1.open;
+  datamodule1.zq1.open;
   datamodule1.zqconti.Open;
   datamodule1.zqaffidamenti.Open;
   datamodule1.zqtipoaffidamento.open;
@@ -174,6 +197,9 @@ datamodule1.zq1.open;
   DataModule1.zqfiditipofido.open;
   //metto la versione sopra nella barra
   mainform.Caption:='Minifinance v' + kfVersionInfo;
+  //inizializzo i selettori data
+  datada.Date:=Now;
+  dataa.Date:=IncMonth(now,1);
 end;
 
 

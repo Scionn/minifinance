@@ -30,19 +30,20 @@ object mainform: Tmainform
     object dbcbcontocorrentefiltro: TDBLookupComboBox
       Left = 104
       Height = 23
-      Top = 88
-      Width = 216
+      Top = 40
+      Width = 239
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
       ListSource = DataModule1.dsconti
       LookupCache = False
+      Style = csDropDownList
       TabOrder = 1
     end
     object bteccontocorrente: TButton
-      Left = 344
+      Left = 360
       Height = 25
-      Top = 88
+      Top = 40
       Width = 96
       Caption = 'Visualizza EC'
       OnClick = bteccontocorrenteClick
@@ -51,7 +52,7 @@ object mainform: Tmainform
     object Label8: TLabel
       Left = 8
       Height = 15
-      Top = 88
+      Top = 40
       Width = 80
       Caption = 'Conto corrente'
       ParentColor = False
@@ -60,12 +61,12 @@ object mainform: Tmainform
       Left = 8
       Height = 15
       Top = 8
-      Width = 164
-      Caption = 'Visualizza Operazioni future da:'
+      Width = 129
+      Caption = 'Visualizza Operazioni da:'
       ParentColor = False
     end
-    object DateTimePicker1: TDateTimePicker
-      Left = 184
+    object datada: TDateTimePicker
+      Left = 144
       Height = 23
       Top = 8
       Width = 83
@@ -87,15 +88,15 @@ object mainform: Tmainform
       MonthNames = 'Long'
     end
     object Label10: TLabel
-      Left = 280
+      Left = 240
       Height = 15
       Top = 8
       Width = 9
       Caption = 'a:'
       ParentColor = False
     end
-    object DateTimePicker2: TDateTimePicker
-      Left = 300
+    object dataa: TDateTimePicker
+      Left = 260
       Height = 23
       Top = 8
       Width = 83
@@ -116,14 +117,6 @@ object mainform: Tmainform
       HideDateTimeParts = []
       MonthNames = 'Long'
     end
-    object btoperazionifuture: TButton
-      Left = 408
-      Height = 25
-      Top = 8
-      Width = 75
-      Caption = 'Visualizza'
-      TabOrder = 5
-    end
     object btfidi: TButton
       Left = 920
       Height = 25
@@ -131,6 +124,15 @@ object mainform: Tmainform
       Width = 136
       Caption = 'Anag. Affidamenti'
       OnClick = btfidiClick
+      TabOrder = 5
+    end
+    object chinfinito: TCheckBox
+      Left = 362
+      Height = 19
+      Top = 8
+      Width = 58
+      Caption = 'Infinito'
+      OnChange = chinfinitoChange
       TabOrder = 6
     end
   end
@@ -279,6 +281,7 @@ object mainform: Tmainform
       ListFieldIndex = 0
       ListSource = DataModule1.dsconti
       LookupCache = False
+      Style = csDropDownList
       TabOrder = 4
     end
     object dbchriconciliato: TDBCheckBox

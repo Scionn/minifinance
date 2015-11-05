@@ -7,9 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, mainform_frm, zcomponent, CONTI_FRM, estrattoconto_frm,
-  datetimectrls, affidamenti_frm, tipiaffidamento_frm, datamodule_frm
-  { you can add units after this };
+  Forms, mainform_frm, zcomponent, estrattoconto_frm,
+  datetimectrls, datamodule_frm;
 
 {$R *.res}
 

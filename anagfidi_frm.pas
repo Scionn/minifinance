@@ -1,4 +1,4 @@
-unit fidi_frm;
+unit anagfidi_frm;
 
 {$mode objfpc}{$H+}
 
@@ -10,9 +10,9 @@ uses
 
 type
 
-  { TFidi }
+  { TanagFidi }
 
-  TFidi = class(TForm)
+  TanagFidi = class(TForm)
     btcerca: TButton;
     btaggiungi: TButton;
     btrimuovi: TButton;
@@ -42,20 +42,20 @@ type
   end;
 
 var
-  Fidi: TFidi;
+  anagFidi: TanagFidi;
 
 implementation
 
 {$R *.lfm}
 
-{ TFidi }
+{ TanagFidi }
 
-procedure TFidi.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+procedure TanagFidi.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   CloseAction:=caFree;
 end;
 
-procedure TFidi.btcercaClick(Sender: TObject);
+procedure TanagFidi.btcercaClick(Sender: TObject);
 begin
   //se è selezionato un affidamento lo filtro nel dataset
   if dbcbaffidamentofiltro.ItemIndex <> -1 then

@@ -18,7 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="2"/>
-      <BuildNr Value="10"/>
+      <BuildNr Value="13"/>
       <Language Value="0410"/>
       <StringTable CompanyName="Gibertini Informatica" ProductName="MiniFinance" ProductVersion=""/>
     </VersionInfo>
@@ -33,25 +33,22 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="6">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="KControlsLaz"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item1>
       <Item2>
-        <PackageName Value="DateTimeCtrls"/>
+        <PackageName Value="SQLDBLaz"/>
       </Item2>
       <Item3>
-        <PackageName Value="SQLDBLaz"/>
+        <PackageName Value="zcomponent"/>
       </Item3>
       <Item4>
-        <PackageName Value="zcomponent"/>
+        <PackageName Value="FCL"/>
       </Item4>
       <Item5>
-        <PackageName Value="FCL"/>
-      </Item5>
-      <Item6>
         <PackageName Value="LCL"/>
-      </Item6>
+      </Item5>
     </RequiredPackages>
     <Units Count="8">
       <Unit0>
@@ -66,47 +63,43 @@
         <ResourceBaseClass Value="Form"/>
       </Unit1>
       <Unit2>
-        <Filename Value="conti_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Conti"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="CONTI_FRM"/>
-      </Unit2>
-      <Unit3>
         <Filename Value="estrattoconto_frm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="estrattoconto"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-      </Unit3>
-      <Unit4>
-        <Filename Value="affidamenti_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Affidamenti"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit4>
-      <Unit5>
-        <Filename Value="tipiaffidamento_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="tipiaffidamento"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="fidi_frm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Fidi"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit6>
-      <Unit7>
+      </Unit2>
+      <Unit3>
         <Filename Value="datamodule_frm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="DataModule1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="anagaffidamenti_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="anagconti_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="anagconti"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="anagCONTI_FRM"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="anagfidi_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="fidi_frm"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="anagtipiaffidamento_frm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="tipiaffidamento_frm"/>
       </Unit7>
     </Units>
   </ProjectOptions>

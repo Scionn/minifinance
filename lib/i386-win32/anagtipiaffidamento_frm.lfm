@@ -1,9 +1,9 @@
-object tipiaffidamento: Ttipiaffidamento
+object anagtipiaffidamento: Tanagtipiaffidamento
   Left = 580
   Height = 388
   Top = 247
   Width = 598
-  Caption = 'Tipologie di affidamento'
+  Caption = 'Anagrafica Tipologie di Affidamento'
   ClientHeight = 388
   ClientWidth = 598
   OnClose = FormClose

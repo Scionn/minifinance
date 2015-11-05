@@ -1,4 +1,4 @@
-unit CONTI_FRM;
+unit anagCONTI_FRM;
 
 {$mode objfpc}{$H+}
 
@@ -10,9 +10,9 @@ uses
 
 type
 
-  { TConti }
+  { Tanagconti }
 
-  TConti = class(TForm)
+  Tanagconti = class(TForm)
     dbedabi: TDBEdit;
     dbedcab: TDBEdit;
     dbedcin: TDBEdit;
@@ -48,16 +48,16 @@ type
   end;
 
 var
-  Conti: TConti;
+  anagconti: Tanagconti;
 
 implementation
 
 {$R *.lfm}
 
-{ TConti }
+{ Tanagconti }
 
 
-procedure TConti.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+procedure Tanagconti.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   closeAction:=caFree;
 end;

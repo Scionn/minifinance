@@ -1,4 +1,4 @@
-unit tipiaffidamento_frm;
+unit anagtipiaffidamento_frm;
 
 {$mode objfpc}{$H+}
 
@@ -10,9 +10,9 @@ uses
 
 type
 
-  { Ttipiaffidamento }
+  { Tanagtipiaffidamento }
 
-  Ttipiaffidamento = class(TForm)
+  Tanagtipiaffidamento = class(TForm)
     dbeddescrizione: TDBEdit;
     DBGridtipoaffidamento: TDBGrid;
     DBNavigator1: TDBNavigator;
@@ -28,15 +28,15 @@ type
   end;
 
 var
-  tipiaffidamento: Ttipiaffidamento;
+  anagtipiaffidamento: Tanagtipiaffidamento;
 
 implementation
 
 {$R *.lfm}
 
-{ Ttipiaffidamento }
+{ Tanagtipiaffidamento }
 
-procedure Ttipiaffidamento.FormClose(Sender: TObject;
+procedure Tanagtipiaffidamento.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
   CloseAction:=cafree;

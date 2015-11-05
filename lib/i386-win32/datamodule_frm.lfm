@@ -1,8 +1,8 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
-  Height = 879
-  HorizontalOffset = 1682
-  VerticalOffset = 3
+  Height = 878
+  HorizontalOffset = 1685
+  VerticalOffset = 4
   Width = 312
   object zc1: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -11,7 +11,6 @@ object DataModule1: TDataModule1
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiRepeatableRead
-    Connected = True
     HostName = 'www.rgibertini.it'
     Port = 0
     Database = 'rgibertini_minifinance'
@@ -37,7 +36,7 @@ object DataModule1: TDataModule1
       'from movimenti '
       'left join conti '
       'on movimenti.idconto=conti.idconto'
-      'ORDER BY dataval'
+      'ORDER BY dataval DESC'
     )
     Params = <>
     left = 80
