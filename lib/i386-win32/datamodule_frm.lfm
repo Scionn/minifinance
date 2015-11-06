@@ -1,4 +1,5 @@
 object DataModule1: TDataModule1
+  OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 878
   HorizontalOffset = 1685
@@ -12,11 +13,11 @@ object DataModule1: TDataModule1
     )
     AutoCommit = False
     TransactIsolationLevel = tiRepeatableRead
+    AfterConnect = zc1AfterConnect
     HostName = 'www.rgibertini.it'
     Port = 0
     Database = 'rgibertini_minifinance'
     User = 'minuuser'
-    Password = '5v1Zvi!6'
     Protocol = 'mysql-5'
     left = 24
     top = 16
@@ -519,5 +520,17 @@ object DataModule1: TDataModule1
         Name = 'OLD_IDTIPO'
         ParamType = ptUnknown
       end>
+  end
+  object zrq1: TZReadOnlyQuery
+    Connection = zc1
+    Params = <>
+    left = 104
+    top = 16
+  end
+  object zrq2: TZReadOnlyQuery
+    Connection = zc1
+    Params = <>
+    left = 184
+    top = 16
   end
 end

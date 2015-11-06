@@ -13,12 +13,12 @@ type
   { Testrattoconto }
 
   Testrattoconto = class(TForm)
-    Button1: TButton;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
     dsec: TDataSource;
+    lbsaldoin: TLabel;
     lbconto: TLabel;
-    lbsaldo: TLabel;
+    lbsaldofin: TLabel;
     Panel1: TPanel;
     zqec: TZQuery;
     zqecDATAOP: TDateField;
@@ -38,9 +38,12 @@ type
     procedure zqecCalcFields(DataSet: TDataSet);
   private
     { private declarations }
-    saldo:Currency;
+    saldo,saldoin:Currency;
   public
     { public declarations }
+    IDCONTO:integer;
+    DATAA, DATADA:TDate;
+    conto:string;
   end;
 
 var
@@ -80,18 +83,44 @@ end;
 
 procedure Testrattoconto.FormShow(Sender: TObject);
 begin
-  saldo:=0;
+//carico i parametri e apro il dataset
+zqec.parambyname('CONTO').asinteger:=IDCONTO;
+zqec.parambyname('DATADA').AsDate:=DATADA;
+zqec.parambyname('DATAA').AsDate:=dataa;
+lbconto.Caption:='Conto corrente n.: ' + conto;
+//calcolo il saldo pregresso (avevo creato una stored procedures ma ho problemi di permessi...)
+with DataModule1.zrq1 do
+ begin
+   close;
+   sql.clear;
+   sql.add('Select sum(movimenti.entrate - movimenti.uscite) as saldo  ');
+   sql.add('from movimenti                                             ');
+   sql.add('where movimenti.DATAOP < :DATADA                           ');
+   sql.add('AND movimenti.IDCONTO = :CC                                ');
+   ParamByName('DATADA').AsDate:=datada;
+   ParamByName('CC').AsInteger:=IDCONTO;
+   open;
+   saldoin:=FieldByName('saldo').AsCurrency;
+   lbsaldoin.Caption:='Saldo iniziale: ' + FormatCurr('€ #,##0.00',saldoin);
+   saldo:=saldoin;
+   close;
+   sql.clear;
+ end;
+//aprio il dataset
+ zqec.open;
 end;
 
 
 
 procedure Testrattoconto.zqecAfterOpen(DataSet: TDataSet);
 begin
-  lbsaldo.caption:='Saldo conto corrente: ' + FormatCurr('€ #,##0.00',saldo);
+  lbsaldofin.caption:='Saldo finale: ' + FormatCurr('€ #,##0.00',saldo);
+  saldo:=saldoin;
 end;
 
 procedure Testrattoconto.zqecCalcFields(DataSet: TDataSet);
 begin
+//ad ogni record sommo il saldo al precedente valore per ottenere lo scalare
     zqec.FieldByName('saldo').AsCurrency:=zqec.FieldByName('entrate').AsCurrency-zqec.FieldByName('uscite').AsCurrency+saldo;
   saldo:=zqec.FieldByName('saldo').AsCurrency;
 end;

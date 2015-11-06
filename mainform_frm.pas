@@ -7,8 +7,8 @@ interface
 uses
   Classes, SysUtils, FileUtil, DateTimePicker, Forms, Controls, Graphics,
   Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, DBExtCtrls, anagconti_frm,
-      estrattoconto_frm,
-  anagaffidamenti_frm, windows, Grids, datamodule_frm, affidamenti_frm;
+  estrattoconto_frm, anagaffidamenti_frm, windows, Grids, datamodule_frm,
+  affidamenti_frm, ZStoredProcedure;
 
 type
 
@@ -158,14 +158,13 @@ begin
      end;
     estrattoconto:=Testrattoconto.Create(self);
     //passo i parametri
-    estrattoconto.zqec.parambyname('CONTO').asinteger:=dbcbcontocorrentefiltro.KeyValue;
-    estrattoconto.zqec.parambyname('DATADA').AsDate:=datada.Date;
+    estrattoconto.IDCONTO:=dbcbcontocorrentefiltro.KeyValue;
+    estrattoconto.CONTO:=dbcbcontocorrentefiltro.Text;
+    estrattoconto.DATADA:=datada.Date;
     if chinfinito.Checked then
-       estrattoconto.zqec.parambyname('DATAA').AsDate:=IncMonth(now,36)
+       estrattoconto.DATAA:=IncMonth(now,36)
     else
-       estrattoconto.zqec.parambyname('DATAA').AsDate:=dataa.Date;
-    estrattoconto.zqec.open;
-    estrattoconto.lbconto.Caption:='Conto corrente n.: ' + dbcbcontocorrentefiltro.Text;
+       estrattoconto.DATAA:=dataa.Date;
     //mostro la form
     estrattoconto.showmodal;
     //aggiorno in dati
