@@ -1,8 +1,8 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
   Height = 878
-  HorizontalOffset = 1318
-  VerticalOffset = 6
+  HorizontalOffset = 1685
+  VerticalOffset = 4
   Width = 312
   object zc1: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -12,10 +12,11 @@ object DataModule1: TDataModule1
     )
     AutoCommit = False
     TransactIsolationLevel = tiRepeatableRead
-    Connected = True
     HostName = 'www.rgibertini.it'
     Port = 0
     Database = 'rgibertini_minifinance'
+    User = 'minuuser'
+    Password = '5v1Zvi!6'
     Protocol = 'mysql-5'
     left = 24
     top = 16
@@ -31,7 +32,6 @@ object DataModule1: TDataModule1
     AfterRefresh = zq1AfterRefresh
     Filtered = True
     UpdateObject = zup1
-    Active = True
     SQL.Strings = (
       'select movimenti.*, conti.descrizione'
       'from movimenti '
@@ -135,7 +135,6 @@ object DataModule1: TDataModule1
   object zqanagconti: TZQuery
     Connection = zc1
     UpdateObject = zupanagconti
-    Active = True
     SQL.Strings = (
       'SELECT *'
       'from conti'
@@ -254,7 +253,6 @@ object DataModule1: TDataModule1
   object zqanagaff: TZQuery
     Connection = zc1
     UpdateObject = zupanagaff
-    Active = True
     SQL.Strings = (
       'SELECT affidamenti.*, conti.descrizione'
       'from affidamenti'
@@ -331,7 +329,6 @@ object DataModule1: TDataModule1
   object zqanagtipoaff: TZQuery
     Connection = zc1
     UpdateObject = zupanagtipoaff
-    Active = True
     SQL.Strings = (
       'select *'
       'from tipoaffidamento'
@@ -388,7 +385,6 @@ object DataModule1: TDataModule1
   object zqanagfidi: TZQuery
     Connection = zc1
     UpdateObject = zupanagfidi
-    Active = True
     SQL.Strings = (
       'select fidi.*, affidamenti.descrizione'
       'from fidi'
@@ -465,7 +461,6 @@ object DataModule1: TDataModule1
   object zqfiditipofido: TZQuery
     Connection = zc1
     UpdateObject = zupfiditipofido
-    Active = True
     SQL.Strings = (
       'select fiditipifido.*, tipoaffidamento.descrizione'
       'from fiditipifido'

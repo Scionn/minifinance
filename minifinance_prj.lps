@@ -32,11 +32,13 @@
         <ComponentName Value="estrattoconto"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="11"/>
-        <CursorPos X="24" Y="32"/>
+        <TopLine Value="56"/>
+        <CursorPos X="15" Y="83"/>
         <UsageCount Value="48"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="datamodule_frm.pas"/>
@@ -105,7 +107,6 @@
         <ComponentName Value="Affidamenti"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
