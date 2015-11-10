@@ -71,6 +71,7 @@ object anagtipiaffidamento: Tanagtipiaffidamento
       DataSource = DataModule1.dsanagtipoaff
       Options = []
       TabOrder = 1
+      VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
     end
   end
   object DBGridtipoaffidamento: TDBGrid

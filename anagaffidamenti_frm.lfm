@@ -107,8 +107,10 @@ object Anagaffidamenti: TAnagaffidamenti
       ClientHeight = 25
       ClientWidth = 241
       DataSource = DataModule1.dsanagaff
+      OnClick = DBNavigator1Click
       Options = []
       TabOrder = 3
+      VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
     end
     object Label10: TLabel
       Left = 8
@@ -125,6 +127,7 @@ object Anagaffidamenti: TAnagaffidamenti
       Width = 368
       DataField = 'IDCONTO'
       DataSource = DataModule1.dsanagaff
+      Enabled = False
       KeyField = 'IDCONTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0

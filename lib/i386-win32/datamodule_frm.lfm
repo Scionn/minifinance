@@ -2,8 +2,8 @@ object DataModule1: TDataModule1
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 878
-  HorizontalOffset = 1685
-  VerticalOffset = 4
+  HorizontalOffset = 1683
+  VerticalOffset = 14
   Width = 312
   object zc1: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -11,13 +11,11 @@ object DataModule1: TDataModule1
     Properties.Strings = (
       'AutoEncodeStrings='
     )
-    AutoCommit = False
     TransactIsolationLevel = tiRepeatableRead
     AfterConnect = zc1AfterConnect
     HostName = 'www.rgibertini.it'
     Port = 0
     Database = 'rgibertini_minifinance'
-    User = 'minuuser'
     Protocol = 'mysql-5'
     left = 24
     top = 16
@@ -53,10 +51,10 @@ object DataModule1: TDataModule1
     InsertSQL.Strings = (
       'INSERT INTO movimenti'
       '  (IDMOV, IDCONTO, DATAOP, DATAVAL, DESCRIZIONE, ENTRATE, USCITE, RICONCILIATO, '
-      '   PRESUNTO)'
+      '   PRESUNTO, GENERATO)'
       'VALUES'
       '  (:IDMOV, :IDCONTO, :DATAOP, :DATAVAL, :DESCRIZIONE, :ENTRATE, :USCITE, '
-      '   :RICONCILIATO, :PRESUNTO)'
+      '   :RICONCILIATO, :PRESUNTO, :GENERATO)'
     )
     ModifySQL.Strings = (
       'UPDATE movimenti SET'
@@ -68,7 +66,8 @@ object DataModule1: TDataModule1
       '  ENTRATE = :ENTRATE,'
       '  USCITE = :USCITE,'
       '  RICONCILIATO = :RICONCILIATO,'
-      '  PRESUNTO = :PRESUNTO'
+      '  PRESUNTO = :PRESUNTO,'
+      '  GENERATO = :GENERATO'
       'WHERE'
       '  movimenti.IDMOV = :OLD_IDMOV'
     )
@@ -119,6 +118,11 @@ object DataModule1: TDataModule1
       item
         DataType = ftUnknown
         Name = 'PRESUNTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'GENERATO'
         ParamType = ptUnknown
       end    
       item

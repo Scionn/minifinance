@@ -204,6 +204,7 @@ object anagconti: Tanagconti
       DataSource = DataModule1.dsanagconti
       Options = []
       TabOrder = 8
+      VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
     end
     object Label10: TLabel
       Left = 480

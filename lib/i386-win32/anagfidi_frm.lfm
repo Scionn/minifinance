@@ -1,7 +1,7 @@
 object anagFidi: TanagFidi
-  Left = 843
+  Left = 776
   Height = 480
-  Top = 493
+  Top = 203
   Width = 822
   Caption = 'Anagrafica Fidi'
   ClientHeight = 480
@@ -25,6 +25,7 @@ object anagFidi: TanagFidi
       Width = 368
       DataField = 'IDAFFIDAMENTO'
       DataSource = DataModule1.dsanagfidi
+      Enabled = False
       KeyField = 'IDAFFIDAMENTO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
@@ -92,7 +93,7 @@ object anagFidi: TanagFidi
       ValueUnchecked = '0'
     end
     object DBNavigator1: TDBNavigator
-      Left = 231
+      Left = 232
       Height = 25
       Top = 112
       Width = 241
@@ -106,8 +107,10 @@ object anagFidi: TanagFidi
       ClientHeight = 25
       ClientWidth = 241
       DataSource = DataModule1.dsanagfidi
+      OnClick = DBNavigator1Click
       Options = []
       TabOrder = 4
+      VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
     end
     object dbgridfidi: TDBGrid
       Left = 1
@@ -236,6 +239,7 @@ object anagFidi: TanagFidi
       Width = 225
       DataField = 'IDTIPO'
       DataSource = DataModule1.dsfiditipofido
+      Enabled = False
       KeyField = 'IDTIPO'
       ListField = 'DESCRIZIONE'
       ListFieldIndex = 0
@@ -267,6 +271,7 @@ object anagFidi: TanagFidi
       ClientHeight = 25
       ClientWidth = 241
       DataSource = DataModule1.dsfiditipofido
+      OnClick = DBNavigator2Click
       Options = []
       TabOrder = 2
       VisibleButtons = [nbInsert, nbDelete, nbPost, nbCancel, nbRefresh]

@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="26">
+    <Units Count="28">
       <Unit0>
         <Filename Value="minifinance_prj.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="61"/>
+        <UsageCount Value="76"/>
       </Unit0>
       <Unit1>
         <Filename Value="mainform_frm.pas"/>
@@ -20,9 +20,10 @@
         <ComponentName Value="mainform"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="152"/>
-        <CursorPos X="54" Y="162"/>
-        <UsageCount Value="61"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="247"/>
+        <CursorPos X="34" Y="267"/>
+        <UsageCount Value="76"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -32,13 +33,10 @@
         <ComponentName Value="estrattoconto"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="9"/>
-        <TopLine Value="77"/>
-        <CursorPos X="18" Y="118"/>
-        <UsageCount Value="52"/>
+        <EditorIndex Value="10"/>
+        <CursorPos X="75" Y="9"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="datamodule_frm.pas"/>
@@ -47,8 +45,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="19" Y="25"/>
-        <UsageCount Value="31"/>
+        <CursorPos X="6" Y="63"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit3>
@@ -59,11 +57,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="27"/>
-        <CursorPos X="27" Y="59"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="35"/>
+        <CursorPos X="42" Y="73"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="anagconti_frm.pas"/>
@@ -73,8 +70,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="anagCONTI_FRM"/>
         <EditorIndex Value="4"/>
-        <CursorPos X="10"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="21"/>
+        <CursorPos X="20" Y="42"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -84,11 +82,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="14"/>
-        <CursorPos X="20" Y="34"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="53"/>
+        <CursorPos X="21" Y="90"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="anagtipiaffidamento_frm.pas"/>
@@ -97,8 +94,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="3"/>
-        <CursorPos X="10"/>
-        <UsageCount Value="27"/>
+        <CursorPos X="20" Y="22"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -108,9 +105,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="1"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="103"/>
+        <CursorPos X="3" Y="106"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="tipiaffidamento_frm.pas"/>
@@ -119,7 +117,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="45" Y="9"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="32"/>
       </Unit9>
       <Unit10>
         <Filename Value="fidi_frm.pas"/>
@@ -129,7 +127,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="16"/>
         <CursorPos X="58" Y="60"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="30"/>
       </Unit10>
       <Unit11>
         <Filename Value="conti_frm.pas"/>
@@ -139,50 +137,50 @@
         <UnitName Value="CONTI_FRM"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="74" Y="9"/>
-        <UsageCount Value="49"/>
+        <UsageCount Value="47"/>
       </Unit11>
       <Unit12>
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZAbstractRODataset.pas"/>
-        <EditorIndex Value="14"/>
-        <TopLine Value="827"/>
-        <CursorPos Y="852"/>
-        <UsageCount Value="28"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="1180"/>
+        <CursorPos Y="1201"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit12>
       <Unit13>
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZSqlUpdate.pas"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="18"/>
         <TopLine Value="843"/>
         <CursorPos Y="851"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit13>
       <Unit14>
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcCachedResultSet.pas"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="19"/>
         <TopLine Value="545"/>
         <CursorPos Y="553"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit14>
       <Unit15>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="4779"/>
-        <CursorPos Y="4792"/>
-        <UsageCount Value="23"/>
+        <TopLine Value="1429"/>
+        <CursorPos Y="1453"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit15>
       <Unit16>
         <Filename Value="C:\lazarus\components\codetools\sourcelog.pas"/>
         <UnitName Value="SourceLog"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <TopLine Value="216"/>
         <CursorPos Y="230"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit16>
       <Unit17>
@@ -191,7 +189,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit17>
       <Unit18>
@@ -200,7 +198,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="19"/>
       </Unit18>
       <Unit19>
         <Filename Value="anagaffidamenti_frm.lfm"/>
@@ -208,7 +206,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="18"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit19>
       <Unit20>
@@ -217,174 +215,190 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="18"/>
       </Unit20>
       <Unit21>
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZStoredProcedure.pas"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="12"/>
         <TopLine Value="293"/>
         <CursorPos Y="329"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit21>
       <Unit22>
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZAbstractConnection.pas"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="17"/>
         <TopLine Value="1172"/>
         <CursorPos Y="1208"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit22>
       <Unit23>
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcConnection.pas"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="13"/>
         <TopLine Value="1266"/>
         <CursorPos Y="1290"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit23>
       <Unit24>
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="2315"/>
         <CursorPos Y="2347"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit24>
       <Unit25>
         <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMySqlMetadata.pas"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="15"/>
         <TopLine Value="436"/>
         <CursorPos Y="460"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit25>
+      <Unit26>
+        <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="1422"/>
+        <CursorPos Y="1444"/>
+        <UsageCount Value="16"/>
+        <Loaded Value="True"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="4279"/>
+        <CursorPos Y="4308"/>
+        <UsageCount Value="16"/>
+        <Loaded Value="True"/>
+      </Unit27>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <Caret Line="4266" TopLine="4243"/>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="159" Column="62" TopLine="133"/>
       </Position1>
       <Position2>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <Caret Line="4268" TopLine="4243"/>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="198" Column="36" TopLine="158"/>
       </Position2>
       <Position3>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <Caret Line="4269" TopLine="4243"/>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="179" TopLine="144"/>
       </Position3>
       <Position4>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <Caret Line="4270" TopLine="4243"/>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="57" Column="51" TopLine="37"/>
       </Position4>
       <Position5>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <Caret Line="4273" TopLine="4243"/>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="56" Column="51" TopLine="36"/>
       </Position5>
       <Position6>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\component\ZStoredProcedure.pas"/>
-        <Caret Line="329" TopLine="293"/>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="159" Column="19" TopLine="134"/>
       </Position6>
       <Position7>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcConnection.pas"/>
-        <Caret Line="1151" TopLine="1129"/>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="261" TopLine="241"/>
       </Position7>
       <Position8>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcConnection.pas"/>
-        <Caret Line="1152" TopLine="1129"/>
+        <Filename Value="anagaffidamenti_frm.pas"/>
+        <Caret Line="66" TopLine="34"/>
       </Position8>
       <Position9>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcConnection.pas"/>
-        <Caret Line="1153" TopLine="1129"/>
+        <Filename Value="anagaffidamenti_frm.pas"/>
+        <Caret Line="62" TopLine="29"/>
       </Position9>
       <Position10>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <Caret Line="2337" TopLine="2315"/>
+        <Filename Value="anagconti_frm.pas"/>
+        <Caret Line="73" Column="11" TopLine="29"/>
       </Position10>
       <Position11>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <Caret Line="2338" TopLine="2315"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="84" Column="11" TopLine="41"/>
       </Position11>
       <Position12>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcConnection.pas"/>
-        <Caret Line="1288" TopLine="1266"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="67" TopLine="37"/>
       </Position12>
       <Position13>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcConnection.pas"/>
-        <Caret Line="1289" TopLine="1266"/>
+        <Filename Value="anagtipiaffidamento_frm.pas"/>
+        <Caret Line="53" Column="11" TopLine="9"/>
       </Position13>
       <Position14>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcConnection.pas"/>
-        <Caret Line="1290" TopLine="1266"/>
+        <Filename Value="anagconti_frm.pas"/>
+        <Caret Line="66" TopLine="25"/>
       </Position14>
       <Position15>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <Caret Line="2344" TopLine="2315"/>
+        <Filename Value="anagtipiaffidamento_frm.pas"/>
+        <Caret Line="45" TopLine="4"/>
       </Position15>
       <Position16>
-        <Filename Value="C:\lazarus\components\ZEOSDBO-7.1.4-stable\src\dbc\ZDbcMetadata.pas"/>
-        <Caret Line="2346" TopLine="2315"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="68" TopLine="28"/>
       </Position16>
       <Position17>
-        <Filename Value="estrattoconto_frm.pas"/>
-        <Caret Line="89" TopLine="66"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="35" Column="45" TopLine="13"/>
       </Position17>
       <Position18>
-        <Filename Value="estrattoconto_frm.pas"/>
-        <Caret Line="86" TopLine="66"/>
+        <Filename Value="affidamenti_frm.pas"/>
+        <Caret Line="56" Column="51" TopLine="36"/>
       </Position18>
       <Position19>
-        <Filename Value="estrattoconto_frm.pas"/>
-        <Caret Line="88" TopLine="66"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="35" Column="45" TopLine="14"/>
       </Position19>
       <Position20>
-        <Filename Value="estrattoconto_frm.pas"/>
-        <Caret Line="86" TopLine="66"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="9" Column="59"/>
       </Position20>
       <Position21>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="25" Column="20" TopLine="34"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="61" Column="87" TopLine="32"/>
       </Position21>
       <Position22>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="74" Column="3" TopLine="49"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="57" Column="5" TopLine="39"/>
       </Position22>
       <Position23>
-        <Filename Value="estrattoconto_frm.pas"/>
-        <Caret Line="86" TopLine="66"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="37" Column="73" TopLine="17"/>
       </Position23>
       <Position24>
-        <Filename Value="mainform_frm.pas"/>
-        <Caret Line="162" Column="60" TopLine="152"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="79" Column="124" TopLine="40"/>
       </Position24>
       <Position25>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="74" Column="3" TopLine="49"/>
+        <Filename Value="estrattoconto_frm.pas"/>
+        <Caret Line="92" Column="22" TopLine="73"/>
       </Position25>
       <Position26>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="9" Column="3"/>
+        <Filename Value="estrattoconto_frm.pas"/>
+        <Caret Line="87" Column="23" TopLine="73"/>
       </Position26>
       <Position27>
-        <Filename Value="estrattoconto_frm.pas"/>
-        <Caret Line="103" Column="43" TopLine="60"/>
+        <Filename Value="mainform_frm.pas"/>
+        <Caret Line="65" Column="76" TopLine="44"/>
       </Position27>
       <Position28>
-        <Filename Value="estrattoconto_frm.pas"/>
-        <Caret Line="102" Column="43" TopLine="59"/>
+        <Filename Value="anagaffidamenti_frm.pas"/>
+        <Caret Line="32" Column="76" TopLine="9"/>
       </Position28>
       <Position29>
-        <Filename Value="estrattoconto_frm.pas"/>
-        <Caret Line="104" Column="44" TopLine="63"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="74" Column="4" TopLine="46"/>
       </Position29>
       <Position30>
-        <Filename Value="datamodule_frm.pas"/>
-        <Caret Line="9" Column="3"/>
+        <Filename Value="anagfidi_frm.pas"/>
+        <Caret Line="77" Column="42" TopLine="51"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

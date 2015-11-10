@@ -1,7 +1,7 @@
 object estrattoconto: Testrattoconto
-  Left = 571
+  Left = 301
   Height = 608
-  Top = 150
+  Top = 336
   Width = 933
   Caption = 'Estratto Conto'
   ClientHeight = 608
@@ -39,7 +39,7 @@ object estrattoconto: Testrattoconto
       Left = 688
       Height = 25
       Top = 0
-      Width = 241
+      Width = 153
       BevelOuter = bvNone
       ChildSizing.EnlargeHorizontal = crsScaleChilds
       ChildSizing.EnlargeVertical = crsScaleChilds
@@ -48,10 +48,11 @@ object estrattoconto: Testrattoconto
       ChildSizing.Layout = cclLeftToRightThenTopToBottom
       ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
-      ClientWidth = 241
+      ClientWidth = 153
       DataSource = dsec
       Options = []
       TabOrder = 0
+      VisibleButtons = [nbEdit, nbPost, nbCancel]
     end
     object lbsaldoin: TLabel
       Left = 305
@@ -60,6 +61,15 @@ object estrattoconto: Testrattoconto
       Width = 48
       Caption = 'lbsaldoin'
       ParentColor = False
+    end
+    object btrefresh: TButton
+      Left = 840
+      Height = 25
+      Top = 0
+      Width = 75
+      Caption = 'Refresh'
+      OnClick = btrefreshClick
+      TabOrder = 1
     end
   end
   object DBGrid1: TDBGrid
@@ -106,11 +116,17 @@ object estrattoconto: Testrattoconto
         Title.Caption = 'Saldo'
         Width = 100
         FieldName = 'saldo'
+        DisplayFormat = '€ #,##0.00'
       end    
       item
         Title.Caption = 'PRESUNTO'
         Visible = False
         FieldName = 'PRESUNTO'
+      end    
+      item
+        Title.Caption = 'GENERATO'
+        Visible = False
+        FieldName = 'GENERATO'
       end>
     DataSource = dsec
     TabOrder = 1
@@ -255,8 +271,19 @@ object estrattoconto: Testrattoconto
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      DisplayFormat = '€ #,##0.00'
       MaxValue = 0
       MinValue = 0
+    end
+    object zqecGENERATO: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'GENERATO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
     end
   end
   object zupec: TZUpdateSQL
@@ -267,10 +294,11 @@ object estrattoconto: Testrattoconto
     )
     InsertSQL.Strings = (
       'INSERT INTO movimenti'
-      '  (IDMOV, IDCONTO, DATAOP, DATAVAL, DESCRIZIONE, ENTRATE, USCITE, RICONCILIATO)'
+      '  (IDMOV, IDCONTO, DATAOP, DATAVAL, DESCRIZIONE, ENTRATE, USCITE, RICONCILIATO, '
+      '   PRESUNTO, GENERATO)'
       'VALUES'
       '  (:IDMOV, :IDCONTO, :DATAOP, :DATAVAL, :DESCRIZIONE, :ENTRATE, :USCITE, '
-      '   :RICONCILIATO)'
+      '   :RICONCILIATO, :PRESUNTO, :GENERATO)'
     )
     ModifySQL.Strings = (
       'UPDATE movimenti SET'
@@ -281,7 +309,9 @@ object estrattoconto: Testrattoconto
       '  DESCRIZIONE = :DESCRIZIONE,'
       '  ENTRATE = :ENTRATE,'
       '  USCITE = :USCITE,'
-      '  RICONCILIATO = :RICONCILIATO'
+      '  RICONCILIATO = :RICONCILIATO,'
+      '  PRESUNTO = :PRESUNTO,'
+      '  GENERATO = :GENERATO'
       'WHERE'
       '  movimenti.IDMOV = :OLD_IDMOV'
     )
@@ -331,8 +361,91 @@ object estrattoconto: Testrattoconto
       end    
       item
         DataType = ftUnknown
+        Name = 'PRESUNTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'GENERATO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
         Name = 'OLD_IDMOV'
         ParamType = ptUnknown
       end>
+  end
+  object zqrsaldi: TZReadOnlyQuery
+    Connection = DataModule1.zc1
+    AfterOpen = zqrsaldiAfterOpen
+    OnCalcFields = zqrsaldiCalcFields
+    SQL.Strings = (
+      'Select entrate, uscite'
+      'from movimenti                     '
+      'where movimenti.DATAOP < :DATADA'
+      'AND movimenti.IDCONTO = :CC'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'DATADA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CC'
+        ParamType = ptUnknown
+      end>
+    left = 80
+    top = 232
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'DATADA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CC'
+        ParamType = ptUnknown
+      end>
+    object zqrsaldientrate: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'entrate'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 22
+    end
+    object zqrsaldiuscite: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'uscite'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 22
+    end
+    object zqrsaldisaldo1: TCurrencyField
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'saldo'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+    end
   end
 end

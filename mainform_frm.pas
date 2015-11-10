@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, DateTimePicker, Forms, Controls, Graphics,
   Dialogs, ExtCtrls, DBGrids, StdCtrls, DbCtrls, DBExtCtrls, anagconti_frm,
   estrattoconto_frm, anagaffidamenti_frm, windows, Grids, datamodule_frm,
-  affidamenti_frm, ZStoredProcedure;
+  affidamenti_frm ;
 
 type
 
@@ -22,9 +22,10 @@ type
     btaffidamenti: TButton;
     chinfinito: TCheckBox;
     dbcbaffidamentofiltro: TDBLookupComboBox;
-    dbchpresunto: TDBCheckBox;
     datada: TDateTimePicker;
     dataa: TDateTimePicker;
+    dbchgenerato: TDBCheckBox;
+    dbchpresunto: TDBCheckBox;
     dbchriconciliato: TDBCheckBox;
     dbeddataop: TDBDateEdit;
     dbeddataval: TDBDateEdit;
@@ -49,14 +50,19 @@ type
     Label9: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
+    RadioGroup1: TRadioGroup;
     procedure btaffidamentiClick(Sender: TObject);
     procedure btcontiClick(Sender: TObject);
     procedure bteccontocorrenteClick(Sender: TObject);
     procedure btfidiClick(Sender: TObject);
     procedure chinfinitoChange(Sender: TObject);
+    procedure dbchgeneratoChange(Sender: TObject);
+    procedure dbchpresuntoChange(Sender: TObject);
+    procedure dbchriconciliatoChange(Sender: TObject);
 
     procedure dbgridmovimentiPrepareCanvas(sender: TObject; DataCol: Integer;
       Column: TColumn; AState: TGridDrawState);
+    procedure DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
     procedure FormShow(Sender: TObject);
     procedure GetBuildInfo(var V1, V2, V3, V4: Word);
     function kfVersionInfo: String;
@@ -134,14 +140,24 @@ begin
      end;
     affidamenti:=Taffidamenti.Create(self);
     //passo i parametri
-    affidamenti.zqaff.parambyname('AFFIDAMENTO').asinteger:=dbcbaffidamentofiltro.KeyValue;
-    affidamenti.zqaff.parambyname('DATADA').AsDate:=datada.Date;
+    Affidamenti.idaffidamento:=dbcbaffidamentofiltro.KeyValue;
+    Affidamenti.dataa:=datada.Date;
     if chinfinito.Checked then
-       affidamenti.zqaff.parambyname('DATAA').AsDate:=IncMonth(now,36)
+       Affidamenti.dataa:=IncMonth(now,36)
     else
-       affidamenti.zqaff.parambyname('DATAA').AsDate:=dataa.Date;
-    affidamenti.zqaff.open;
-    affidamenti.lbaffidamenti.Caption:='Affidamento n.: ' + dbcbaffidamentofiltro.Text;
+       Affidamenti.dataa:=dataa.Date;
+    Affidamenti.nomeaffidamento:=dbcbaffidamentofiltro.Text;
+    with DataModule1.zrq1 do
+      begin
+        close;
+        sql.clear;
+        sql.add('Select idconto from affidamenti where idaffidamento=:IDAFF');
+        ParamByName('IDAFF').AsInteger:=dbcbaffidamentofiltro.KeyValue;
+        open;
+        Affidamenti.idconto:=FieldByName('IDCONTO').AsInteger;
+        close;
+        sql.clear;
+      end;
     //mostro la form
     affidamenti.showmodal;
     //aggiorno in dati
@@ -191,25 +207,71 @@ else
   dataa.Enabled:=true;
 end;
 
+procedure Tmainform.dbchgeneratoChange(Sender: TObject);
+begin
+  if  dbchgenerato.Checked then
+   begin
+     dbchpresunto.Checked:=false;
+     dbchriconciliato.Checked:=false;
+   end;
+end;
+
+procedure Tmainform.dbchpresuntoChange(Sender: TObject);
+begin
+  if  dbchpresunto.Checked then
+   begin
+     dbchriconciliato.Checked:=false;
+     dbchgenerato.Checked:=false;
+   end;
+end;
+
+procedure Tmainform.dbchriconciliatoChange(Sender: TObject);
+begin
+  if  dbchriconciliato.Checked then
+   begin
+     dbchpresunto.Checked:=false;
+     dbchgenerato.Checked:=false;
+   end;
+end;
+
 
 
 procedure Tmainform.dbgridmovimentiPrepareCanvas(sender: TObject;
   DataCol: Integer; Column: TColumn; AState: TGridDrawState);
 begin
 
-//controllo se il record è presunto o meno
+//cambio il colore della riga in base al tipo di record
 if datamodule1.zq1.FieldByName('presunto').AsBoolean then
    with sender as TDBGrid do
                begin
-                    Canvas.Brush.Color:=clYellow;
+                    Canvas.Brush.Color:=clSkyBlue;
                end
 //quindi se è riconciliato
 else if datamodule1.zq1.FieldByName('riconciliato').AsBoolean then
    with sender as TDBGrid do
                begin
                     Canvas.Brush.Color:=clMoneyGreen;
+               end
+else if datamodule1.zq1.FieldByName('generato').AsBoolean then
+   with sender as TDBGrid do
+               begin
+                    Canvas.Brush.Color:=clOlive;
                end;
 end;
+
+procedure Tmainform.DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType
+  );
+begin
+  if Button=nbEdit then
+   dbcbcontocorrente.Enabled:=true;
+  if Button=nbInsert then
+   dbcbcontocorrente.Enabled:=true;
+  if Button=nbPost then
+   dbcbcontocorrente.Enabled:=false;
+  if Button=nbCancel then
+   dbcbcontocorrente.Enabled:=false;
+end;
+
 
 
 
